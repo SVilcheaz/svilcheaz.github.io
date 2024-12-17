@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Stefan</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  hello stefan
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('experience')">Experience</button>
+  </nav>
+  <div id="content">
+    <div id="home" class="section active">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Click the tabs above to explore!</p>
+    </div>
+    <div id="about" class="section">
+      <h1>About Me</h1>
+      <p>This is where you describe yourself.</p>
+    </div>
+    <div id="experience" class="section">
+      <h1>My Experience</h1>
+      <p>Here’s information about my work experience and projects.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
