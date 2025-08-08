@@ -3,18 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="style.css">
+  <title>About Me - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="about.html" class="active">About Me</a></li>
       <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <h1>About Me</h1>
-  <p>This is where you can describe yourself.</p>
+  <div class="section active" id="about">
+    <h1>About Me</h1>
+    <div class="profile-container">
+      <div class="profile-image">
+        <!-- Add your profile picture here -->
+        <img src="photo.jpg" alt="Profile Picture" class="profile-pic">
+      </div>
+      <div class="profile-info">
+        <h2>Software Developer</h2>
+        <p>I am a passionate software developer with a keen interest in web development and problem-solving. I love creating elegant solutions to complex problems and am always eager to learn new technologies.</p>
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="skill-tags">
+            <span class="skill">HTML5</span>
+            <span class="skill">CSS3</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

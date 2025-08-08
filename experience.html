@@ -3,18 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Experience - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About Me</a></li>
-      <li><a href="experience.html">Experience</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <h1>About Me</h1>
-  <p>This is where you can describe yourself.</p>
+  <div class="section active" id="experience">
+    <h1>Professional Experience</h1>
+    <div class="experience-carousel">
+      <div class="carousel-container">
+        <!-- Experience 1 -->
+        <div class="carousel-slide active">
+          <div class="timeline-content">
+            <h3>Senior Software Developer</h3>
+            <p class="company">Tech Innovations Inc.</p>
+            <p class="date">2023 - Present</p>
+            <ul class="responsibilities">
+              <li>Lead development of web applications using modern technologies</li>
+              <li>Mentor junior developers and implement code reviews</li>
+              <li>Optimize application performance and scalability</li>
+              <li>Collaborate with cross-functional teams on project delivery</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Experience 2 -->
+        <div class="carousel-slide">
+          <div class="timeline-content">
+            <h3>Full Stack Developer</h3>
+            <p class="company">Digital Solutions Ltd.</p>
+            <p class="date">2020 - 2023</p>
+            <ul class="responsibilities">
+              <li>Developed responsive web applications using React, Node.js, and MongoDB</li>
+              <li>Implemented RESTful APIs and integrated with third-party services</li>
+              <li>Collaborated with UX/UI designers to create intuitive user interfaces</li>
+              <li>Participated in Agile development processes and daily standups</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Experience 3 -->
+        <div class="carousel-slide">
+          <div class="timeline-content">
+            <h3>Frontend Developer</h3>
+            <p class="company">Creative Web Agency</p>
+            <p class="date">2018 - 2020</p>
+            <ul class="responsibilities">
+              <li>Built interactive user interfaces with Vue.js and Angular</li>
+              <li>Optimized web applications for maximum speed and scalability</li>
+              <li>Worked closely with backend developers to integrate APIs</li>
+              <li>Implemented responsive design principles for mobile compatibility</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Experience 4 -->
+        <div class="carousel-slide">
+          <div class="timeline-content">
+            <h3>Software Engineer</h3>
+            <p class="company">Web Solutions Ltd.</p>
+            <p class="date">2021 - 2023</p>
+            <ul class="responsibilities">
+              <li>Developed responsive web applications using React and Node.js</li>
+              <li>Implemented RESTful APIs and database integrations</li>
+              <li>Participated in agile development processes</li>
+              <li>Created automated testing frameworks</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Experience 5 -->
+        <div class="carousel-slide">
+          <div class="timeline-content">
+            <h3>Junior Developer</h3>
+            <p class="company">StartUp Tech</p>
+            <p class="date">2019 - 2021</p>
+            <ul class="responsibilities">
+              <li>Assisted in web application development</li>
+              <li>Learned and implemented best coding practices</li>
+              <li>Contributed to team projects</li>
+              <li>Participated in code reviews and pair programming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation Controls -->
+      <div class="carousel-controls">
+        <button class="carousel-btn prev-btn" onclick="changeExperience(-1)">❮</button>
+        <button class="carousel-btn next-btn" onclick="changeExperience(1)">❯</button>
+      </div>
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <span class="indicator active" onclick="currentExperience(1)"></span>
+        <span class="indicator" onclick="currentExperience(2)"></span>
+        <span class="indicator" onclick="currentExperience(3)"></span>
+        <span class="indicator" onclick="currentExperience(4)"></span>
+        <span class="indicator" onclick="currentExperience(5)"></span>
+      </div>
+      
+      <!-- Next Experience Button -->
+      <button class="next-experience-btn" onclick="changeExperience(1)">Next Experience</button>
+    </div>
+  </div>
+  
+  <script>
+    let currentSlide = 0;
+    
+    function changeExperience(n) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const totalSlides = slides.length;
+      showExperience(currentSlide + n, totalSlides);
+    }
+    
+    function currentExperience(n) {
+      showExperience(n - 1, document.querySelectorAll('.carousel-slide').length);
+    }
+    
+    function showExperience(n, totalSlides) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const indicators = document.querySelectorAll('.indicator');
+      
+      if (n >= totalSlides) {
+        currentSlide = 0;
+      } else if (n < 0) {
+        currentSlide = totalSlides - 1;
+      } else {
+        currentSlide = n;
+      }
+      
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      // Remove active class from all indicators
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      // Show current slide
+      slides[currentSlide].classList.add('active');
+      
+      // Set active indicator
+      indicators[currentSlide].classList.add('active');
+    }
+  </script>
 </body>
 </html>
