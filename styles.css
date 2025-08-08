@@ -1,9 +1,86 @@
 /* styles.css */
+
+/* Theme Variables */
+:root {
+  /* Light theme (default) */
+  --primary-color: #481a85;
+  --accent-color: #4ecdc4;
+  --text-color: #333;
+  --bg-color: #f8f9fa;
+  --light-bg: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.2);
+  --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  --transition: all 0.3s ease;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --primary-color: #9b59b6;
+  --accent-color: #1abc9c;
+  --text-color: #f0f0f0;
+  --bg-color: #1a1a1a;
+  --light-bg: #2d2d2d;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  z-index: 1001;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-toggle::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  transition: var(--transition);
+  box-shadow: inset 8px -8px 0 0 var(--light-bg);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  box-shadow: inset 24px -24px 0 0 var(--light-bg);
+}
+
+/* Apply theme to body */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Project Grid */
