@@ -30,11 +30,62 @@
   --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
+[data-theme="dark"] nav {
+  background-color: var(--light-bg);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: var(--light-bg);
+  padding: 0.25rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 0.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  transition: var(--transition);
+  position: relative;
+  font-size: 0.85rem;
+}
+
+nav a:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+nav a.active {
+  background-color: var(--primary-color);
+  color: white;
 }
 
 /* Theme Toggle Button */
