@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "My Portfolio",
+    "aboutTitle": "About Me - Portfolio",
+    "projectsTitle": "Projects - Portfolio",
+    "experienceTitle": "Experience - Portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Me",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+  "home": {
+    "heroTitle": "Welcome to My Portfolio",
+    "heroSubtitle": "Software Developer & Web Designer",
+    "yearsExperience": "5+",
+    "yearsLabel": "Years of Experience",
+    "projectsCount": "20+",
+    "projectsLabel": "Completed Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "role": "Software Developer",
+    "description": "I am a passionate software developer with a keen interest in web development and problem-solving. I love creating elegant solutions to complex problems and am always eager to learn new technologies.",
+    "skillsTitle": "Skills",
+    "skills": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "Python", "Git", "Responsive Design"]
+  },
+  "projects": {
+    "title": "My Projects",
+    "project1": {
+      "title": "E-commerce Platform",
+      "tech": "React.js, Node.js, MongoDB",
+      "description": "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
+      "demo": "Live Demo",
+      "github": "GitHub"
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "job1": {
+      "title": "Senior Software Developer",
+      "company": "Tech Innovations Inc.",
+      "date": "2023 - Present",
+      "responsibilities": [
+        "Lead development of web applications using modern technologies",
+        "Mentor junior developers and implement code reviews",
+        "Optimize application performance and scalability",
+        "Collaborate with cross-functional teams on project delivery"
+      ]
+    }
+  },
+  "themeToggle": "Toggle theme"
+}

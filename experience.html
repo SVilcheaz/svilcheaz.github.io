@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="app.lang">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experience - Portfolio</title>
+  <title data-i18n="app.experienceTitle">Experience - Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script>
     // Apply theme immediately to prevent flash of incorrect theme
@@ -24,28 +24,33 @@
   <script src="script.js"></script>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="experience.html" class="active">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+      <li><a href="experience.html" class="active" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
     </ul>
+    <div class="language-switcher">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
   </nav>
   <button class="theme-toggle" aria-label="Toggle theme"></button>
   <div class="section active" id="experience">
-    <h1>Professional Experience</h1>
+    <h1 data-i18n="experience.title">Professional Experience</h1>
     <div class="experience-carousel">
       <div class="carousel-container">
         <!-- Experience 1 -->
         <div class="carousel-slide active">
           <div class="timeline-content">
-            <h3>Senior Software Developer</h3>
-            <p class="company">Tech Innovations Inc.</p>
-            <p class="date">2023 - Present</p>
+            <h3 data-i18n="experience.job1.title">Senior Software Developer</h3>
+            <p class="company" data-i18n="experience.job1.company">Tech Innovations Inc.</p>
+            <p class="date" data-i18n="experience.job1.date">2023 - Present</p>
             <ul class="responsibilities">
-              <li>Lead development of web applications using modern technologies</li>
-              <li>Mentor junior developers and implement code reviews</li>
-              <li>Optimize application performance and scalability</li>
-              <li>Collaborate with cross-functional teams on project delivery</li>
+              <li data-i18n="experience.job1.responsibilities[0]">Lead development of web applications using modern technologies</li>
+              <li data-i18n="experience.job1.responsibilities[1]">Mentor junior developers and implement code reviews</li>
+              <li data-i18n="experience.job1.responsibilities[2]">Optimize application performance and scalability</li>
+              <li data-i18n="experience.job1.responsibilities[3]">Collaborate with cross-functional teams on project delivery</li>
             </ul>
           </div>
         </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="app.lang">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Portfolio</title>
+  <title data-i18n="app.projectsTitle">Projects - Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script>
     // Apply theme immediately to prevent flash of incorrect theme
@@ -24,27 +24,32 @@
   <script src="script.js"></script>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+      <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="projects.html" class="active" data-i18n="nav.projects">Projects</a></li>
     </ul>
+    <div class="language-switcher">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
   </nav>
   <button class="theme-toggle" aria-label="Toggle theme"></button>
   <div class="section active" id="projects">
-    <h1>My Projects</h1>
+    <h1 data-i18n="projects.title">My Projects</h1>
     <div class="projects-grid">
       <div class="project-card">
         <div class="project-image">
-          <img src="project1.jpg" alt="Project 1" class="project-img">
+          <img src="project1.jpg" data-i18n="[alt]projects.project1.imageAlt" alt="Project 1" class="project-img">
         </div>
         <div class="project-content">
-          <h3>E-commerce Platform</h3>
-          <p class="project-tech">React.js, Node.js, MongoDB</p>
-          <p>A full-stack e-commerce platform with user authentication, product management, and payment integration.</p>
+          <h3 data-i18n="projects.project1.title">E-commerce Platform</h3>
+          <p class="project-tech" data-i18n="projects.project1.tech">React.js, Node.js, MongoDB</p>
+          <p data-i18n="projects.project1.description">A full-stack e-commerce platform with user authentication, product management, and payment integration.</p>
           <div class="project-links">
-            <a href="#" class="project-link">Live Demo</a>
-            <a href="#" class="project-link">GitHub</a>
+            <a href="#" class="project-link" data-i18n="projects.project1.demo">Live Demo</a>
+            <a href="#" class="project-link" data-i18n="projects.project1.github">GitHub</a>
           </div>
         </div>
       </div>

@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "Mein Portfolio",
+    "aboutTitle": "Über mich - Portfolio",
+    "projectsTitle": "Projekte - Portfolio",
+    "experienceTitle": "Berufserfahrung - Portfolio"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "experience": "Berufserfahrung",
+    "projects": "Projekte"
+  },
+  "home": {
+    "heroTitle": "Willkommen in meinem Portfolio",
+    "heroSubtitle": "Softwareentwickler & Webdesigner",
+    "yearsExperience": "5+",
+    "yearsLabel": "Jahre Erfahrung",
+    "projectsCount": "20+",
+    "projectsLabel": "Abgeschlossene Projekte"
+  },
+  "about": {
+    "title": "Über mich",
+    "role": "Softwareentwickler",
+    "description": "Ich bin ein leidenschaftlicher Softwareentwickler mit einem besonderen Interesse an Webentwicklung und Problemlösung. Ich liebe es, elegante Lösungen für komplexe Probleme zu finden und bin stets bestrebt, neue Technologien zu erlernen.",
+    "skillsTitle": "Fähigkeiten",
+    "skills": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "Python", "Git", "Responsive Design"]
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "project1": {
+      "title": "E-Commerce-Plattform",
+      "tech": "React.js, Node.js, MongoDB",
+      "description": "Eine Full-Stack-E-Commerce-Plattform mit Benutzerauthentifizierung, Produktverwaltung und Zahlungsintegration.",
+      "demo": "Live Demo",
+      "github": "GitHub"
+    }
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "job1": {
+      "title": "Senior Softwareentwickler",
+      "company": "Tech Innovations GmbH",
+      "date": "2023 - Heute",
+      "responsibilities": [
+        "Leitung der Entwicklung von Webanwendungen mit modernen Technologien",
+        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
+        "Optimierung der Anwendungsleistung und Skalierbarkeit",
+        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
+      ]
+    }
+  },
+  "themeToggle": "Thema wechseln"
+}

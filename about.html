@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="app.lang">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Portfolio</title>
+  <title data-i18n="app.aboutTitle">About Me - Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script>
     // Apply theme immediately to prevent flash of incorrect theme
@@ -24,30 +24,35 @@
   <script src="script.js"></script>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Me</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" class="active" data-i18n="nav.about">About Me</a></li>
+      <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
     </ul>
+    <div class="language-switcher">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
   </nav>
   <button class="theme-toggle" aria-label="Toggle theme"></button>
   <div class="section active" id="about">
-    <h1>About Me</h1>
+    <h1 data-i18n="about.title">About Me</h1>
     <div class="profile-container">
       <div class="profile-image">
         <!-- Add your profile picture here -->
-        <img src="photo.jpg" alt="Profile Picture" class="profile-pic">
+        <img src="photo.jpg" data-i18n="[alt]about.profileAlt" alt="Profile Picture" class="profile-pic">
       </div>
       <div class="profile-info">
-        <h2>Software Developer</h2>
-        <p>I am a passionate software developer with a keen interest in web development and problem-solving. I love creating elegant solutions to complex problems and am always eager to learn new technologies.</p>
+        <h2 data-i18n="about.role">Software Developer</h2>
+        <p data-i18n="about.description">I am a passionate software developer with a keen interest in web development and problem-solving. I love creating elegant solutions to complex problems and am always eager to learn new technologies.</p>
         <div class="skills">
-          <h3>Skills</h3>
+          <h3 data-i18n="about.skillsTitle">Skills</h3>
           <div class="skill-tags">
-            <span class="skill">HTML5</span>
-            <span class="skill">CSS3</span>
-            <span class="skill">JavaScript</span>
-            <span class="skill">React</span>
+            <span class="skill" data-i18n="about.skills[0]">HTML5</span>
+            <span class="skill" data-i18n="about.skills[1]">CSS3</span>
+            <span class="skill" data-i18n="about.skills[2]">JavaScript</span>
+            <span class="skill" data-i18n="about.skills[3]">React</span>
             <span class="skill">Node.js</span>
             <span class="skill">Python</span>
           </div>

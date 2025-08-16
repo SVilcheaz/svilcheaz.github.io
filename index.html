@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18n="app.lang">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title data-i18n="app.title">My Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <script>
     // Apply theme immediately to prevent flash of incorrect theme
@@ -24,30 +24,35 @@
   <script src="script.js"></script>
   <nav>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
+      <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
     </ul>
+    <div class="language-switcher">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <span>|</span>
+      <button class="lang-btn" data-lang="de">DE</button>
+    </div>
   </nav>
   <button class="theme-toggle" aria-label="Toggle theme"></button>
   <div class="section active" id="home">
     <div class="hero">
       <div class="hero-content">
         <div class="hero-content-inner">
-          <h1 class="hero-title">Welcome to My Portfolio</h1>
-          <p class="hero-subtitle">Software Developer & Web Designer</p>
+          <h1 class="hero-title" data-i18n="home.heroTitle">Welcome to My Portfolio</h1>
+          <p class="hero-subtitle" data-i18n="home.heroSubtitle">Software Developer & Web Designer</p>
           <!-- Buttons removed as per request -->
         </div>
       </div>
       <div class="hero-stats">
         <div class="stat-item" onclick="window.location.href='experience.html'" style="cursor: pointer;">
-          <span class="stat-number">5+</span>
-          <span class="stat-label">Years of Experience</span>
+          <span class="stat-number" data-i18n="home.yearsExperience">5+</span>
+          <span class="stat-label" data-i18n="home.yearsLabel">Years of Experience</span>
         </div>
         <div class="stat-item" onclick="window.location.href='projects.html'" style="cursor: pointer;">
-          <span class="stat-number">20+</span>
-          <span class="stat-label">Completed Projects</span>
+          <span class="stat-number" data-i18n="home.projectsCount">20+</span>
+          <span class="stat-label" data-i18n="home.projectsLabel">Completed Projects</span>
         </div>
         <div class="stat-item" onclick="window.location.href='about.html'" style="cursor: pointer;">
           <span class="stat-number">10+</span>
