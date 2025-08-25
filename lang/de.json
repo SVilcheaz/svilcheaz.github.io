@@ -12,8 +12,8 @@
     "projects": "Projekte"
   },
   "home": {
-    "heroTitle": "Willkommen in meinem Portfolio",
-    "heroSubtitle": "Softwareentwickler & Webdesigner",
+    "heroTitle": "Willkommen Zu Meinem Portfolio",
+    "heroSubtitle": "KI Ingineur & Softwareentwickler",
     "yearsExperience": "5+",
     "yearsLabel": "Jahre Erfahrung",
     "projectsCount": "20+",
@@ -21,10 +21,17 @@
   },
   "about": {
     "title": "Über mich",
-    "role": "Softwareentwickler",
-    "description": "Ich bin ein leidenschaftlicher Softwareentwickler mit einem besonderen Interesse an Webentwicklung und Problemlösung. Ich liebe es, elegante Lösungen für komplexe Probleme zu finden und bin stets bestrebt, neue Technologien zu erlernen.",
+    "role": "Wer bin ich?",
+    "description": "Ich bin AI-Engineer und Softwareentwickler mit einer Leidenschaft dafür, intelligente Systeme zu entwickeln, die modernste Forschung mit praxisnahen Anwendungen verbinden. Mein Hintergrund umfasst Machine Learning, Computer Vision, Robotik und Embedded Systems, und ich arbeite gerne entlang des gesamten Technologie-Stacks, von der Entwicklung von Deep-Learning-Modellen und Automatisierungspipelines bis hin zur Umsetzung robuster Software für vernetzte und autonome Systeme. Ich liebe es, komplexe Herausforderungen anzunehmen, neue Tools und Frameworks zu erlernen und in interdisziplinären Teams innovative, verlässliche Lösungen zu schaffen, die einen echten Unterschied machen.",
     "skillsTitle": "Fähigkeiten",
-    "skills": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "Python", "Git", "Responsive Design"]
+    "skills0": "Machine Learning & Deep Learning",
+    "skills1": "Computer Vision",
+    "skills2": "GenAI",
+    "skills3": "Robotik & ROS2 Entwicklung",
+    "skills4": "Embedded Systems & Mikrocontroller-Programmierung",
+    "skills5": "Softwareentwicklung & CI/CD-Automatisierung",
+    "skills6": "IT-Sicherheit",
+    "skills7": "Data Engineering"
   },
   "projects": {
     "title": "Meine Projekte",
@@ -32,6 +39,20 @@
       "title": "E-Commerce-Plattform",
       "tech": "React.js, Node.js, MongoDB",
       "description": "Eine Full-Stack-E-Commerce-Plattform mit Benutzerauthentifizierung, Produktverwaltung und Zahlungsintegration.",
+      "demo": "Live Demo",
+      "github": "GitHub"
+    },
+    "project2": {
+      "title": "Task Management App",
+      "tech": "Vue.js, Firebase",
+      "description": "Eine kollaborative Task-Management-Anwendung mit Echtzeit-Updates und Team-Kollaborationsfunktionen.",
+      "demo": "Live Demo",
+      "github": "GitHub"
+    },
+    "project3": {
+      "title": "Weather Dashboard",
+      "tech": "Python, Flask, OpenWeather API",
+      "description": "Eine reaktive Wetter-Übersicht, die aktuelle Wetterdaten für mehrere Städte bereitstellt.",
       "demo": "Live Demo",
       "github": "GitHub"
     }
@@ -44,6 +65,50 @@
       "date": "2023 - Heute",
       "responsibilities": [
         "Leitung der Entwicklung von Webanwendungen mit modernen Technologien",
+        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
+        "Optimierung der Anwendungsleistung und Skalierbarkeit",
+        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
+      ]
+    },
+    "job2": {
+      "title": "Softwareentwickler",
+      "company": "Tech Innovations GmbH",
+      "date": "2022 - 2023",
+      "responsibilities": [
+        "Entwicklung von Webanwendungen mit modernen Technologien",
+        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
+        "Optimierung der Anwendungsleistung und Skalierbarkeit",
+        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
+      ]
+    },
+    "job3": {
+      "title": "Softwareentwickler",
+      "company": "Tech Innovations GmbH",
+      "date": "2021 - 2022",
+      "responsibilities": [
+        "Entwicklung von Webanwendungen mit modernen Technologien",
+        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
+        "Optimierung der Anwendungsleistung und Skalierbarkeit",
+        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
+      ]
+    },
+    "job4": {
+      "title": "Softwareentwickler",
+      "company": "Tech Innovations GmbH",
+      "date": "2020 - 2021",
+      "responsibilities": [
+        "Entwicklung von Webanwendungen mit modernen Technologien",
+        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
+        "Optimierung der Anwendungsleistung und Skalierbarkeit",
+        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
+      ]
+    },
+    "job5": {
+      "title": "Softwareentwickler",
+      "company": "Tech Innovations GmbH",
+      "date": "2019 - 2020",
+      "responsibilities": [
+        "Entwicklung von Webanwendungen mit modernen Technologien",
         "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
         "Optimierung der Anwendungsleistung und Skalierbarkeit",
         "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
