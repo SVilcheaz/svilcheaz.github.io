@@ -38,10 +38,10 @@
   "projects": {
     "title": "My Projects",
     "project1": {
-      "title": "E-commerce Platform",
-      "tech": "React.js, Node.js, MongoDB",
-      "description": "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      "demo": "Live Demo",
+      "title": "Lane Segmentation",
+      "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
+      "description": "To DO",
+      "demo": "Demo Video",
       "github": "GitHub"
     },
     "project2": {
