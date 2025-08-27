@@ -297,18 +297,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Smooth scrolling for all links
   document.querySelectorAll('a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const href = this.getAttribute('href');
-      if (href) {
-        const sectionId = href.split('.')[0];
-        const targetSection = document.getElementById(sectionId);
+      
+      // Only prevent default for in-page links that start with '#'
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(href);
         if (targetSection) {
           targetSection.scrollIntoView({ behavior: 'smooth' });
         }
       }
+      // Any other href (like source/LaneAnalysis.mp4) will behave normally
     });
   });
 
