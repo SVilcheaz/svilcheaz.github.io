@@ -40,23 +40,32 @@
     "project1": {
       "title": "Lane Segmentation",
       "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
-      "description": "To DO",
-      "demo": "Demo Video",
-      "github": "GitHub"
+      "description": "YoloPv2 model used for lane line segmentation, IPM was applied to modify the perspective of the image to a Bird's Eye View perspective, and Bayesian Filtering was used to keep the lane localization and assignment algorithm stable.",
+      "demo": "Video"
     },
     "project2": {
-      "title": "Task Management App",
-      "tech": "Vue.js, Firebase",
-      "description": "A collaborative task management application with real-time updates and team collaboration features.",
-      "demo": "Live Demo",
-      "github": "GitHub"
+      "title": "Comparison of Neural Networks for Efficient Inverse Dynamics Identification",
+      "tech": "Python, ROS2, Docker",
+      "description": "Trained, tested and compared several neural network architectures for predicting torque in robot joints of a 6-axis industrial robot.",
+      "demo": "Paper"
     },
     "project3": {
-      "title": "Weather Dashboard",
-      "tech": "Python, Flask, OpenWeather API",
-      "description": "A reactive weather overview that provides current weather data for multiple cities.",
-      "demo": "Live Demo",
-      "github": "GitHub"
+      "title": "Uncertainty Estimation for 3D Object Detectors",
+      "tech": "Python, ROS2, Docker",
+      "description": "Uncertainty Estimation for 3D Object Detectors",
+      "demo": "Master's Thesis"
+    },
+    "project4": {
+      "title": "Memristor-based MVM Engine",
+      "tech": "Python, ROS2, Docker",
+      "description": "Memristor-based MVM Engine",
+      "demo": "Bachelor Thesis"
+    },
+    "project5": {
+      "title": "The Shape and Texture Bias for Object Recognition",
+      "tech": "Python, ROS2, Docker",
+      "description": "Uncertainty Estimation for 3D Object Detectors",
+      "demo": "Report"
     }
   },
   "experience": {
