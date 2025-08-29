@@ -39,39 +39,56 @@
   <div class="section active" id="about">
     <h1 data-i18n="about.title">About Me</h1>
     <div class="profile-container">
+      <!-- Left Column: Profile Image -->
       <div class="profile-image">
-        <!-- Add your profile picture here -->
         <img src="source/photo.jpg" data-i18n="[alt]about.profileAlt" alt="Profile Picture" class="profile-pic">
       </div>
-      <div class="profile-info">
-        <h2 data-i18n="about.role">AI Engineer & Software Developer</h2>
-        <p data-i18n="about.description">I am a passionate software developer with a keen interest in web development and problem-solving. I love creating elegant solutions to complex problems and am always eager to learn new technologies.</p>
-        <div class="skills">
-          <h3 data-i18n="about.skillsTitle">Skills</h3>
-          <div class="skill-tags">
-            <span class="skill" data-i18n="about.skills0">HTML5</span>
-            <span class="skill" data-i18n="about.skills1">CSS3</span>
-            <span class="skill" data-i18n="about.skills2">JavaScript</span>
-            <span class="skill" data-i18n="about.skills3">React</span>
-            <span class="skill" data-i18n="about.skills4">Node.js</span>
-            <span class="skill" data-i18n="about.skills5">Python</span>
-            <span class="skill" data-i18n="about.skills6">Git</span>
-            <span class="skill" data-i18n="about.skills7">Responsive Design</span>
+      
+      <!-- Middle Column: Profile Info, Skills, and Contact -->
+      <div class="profile-main">
+        <div class="profile-info">
+          <h2 data-i18n="about.role">AI Engineer & Software Developer</h2>
+          <p data-i18n="about.description">I am a passionate software developer with a keen interest in web development and problem-solving. I love creating elegant solutions to complex problems and am always eager to learn new technologies.</p>
+          
+          <div class="skills">
+            <h3 data-i18n="about.skillsTitle">Skills</h3>
+            <div class="skill-tags">
+              <span class="skill" data-i18n="about.skills0">HTML5</span>
+              <span class="skill" data-i18n="about.skills1">CSS3</span>
+              <span class="skill" data-i18n="about.skills2">JavaScript</span>
+              <span class="skill" data-i18n="about.skills3">React</span>
+              <span class="skill" data-i18n="about.skills4">Node.js</span>
+              <span class="skill" data-i18n="about.skills5">Python</span>
+              <span class="skill" data-i18n="about.skills6">Git</span>
+              <span class="skill" data-i18n="about.skills7">Responsive Design</span>
+            </div>
+          </div>
+          
+          <div class="profile-info">
+            <div class="profile-info contact-section" style="margin-top: 40px;"></div>
+            <h3 data-i18n="about.contactTitle">Contact Information</h3>
+            <p data-i18n="about.contactEmail1">stefan.vilceanu@rwth-aachen.de</p>
+            <p data-i18n="about.contactEmail2">vilceanu.stefan@yahoo.com</p>
+            <p data-i18n="about.contactPhone">Phone: +40 734588720</p>
+            <p data-i18n="about.contactAddress">Address: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany</p>
           </div>
         </div>
-        <div class="profile-info" style="margin-top: 40px;">
-          <h3 data-i18n="about.contactTitle">Contact Information</h3>
-          <p data-i18n="about.contactEmail1">stefan.vilceanu@gmail.com</p>
-          <p data-i18n="about.contactEmail2">vilceanu.stefan@yahoo.com</p>
-          <p data-i18n="about.contactPhone">+40 722 222 222</p>
-          <p data-i18n="about.contactAddress">București, Romania</p>
+      </div>
+      
+      <!-- Right Column: Education -->
+      <div class="education">
+        <h2>Education</h2>
+        <div class="profile-info contact-section" style="margin-top: 10px;"></div>
+        <div class="education-item">
+          <h3>M.Sc. in Computer Engineering & AI</h3>
+          <p>RWTH Aachen University 2023 – 2025</p>
         </div>
-
-        <!-- New Education Column -->
-        <div class="education">
-          <h3>Education</h3>
-          <p><strong>Master’s in AI</strong><br>University X, 2022 – 2024</p>
-          <p><strong>Bachelor’s in Computer Science</strong><br>University Y, 2018 – 2022</p>
+        <div class="education-item">
+          <h3>B.Sc. in Electrical Engineering</h3>
+          <p>RWTH Aachen University 2019 – 2023</p>
+        </div>
+        <div class="project-links">
+          <a href="source/CV.pdf" target="_blank" class="project-link">View CV</a>
         </div>
       </div>
     </div>
