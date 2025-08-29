@@ -13,7 +13,7 @@
   },
   "home": {
     "heroTitle": "Welcome To My Portfolio",
-    "heroSubtitle": "AI Engineer & Software Developer",
+    "heroSubtitle": "Stefan Vilceanu - AI Engineer & Software Developer",
     "yearsExperience": "5+",
     "yearsLabel": "Years of Experience",
     "projectsCount": "10+",
@@ -33,7 +33,12 @@
     "skills4": "Embedded Systems & Microcontroller Programming",
     "skills5": "Software Development & CI/CD Automation",
     "skills6": "IT Security",
-    "skills7": "Data Engineering"
+    "skills7": "Data Engineering",
+    "contactTitle": "Contact Information",
+    "contactEmail1": "E-Mail: stefan.vilceanu@rwth-aachen.de",
+    "contactPhone": "Phone: +40 734588720",
+    "contactAddress": "Address: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
+    "contactEmail2": "E-Mail: vilceanu.stefan@yahoo.com"
   },
   "projects": {
     "title": "My Projects",
