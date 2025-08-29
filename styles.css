@@ -434,6 +434,19 @@ body {
   transform: translateY(0);
 }
 
+.hero-image {
+  max-width: 260px;      /* Adjust size */
+  margin: 0 auto 50px;   /* Center + spacing below */
+  display: block;
+  border-radius: 50%;    /* Makes it circular (optional, great for profile pics) */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Soft shadow */
+  transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.05); /* Subtle hover zoom */
+}
+
 .hero-title {
   font-size: 4rem;
   font-weight: 800;
