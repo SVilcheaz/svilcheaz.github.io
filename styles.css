@@ -828,7 +828,7 @@ h1::after {
 
 .skill:hover {
   transform: translateY(-3px);
-  background: #007bff;
+  background: var(--primary-color);
   color: white;
 }
 
