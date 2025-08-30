@@ -1226,6 +1226,25 @@ h1::after {
   margin-top: -0.3em;
 }
 
+.linkedin-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: var(--primary-color); /* LinkedIn blue */
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.linkedin-btn:hover {
+  transform: translateY(-3px);
+  background-color: var(--primary-color);
+  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
 /* Timeline Animations */
 @keyframes fadeInLeft {
   from {

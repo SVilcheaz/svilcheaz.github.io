@@ -19,7 +19,7 @@
     "projectsCount": "10+",
     "projectsLabel": "Completed Projects",
     "technologiesCount": "10+",
-    "technologiesLabel": "Skill  Mastered"
+    "technologiesLabel": "Skills  Mastered"
   },
   "about": {
     "title": "About Me",
@@ -38,7 +38,8 @@
     "contactEmail1": "E-Mail: stefan.vilceanu@rwth-aachen.de",
     "contactPhone": "Phone: +40 734588720",
     "contactAddress": "Address: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
-    "contactEmail2": "E-Mail: vilceanu.stefan@yahoo.com"
+    "contactEmail2": "E-Mail: vilceanu.stefan@yahoo.com",
+    "contactLinkedin": ""
   },
   "projects": {
     "title": "My Projects",
