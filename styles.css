@@ -1009,6 +1009,41 @@ h1::after {
   z-index: 10;
 }
 
+/* Header row aligns title and button on same line & baseline */
+.experience-header {
+  display: flex;
+  align-items: baseline;      /* matches the title's text baseline */
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0px;        /* space before company/date row */
+  /* button will now sit inside the card's padding, not touching edges */
+}
+
+/* Make sure long titles can shrink without pushing the button off */
+.experience-header h3 {
+  margin: 0;
+  min-width: 0;               /* allows wrapping */
+}
+
+/* Keep the button from shrinking */
+.experience-header .recommendation-btn {
+  flex-shrink: 0;
+}
+
+/* Button styling (tweak to your theme) */
+.recommendation-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  transition: transform .15s ease, background .2s ease;
+}
+.recommendation-btn:hover { background:var(--accent-color); transform: translateY(-1px); }
+.recommendation-btn:active { transform: translateY(0); }
+
 .carousel-btn {
   background: var(--primary-color);
   color: white;
