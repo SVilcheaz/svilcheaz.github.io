@@ -77,8 +77,8 @@
   "experience": {
     "title": "Professional Experience",
     "job1": {
-      "title": "Senior Software Developer",
-      "company": "Tech Innovations Inc.",
+      "title": "Software Engineer Intern",
+      "company": "Porsche Engineering",
       "date": "2023 - Present",
       "responsibilities": [
         "Lead development of web applications using modern technologies",
@@ -88,8 +88,8 @@
       ]
     },
     "job2": {
-      "title": "Software Developer",
-      "company": "Tech Innovations Inc.",
+      "title": "Automotive Security Intern",
+      "company": "ETAS GmbH",
       "date": "2022 - 2023",
       "responsibilities": [
         "Develop web applications using modern technologies",
@@ -99,8 +99,8 @@
       ]
     },
     "job3": {
-      "title": "Software Developer",
-      "company": "Tech Innovations Inc.",
+      "title": "Computer Vision Research Assistant",
+      "company": "IKA RWTH Aachen",
       "date": "2022 - 2023",
       "responsibilities": [
         "Develop web applications using modern technologies",
@@ -110,8 +110,8 @@
       ]
     },
     "job4": {
-      "title": "Software Developer",
-      "company": "Tech Innovations Inc.",
+      "title": "Robotics Research Assistant",
+      "company": "WZL RWTH Aachen",
       "date": "2022 - 2023",
       "responsibilities": [
         "Develop web applications using modern technologies",
@@ -121,8 +121,19 @@
       ]
     },
     "job5": {
-      "title": "Software Developer",
-      "company": "Tech Innovations Inc.",
+      "title": "C++ Teaching Assistant",
+      "company": "MMI RWTH Aachen",
+      "date": "2022 - 2023",
+      "responsibilities": [
+        "Develop web applications using modern technologies",
+        "Implement code reviews",
+        "Optimize application performance and scalability",
+        "Collaborate with cross-functional teams on project delivery"
+      ]
+    },
+    "job6": {
+      "title": "Smart Grid Research Assistant",
+      "company": "IAEW RWTH Aachen",
       "date": "2022 - 2023",
       "responsibilities": [
         "Develop web applications using modern technologies",
