@@ -14,9 +14,9 @@
   "home": {
     "heroTitle": "Welcome To My Portfolio",
     "heroSubtitle": "Stefan Vilceanu - AI Engineer & Software Developer",
-    "yearsExperience": "5+",
+    "yearsExperience": "3+",
     "yearsLabel": "Years of Experience",
-    "projectsCount": "10+",
+    "projectsCount": "5+",
     "projectsLabel": "Completed Projects",
     "technologiesCount": "10+",
     "technologiesLabel": "Skills  Mastered"
@@ -26,121 +26,114 @@
     "role": "Who am I?",
     "description": "My name is Stefan Vilceanu, I’m an AI engineer and software developer with a passion for building intelligent systems that bridge cutting-edge research and real-world impact. My background spans machine learning, computer vision, robotics, and embedded systems, and I enjoy working across the full stack of technologies, from designing deep learning models and automation pipelines to developing robust software for connected and autonomous systems. I thrive on tackling complex problems, learning new tools and frameworks, and collaborating in multidisciplinary teams to create innovative, reliable solutions that make a difference.",
     "skillsTitle": "Skills",
-    "skills0": "Machine Learning & Deep Learning",
+    "skills0": "Machine Learning",
     "skills1": "Computer Vision",
     "skills2": "GenAI",
-    "skills3": "Robotics & ROS2 Development",
-    "skills4": "Embedded Systems & Microcontroller Programming",
-    "skills5": "Software Development & CI/CD Automation",
-    "skills6": "IT Security",
-    "skills7": "Data Engineering",
+    "skills3": "Robotics & ROS2",
+    "skills4": "Microcontroller Programming",
+    "skills5": "Embedded Systems",
+    "skills6": "Software Development",
+    "skills7": "CI/CD Automation",
+    "skills8": "IT Security",
+    "skills9": "Data Engineering",
     "contactTitle": "Contact Information",
-    "contactEmail1": "E-Mail: stefan.vilceanu@rwth-aachen.de",
+    "contactEmail1": "E-Mail 1: stefan.vilceanu@rwth-aachen.de",
     "contactPhone": "Phone: +40 734588720",
     "contactAddress": "Address: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
-    "contactEmail2": "E-Mail: vilceanu.stefan@yahoo.com",
-    "contactLinkedin": ""
+    "contactEmail2": "E-Mail 2: vilceanu.stefan@yahoo.com",
+    "education": "Studies",
+    "degree1": "M.Sc. in Computer Engineering & AI",
+    "university1": "RWTH Aachen University 2023-2025",
+    "degree2": "B.Sc. in Electrical Engineering",
+    "university2": "RWTH Aachen University 2019-2023"
   },
   "projects": {
     "title": "My Projects",
     "project1": {
-      "title": "Lane Segmentation",
+      "title": "Determining Vehicle Position Over Lane Segmentation",
       "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
-      "description": "YoloPv2 model used for lane line segmentation, IPM was applied to modify the perspective of the image to a Bird's Eye View perspective, and Bayesian Filtering was used to keep the lane localization and assignment algorithm stable.",
-      "demo": "Video"
+      "description": "The YOLOPv2 model was used for lane line segmentation, IPM was applied to modify the perspective of the image to a Bird's Eye View perspective, and Bayesian Filtering was used to keep the lane localization and assignment algorithm stable.",
+      "demo": "View Demo"
     },
     "project2": {
       "title": "Comparison of Neural Networks for Efficient Inverse Dynamics Identification",
-      "tech": "Python, ROS2, Docker",
-      "description": "Trained, tested and compared several neural network architectures for predicting torque in robot joints of a 6-axis industrial robot.",
+      "tech": "Python, Pytorch, JAX, LSTM, MLP",
+      "description": "Developed, trained, tested and compared several neural network architectures for predicting torque in robot joints of a 6-axis industrial robot using the position, velocity and acceleration of the joint as input data.",
       "demo": "Paper"
     },
     "project3": {
       "title": "Uncertainty Estimation for 3D Object Detectors",
-      "tech": "Python, ROS2, Docker",
-      "description": "Uncertainty Estimation for 3D Object Detectors",
+      "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Camera, Sensor Fusion",
+      "description": "Analyzed uncertainty estimation in transformer-based 3D object detectors using LiDAR, radar and camera data, evaluating baseline methods against calibration techniques to improve reliabilty without high computational cost.",
       "demo": "Master's Thesis"
     },
     "project4": {
       "title": "Memristor-based MVM Engine",
-      "tech": "Python, ROS2, Docker",
-      "description": "Memristor-based MVM Engine",
-      "demo": "Bachelor Thesis"
+      "tech": "Cadence, SPICE, C++, Python, Memristor Arrays",
+      "description": "Built and studied a memristor-based matrix-vector multiplication engine for in-memory computing and compared efficiency, accuracy and resource use to the classical Von Neumann approaches.",
+      "demo": "Bachelor's Thesis"
     },
     "project5": {
-      "title": "The Shape and Texture Bias for Object Recognition",
-      "tech": "Python, ROS2, Docker",
-      "description": "Uncertainty Estimation for 3D Object Detectors",
+      "title": "About The Shape and Texture Bias for Object Recognition",
+      "tech": "CNN, ViT, ImageNet",
+      "description": "Researched about how CNNs, unlike humans, are biased towards textures rathen than shapes when recognizing objects. Additonaly, presented two transformer-based methods to reduce this bias and improve accuracy.",
       "demo": "Report"
     }
   },
   "experience": {
     "title": "Professional Experience",
+    "next": "Next Experience",
     "job1": {
       "title": "Software Engineer Intern",
       "company": "Porsche Engineering",
-      "date": "2023 - Present",
-      "responsibilities": [
-        "Lead development of web applications using modern technologies",
-        "Mentor junior developers and implement code reviews",
-        "Optimize application performance and scalability",
-        "Collaborate with cross-functional teams on project delivery"
-      ]
+      "date": "2025 - Present",
+      "responsibilities0": "Designed, developed, and deployed an AI Agent that autonomously executes HMI test-cases for all Porsche infotainment systems, using LLMs, VLMs and classical computer vision approaches.",
+      "responsibilities1": "Automated the full testing pipeline by connecting Jira for test-case retrieval, executing tests, and uploading results back to the platform, significantly improving efficiency and reducing manual effort.",
+      "responsibilities2": "Developed CI/CD pipelines and automation scripts to streamline software flashing and testing on infotainment system ECUs, improving reliability and deployment speed.",
+      "responsibilities3": "Assisted in designing ESP32 microcontroller-based test hardware for triggering and validating primary vehicle and infotainment functions."
     },
     "job2": {
       "title": "Automotive Security Intern",
       "company": "ETAS GmbH",
-      "date": "2022 - 2023",
-      "responsibilities": [
-        "Develop web applications using modern technologies",
-        "Implement code reviews",
-        "Optimize application performance and scalability",
-        "Collaborate with cross-functional teams on project delivery"
-      ]
+      "date": "2024 - 2025",
+      "responsibilities0": "Analyzed real-world automotive cyberattacks and mapped them to frameworks such as MITRE ATT&CK, EMB3D, Auto-ISAC ATM, and VATT&EK, to strengthen detection strategies in ETAS’s VSOC solution.",
+      "responsibilities1": "Designed detection queries and an alert library for identifying attacks from security events (AUTOSAR Security Events, DTCs, Linux Audit, CAN logs), improving the ability of VSOC analysts to detect intrusions and reduce false positives.",
+      "responsibilities2": "Developed a prototype LLM-based tool that translates natural language into VSOC specific queries, showcasing how AI can automate and accelerate VSOC workflows.",
+      "responsibilities3": "Generated demo data and simulated cyberattacks (e.g., EPS and TPMS hacks) to demonstrate how the tool can detect real-world intrusions in connected vehicles."
     },
     "job3": {
       "title": "Computer Vision Research Assistant",
       "company": "IKA RWTH Aachen",
-      "date": "2022 - 2023",
-      "responsibilities": [
-        "Develop web applications using modern technologies",
-        "Implement code reviews",
-        "Optimize application performance and scalability",
-        "Collaborate with cross-functional teams on project delivery"
-      ]
+      "date": "2024 - 2024",
+      "responsibilities0": "Developed ROS2 nodes in Python to integrate YOLOPv2-based lane segmentation and drivable area detection into a semi-autonomous vehicle.",
+      "responsibilities1": "Applied Inverse Perspective Mapping (IPM) to transform the camera feed into a top-down (Bird’s Eye View) perspective, enabling more reliable lane analysis.",
+      "responsibilities2": "Designed a lane detection algorithm that determines vehicle lane position from the Bird’s Eye View by analyzing lanes relative to the image midpoint.",
+      "responsibilities3": "Implemented Bayesian filtering to smooth lane position estimates, reducing noise and improving localization accuracy and overall stability."
     },
     "job4": {
       "title": "Robotics Research Assistant",
       "company": "WZL RWTH Aachen",
-      "date": "2022 - 2023",
-      "responsibilities": [
-        "Develop web applications using modern technologies",
-        "Implement code reviews",
-        "Optimize application performance and scalability",
-        "Collaborate with cross-functional teams on project delivery"
-      ]
+      "date": "2023 - 2024",
+      "responsibilities0": "Designed, trained, and benchmarked multiple neural network architectures for predicting torque in a 6-axis industrial robot, using joint position, velocity, and acceleration as input features, to improve modeling accuracy and performance.",
+      "responsibilities1": "Performed measurements using Siemens SINUMERIK and the MABI 100 industrial robot to capture joint position, velocity, acceleration, and friction torque data, creating training datasets for developing and validating neural network models.",
+      "responsibilities2": "Developed MATLAB scripts to generate G-code trajectories for robotic experiments, enabling precise path execution and repeatable motion control."
     },
     "job5": {
       "title": "C++ Teaching Assistant",
       "company": "MMI RWTH Aachen",
       "date": "2022 - 2023",
-      "responsibilities": [
-        "Develop web applications using modern technologies",
-        "Implement code reviews",
-        "Optimize application performance and scalability",
-        "Collaborate with cross-functional teams on project delivery"
-      ]
+      "responsibilities0": "Aided students with understanding object-oriented programming, data structures, and algorithm implementation in C++.",
+      "responsibilities1": "Provided one-on-one and group support to help students strengthen coding skills, debug programs, and improve problem-solving approaches.",
+      "responsibilities2": "Developed strong communication and teaching skills by explaining complex programming concepts in an accessible and supportive way."
     },
+
     "job6": {
       "title": "Smart Grid Research Assistant",
       "company": "IAEW RWTH Aachen",
-      "date": "2022 - 2023",
-      "responsibilities": [
-        "Develop web applications using modern technologies",
-        "Implement code reviews",
-        "Optimize application performance and scalability",
-        "Collaborate with cross-functional teams on project delivery"
-      ]
+      "date": "2021 - 2022",
+      "responsibilities0": "Developed a Python framework to visualize hybrid AC/DC distribution grids using OpenStreetMap, enhancing accessibility and analysis of grid layouts.",
+      "responsibilities1": "Extended and validated C++-based metaheuristic planning models (Genetic Algorithm) for hybrid AC/DC grids, improving accuracy and efficiency of grid planning.",
+      "responsibilities2": "Contributed to the development and integration of interfaces for grid data models, supporting the expansion of modeling procedures for DC distribution networks."
     }
   },
   "themeToggle": "Toggle theme"

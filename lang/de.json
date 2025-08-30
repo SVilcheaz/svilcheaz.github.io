@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Mein Portfolio",
+    "title": "Stefan's Portfolio",
     "aboutTitle": "Über mich - Portfolio",
     "projectsTitle": "Projekte - Portfolio",
     "experienceTitle": "Berufserfahrung - Portfolio"
@@ -13,10 +13,10 @@
   },
   "home": {
     "heroTitle": "Willkommen Zu Meinem Portfolio",
-    "heroSubtitle": "KI Ingineur & Softwareentwickler",
-    "yearsExperience": "5+",
+    "heroSubtitle": "Stefan Vilceanu - KI Ingineur & Softwareentwickler",
+    "yearsExperience": "3+",
     "yearsLabel": "Jahre Erfahrung",
-    "projectsCount": "10+",
+    "projectsCount": "5+",
     "projectsLabel": "Abgeschlossene Projekte",
     "technologiesCount": "10+",
     "technologiesLabel": "Fähigkeiten Erworben"
@@ -24,97 +24,117 @@
   "about": {
     "title": "Über mich",
     "role": "Wer bin ich?",
-    "description": "Ich bin AI-Engineer und Softwareentwickler mit einer Leidenschaft dafür, intelligente Systeme zu entwickeln, die modernste Forschung mit praxisnahen Anwendungen verbinden. Mein Hintergrund umfasst Machine Learning, Computer Vision, Robotik und Embedded Systems, und ich arbeite gerne entlang des gesamten Technologie-Stacks, von der Entwicklung von Deep-Learning-Modellen und Automatisierungspipelines bis hin zur Umsetzung robuster Software für vernetzte und autonome Systeme. Ich liebe es, komplexe Herausforderungen anzunehmen, neue Tools und Frameworks zu erlernen und in interdisziplinären Teams innovative, verlässliche Lösungen zu schaffen, die einen echten Unterschied machen.",
+    "description": "Mein Name ist Stefan Vilceanu. Ich bin KI-Ingenieur und Softwareentwickler mit einer Leidenschaft dafür, intelligente Systeme zu entwickeln, die modernste Forschung mit realen Anwendungen verbinden. Mein Hintergrund umfasst maschinelles Lernen, Computer Vision, Robotik und eingebettete Systeme. Ich arbeite gerne über den gesamten Technologie-Stack hinweg – von der Entwicklung von Deep-Learning-Modellen und Automatisierungspipelines bis hin zur Erstellung robuster Software für vernetzte und autonome Systeme. Es motiviert mich, komplexe Probleme zu lösen, neue Tools und Frameworks zu erlernen und in interdisziplinären Teams zusammenzuarbeiten, um innovative und zuverlässige Lösungen zu schaffen, die einen echten Unterschied machen.",
     "skillsTitle": "Fähigkeiten",
     "skills0": "Machine Learning & Deep Learning",
     "skills1": "Computer Vision",
     "skills2": "GenAI",
-    "skills3": "Robotik & ROS2 Entwicklung",
-    "skills4": "Embedded Systems & Mikrocontroller-Programmierung",
-    "skills5": "Softwareentwicklung & CI/CD-Automatisierung",
-    "skills6": "IT-Sicherheit",
-    "skills7": "Data Engineering"
+    "skills3": "Robotik & ROS2",
+    "skills4": "Mikrocontroller-Programmierung",
+    "skills5": "Embedded Systems",
+    "skills6": "Softwareentwicklung",
+    "skills7": "CI/CD-Automatisierung",
+    "skills8": "IT-Sicherheit",
+    "skills9": "Data Engineering",
+
+    "contactTitle": "Kontakt",
+    "contactEmail1": "E-Mail 1: stefan.vilceanu@rwth-aachen.de",
+    "contactPhone": "Handy: +40 734588720",
+    "contactAddress": "Adresse: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
+    "contactEmail2": "E-Mail 2: vilceanu.stefan@yahoo.com",
+    "education": "Studium",
+    "degree1": "M.Sc. Computer Engineering & KI",
+    "university1": "RWTH Aachen Universität 2023-2025",
+    "degree2": "B.Sc. Elektrotechnik",
+    "university2": "RWTH Aachen Universität 2019-2023"
   },
   "projects": {
     "title": "Meine Projekte",
     "project1": {
-      "title": "E-Commerce-Plattform",
-      "tech": "React.js, Node.js, MongoDB",
-      "description": "Eine Full-Stack-E-Commerce-Plattform mit Benutzerauthentifizierung, Produktverwaltung und Zahlungsintegration.",
-      "demo": "Live Demo",
-      "github": "GitHub"
+      "title": "Bestimmung der Fahrzeugposition über Fahrbahnsegmentierung",
+      "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
+      "description": "Das YOLOPv2-Modell wurde für die Lane Line Segmentation verwendet. IPM wurde angewendet, um die Perspektive des Bildes in eine Bird’s Eye View-Perspektive zu ändern, und Bayesian Filtering wurde eingesetzt, um den Lane Localization- und Assignment-Algorithmus stabil zu halten.",
+      "demo": "Demo Ansehen"
     },
     "project2": {
-      "title": "Task Management App",
-      "tech": "Vue.js, Firebase",
-      "description": "Eine kollaborative Task-Management-Anwendung mit Echtzeit-Updates und Team-Kollaborationsfunktionen.",
-      "demo": "Live Demo",
-      "github": "GitHub"
+      "title": "Vergleich von Neural Networks zur effizienten Identifikation inverser Dynamik",
+      "tech": "Python, Pytorch, JAX, LSTM, MLP",
+      "description": "Entwicklung, Training, Test und Vergleich mehrerer Neural Network-Architekturen zur Vorhersage des Drehmoments in Roboterachsen eines 6-Achs-Industrieroboters unter Verwendung von Positions-, Geschwindigkeits- und Beschleunigungsdaten der Achsen als Input Data.",
+      "demo": "Paper"
     },
     "project3": {
-      "title": "Weather Dashboard",
-      "tech": "Python, Flask, OpenWeather API",
-      "description": "Eine reaktive Wetter-Übersicht, die aktuelle Wetterdaten für mehrere Städte bereitstellt.",
-      "demo": "Live Demo",
-      "github": "GitHub"
+      "title": "Unsicherheitsabschätzung für 3D-Objektdetektoren",
+      "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Kamera, Sensorfusion",
+      "description": "Analysis von Unsicherheitsabschätzung in transformer-basierten 3D-Objektdetektoren unter Verwendung von LiDAR-, Radar- und Kameradaten, wobei Baseline Methods mit Kalibrierungstechniken verglichen wurden, um die Reliability ohne hohen Rechenaufwand zu verbessern.",
+      "demo": "Masterarbeit"
+    },
+    "project4": {
+      "title": "Memristor-basierte MVM Maschine",
+      "tech": "Cadence, SPICE, C++, Python, Memristor Arrays",
+      "description": "Entwicklung und Untersuchung einer auf Memristoren basierenden Matrix-Vektor-Multiplikationsmaschine für In-Memory-Computing und Vergleich der Effizienz, Genauigkeit und Ressourcennutzung mit den klassischen Von-Neumann-Ansätzen.",
+      "demo": "Bachelorarbeit"
+    },
+    "project5": {
+      "title": "Über die Form und Textur-Verzerrung bei der Objekterkennung",
+      "tech": "CNN, ViT, ImageNet",
+      "description": "Untersuchte, wie CNNs im Gegensatz zu Menschen bei der Erkennung von Objekten eher auf Texturen als auf Formen ausgerichtet sind. Zusätzlich wurden zwei Transformer-basierte Methoden vorgestellt, um diese Verzerrung zu reduzieren und die Genauigkeit zu verbessern.",
+      "demo": "Bericht"
     }
   },
   "experience": {
     "title": "Berufserfahrung",
+    "next": "Nächste Berufserfahrung",
     "job1": {
-      "title": "Senior Softwareentwickler",
-      "company": "Tech Innovations GmbH",
-      "date": "2023 - Heute",
-      "responsibilities": [
-        "Leitung der Entwicklung von Webanwendungen mit modernen Technologien",
-        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
-        "Optimierung der Anwendungsleistung und Skalierbarkeit",
-        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
-      ]
+      "title": "Softwarentwicklungspraktikant",
+      "company": "Porsche Engineering",
+      "date": "2025 - Heute",
+      "responsibilities0": "Entwurf, Entwicklung und Einsatz eines KI-Agenten, der mithilfe von LLMs, VLMs und klassischen Computer-Vision-Ansätzen autonom HMI-Testfälle für alle Porsche-Infotainmentsysteme ausführt.",
+      "responsibilities1": "Automatisierung der gesamten Testpipeline, indem Jira für den Abruf von Testfällen, die Ausführung von Tests und das Hochladen der Ergebnisse auf die Plattform verbunden wurde, wodurch die Effizienz erheblich verbessert und der manuelle Aufwand reduziert wurde.",
+      "responsibilities2": "Entwicklung von CI/CD-Pipelines und Automatisierungsskripten zur Optimierung des Software-Flashings und -Testens auf ECUs von Infotainment-Systemen, wodurch die Zuverlässigkeit und Bereitstellungsgeschwindigkeit verbessert wurden.",
+      "responsibilities3": "Unterstützung bei der Entwicklung von ESP32-Mikrocontroller-basierter Testhardware zum Auslösen und Validieren von primären Fahrzeug- und Infotainment-Funktionen."
     },
     "job2": {
-      "title": "Softwareentwickler",
-      "company": "Tech Innovations GmbH",
-      "date": "2022 - 2023",
-      "responsibilities": [
-        "Entwicklung von Webanwendungen mit modernen Technologien",
-        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
-        "Optimierung der Anwendungsleistung und Skalierbarkeit",
-        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
-      ]
+      "title": "Automobil IT-Sicherheit Praktikant",
+      "company": "ETAS GmbH",
+      "date": "2024 - 2025",
+      "responsibilities0": "Analyse realer Cyberangriffe auf Automobile und Zuordnung zu Frameworks wie MITRE ATT&CK, EMB3D, Auto-ISAC ATM und VATT&EK, um die Erkennungsstrategien in der VSOC-Lösung von ETAS zu verbessern.",
+      "responsibilities1": "Entwicklung von Erkennungsabfragen und einer Warnungsbibliothek zur Identifizierung von Angriffen anhand von Sicherheitsereignissen (AUTOSAR-Sicherheitsereignisse, DTCs, Linux-Audit, CAN-Protokolle), wodurch die Fähigkeit der VSOC-Analysten zur Erkennung von Eindringlingen verbessert und Fehlalarme reduziert werden konnten.",
+      "responsibilities2": "Entwicklung eines Prototyps eines LLM-basierten Tools, das natürliche Sprache in VSOC-spezifische Abfragen übersetzt und damit zeigt, wie KI VSOC-Workflows automatisieren und beschleunigen kann.",
+      "responsibilities3": "Generierung von Demodaten und simulierte Cyberangriffe (z. B. EPS- und TPMS-Hacks), um zu demonstrieren, wie das Tool reale Angriffe auf vernetzte Fahrzeuge erkennen kann."
     },
     "job3": {
-      "title": "Softwareentwickler",
-      "company": "Tech Innovations GmbH",
-      "date": "2021 - 2022",
-      "responsibilities": [
-        "Entwicklung von Webanwendungen mit modernen Technologien",
-        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
-        "Optimierung der Anwendungsleistung und Skalierbarkeit",
-        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
-      ]
+      "title": "Computer Vision Wissenschaftlicher Mitarbeiter",
+      "company": "IKA RWTH Aachen",
+      "date": "2024 - 2024",
+      "responsibilities0": "Entwicklung von ROS2-Knoten in Python zur Integration der YOLOPv2-basierten Fahrspursegmentierung und Erkennung befahrbarer Bereiche in ein halbautonomes Fahrzeug.",
+      "responsibilities1": "Anwendung der inversen Perspektivkartierung (IPM) zur Umwandlung des Kamerabildes in eine Top-Down-Perspektive (Vogelperspektive), wodurch eine zuverlässigere Spuranalyse ermöglicht wird.",
+      "responsibilities2": "Entwicklung eines Algorithmus zur Fahrspurerkennung, der die Position eines Fahrzeugs auf der Fahrspur aus der Vogelperspektive bestimmt, indem er die Fahrspuren relativ zum Bildmittelpunkt analysiert.",
+      "responsibilities3": "Implementation von Bayesianische Filterung, um die Schätzung der Fahrspurposition zu glätten, Störungen zu reduzieren und die Lokalisierungsgenauigkeit sowie die allgemeine Stabilität zu verbessern."
     },
     "job4": {
-      "title": "Softwareentwickler",
-      "company": "Tech Innovations GmbH",
-      "date": "2020 - 2021",
-      "responsibilities": [
-        "Entwicklung von Webanwendungen mit modernen Technologien",
-        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
-        "Optimierung der Anwendungsleistung und Skalierbarkeit",
-        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
-      ]
+      "title": "Robotik Wissenschaftlicher Mitarbeiter",
+      "company": "WZL RWTH Aachen",
+      "date": "2023 - 2024",
+      "responsibilities0": "Entwurf, Training und Benchmarking mehrerer neuronaler Netzwerkarchitekturen zur Vorhersage des Drehmoments in einem 6-achsigen Industrieroboter unter Verwendung von Gelenkposition, Geschwindigkeit und Beschleunigung als Eingabemerkmale, um die Modellierungsgenauigkeit und -leistung zu verbessern.",
+      "responsibilities1": "Durchführung von Messungen mit Siemens SINUMERIK und dem Industrieroboter MABI 100 zur Erfassung von Daten zu Gelenkposition, Geschwindigkeit, Beschleunigung und Reibungsmoment, um Trainingsdatensätze für die Entwicklung und Validierung neuronaler Netzmodelle zu erstellen.",
+      "responsibilities2": "Entwicklung von MATLAB-Skripten zur Generierung von G-Code-Trajektorien für Roboterexperimente, die eine präzise Pfadausführung und wiederholbare Bewegungssteuerung ermöglichen."
     },
     "job5": {
-      "title": "Softwareentwickler",
-      "company": "Tech Innovations GmbH",
-      "date": "2019 - 2020",
-      "responsibilities": [
-        "Entwicklung von Webanwendungen mit modernen Technologien",
-        "Mentoring von Nachwuchsentwicklern und Durchführung von Code-Reviews",
-        "Optimierung der Anwendungsleistung und Skalierbarkeit",
-        "Zusammenarbeit mit bereichsübergreifenden Teams bei der Projektdurchführung"
-      ]
+      "title": "C++ Tutor",
+      "company": "MMI RWTH Aachen",
+      "date": "2022 - 2023",
+      "responsibilities0": "Unterstützung der Studenten beim Verständnis von objektorientierter Programmierung, Datenstrukturen und Algorithmusimplementierung in C++.",
+      "responsibilities1": "Bot Einzel- und Gruppenunterstützung, um Schülern dabei zu helfen, ihre Programmierkenntnisse zu verbessern, Programme zu debuggen und ihre Problemlösungsansätze zu optimieren.",
+      "responsibilities2": "Selbstentwicklung starker Kommunikations- und Lehrfähigkeiten durch die verständliche und unterstützende Vermittlung komplexer Programmierkonzepte."
+    },
+
+    "job6": {
+      "title": "Intelligente Netze Wissenschaftlicher Mitarbeiter",
+      "company": "IAEW RWTH Aachen",
+      "date": "2021 - 2022",
+      "responsibilities0": "Entwicklung eines Python-Frameworks zur Visualisierung hybrider AC/DC-Verteilungsnetze unter Verwendung von OpenStreetMap, wodurch die Zugänglichkeit und Analyse von Netzlayouts verbessert wird.",
+      "responsibilities1": "Erweiterung und Validierung der C++-basierten metaheuristischen Planungsmodelle (Genetischer Algorithmus) für hybride AC/DC-Netze, die die Genauigkeit und Effizienz der Netzplanung verbessern.",
+      "responsibilities2": "Beitrag zur Entwicklung und Integration von Schnittstellen für Netzdatenmodelle, Unterstützung der Erweiterung von Modellierungsverfahren für Gleichstromverteilungsnetze."
     }
   },
   "themeToggle": "Thema wechseln"
