@@ -16,7 +16,7 @@
     "heroSubtitle": "Stefan Vilceanu - KI Ingineur & Softwareentwickler",
     "yearsExperience": "3+",
     "yearsLabel": "Jahre Erfahrung",
-    "projectsCount": "5+",
+    "projectsCount": "6+",
     "projectsLabel": "Abgeschlossene Projekte",
     "technologiesCount": "10+",
     "technologiesLabel": "Fähigkeiten Erworben"
@@ -79,6 +79,12 @@
       "tech": "CNN, ViT, ImageNet",
       "description": "Untersuchte, wie CNNs im Gegensatz zu Menschen bei der Erkennung von Objekten eher auf Texturen als auf Formen ausgerichtet sind. Zusätzlich wurden zwei Transformer-basierte Methoden vorgestellt, um diese Verzerrung zu reduzieren und die Genauigkeit zu verbessern.",
       "demo": "Bericht"
+    },
+    "project6": {
+      "title": "Nachbauen von GPT 1 & 2",
+      "tech": "Python, Pytorch, Transformers",
+      "description": "Implementierung der GPT 1- und 2-Architekturen aus dem ursprünglichen OpenAI-Papier. Die Modelle wurden anhand des Shakespeare- und Game of Thrones-Datensatzes trainiert und getestet, damit sie Inhalte in diesem Stil produzieren können. Zusätzlich wurde ein SIEM-Abfrage-LLM-Generator implementiert und trainiert.",
+      "demo": "Github"
     }
   },
   "experience": {

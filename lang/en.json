@@ -16,7 +16,7 @@
     "heroSubtitle": "Stefan Vilceanu - AI Engineer & Software Developer",
     "yearsExperience": "3+",
     "yearsLabel": "Years of Experience",
-    "projectsCount": "5+",
+    "projectsCount": "6+",
     "projectsLabel": "Completed Projects",
     "technologiesCount": "10+",
     "technologiesLabel": "Skills  Mastered"
@@ -78,6 +78,12 @@
       "tech": "CNN, ViT, ImageNet",
       "description": "Researched about how CNNs, unlike humans, are biased towards textures rathen than shapes when recognizing objects. Additonaly, presented two transformer-based methods to reduce this bias and improve accuracy.",
       "demo": "Report"
+    },
+    "project6": {
+      "title": "Recreating GPT 1 & 2",
+      "tech": "Python, Pytorch, Transformers",
+      "description": "Reimplemented the GPT 1 & 2 architectures from the original OpenAI paper. Trained and tested the models on the Shakespeare and Game of Thrones dataset, in order to let the models produce such-styled content. Similarly, a SIEM query LLM generator was implemented and trained.",
+      "demo": "Github"
     }
   },
   "experience": {
