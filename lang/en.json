@@ -89,6 +89,7 @@
   "experience": {
     "title": "Professional Experience",
     "next": "Next Experience",
+    "recommandation": "Recommandation Letter",
     "job1": {
       "title": "Software Engineer Intern",
       "company": "Porsche Engineering",
