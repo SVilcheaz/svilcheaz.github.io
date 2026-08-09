@@ -227,24 +227,6 @@ async function initApp() {
     });
   });
   
-  // Timeline interactions
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  timelineItems.forEach((item, index) => {
-    // Add staggered animation delay
-    item.style.animationDelay = `${index * 0.2}s`;
-
-    // Add click animation only
-    item.addEventListener('click', () => {
-      const content = item.querySelector('.timeline-content');
-      if (content) {
-        content.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-          content.style.transform = 'scale(1)';
-        }, 200);
-      }
-    });
-  });
-  
   // Smooth scrolling for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -258,78 +240,14 @@ async function initApp() {
   });
 }
 
-// Start the app when the DOM is loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initApp);
-} else {
-  initApp();
+// Start the app when the DOM is loaded, exposing the readiness promise so
+// page-specific scripts can wait for i18n/theme setup to finish first.
+function startApp() {
+  window.appReady = initApp();
 }
 
-// Timeline Interactions
-document.addEventListener('DOMContentLoaded', () => {
-  // Navigation links
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const href = link.getAttribute('href');
-      if (href) {
-        navigateToPage(href);
-      }
-    });
-  });
-
-  // Timeline interactions
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  timelineItems.forEach((item, index) => {
-    // Add staggered animation delay
-    item.style.animationDelay = `${index * 0.2}s`;
-
-    // Add click animation only
-    item.addEventListener('click', () => {
-      const content = item.querySelector('.timeline-content');
-      if (content) {
-        content.style.transform = 'scale(1.05)';
-        setTimeout(() => {
-          content.style.transform = 'scale(1)';
-        }, 200);
-      }
-    });
-  });
-
-  document.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      
-      // Only prevent default for in-page links that start with '#'
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        const targetSection = document.querySelector(href);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-      // Any other href (like source/LaneAnalysis.mp4) will behave normally
-    });
-  });
-
-  // Add scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
-
-  timelineItems.forEach(item => observer.observe(item));
-  
-  // Listen for theme changes from other tabs/windows
-  window.addEventListener('storage', (e) => {
-    if (e.key === 'theme') {
-      document.documentElement.setAttribute('data-theme', e.newValue || 'light');
-    }
-  });
-});
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startApp);
+} else {
+  startApp();
+}

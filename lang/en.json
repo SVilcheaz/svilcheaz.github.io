@@ -19,7 +19,7 @@
     "projectsCount": "6+",
     "projectsLabel": "Completed Projects",
     "technologiesCount": "10+",
-    "technologiesLabel": "Skills  Mastered"
+    "technologiesLabel": "Skills Mastered"
   },
   "about": {
     "title": "About Me",
@@ -88,7 +88,6 @@
   },
   "experience": {
     "title": "Professional Experience",
-    "next": "Next Experience",
     "recommandation": "Recommandation Letter",
     "job1": {
       "title": "Software Engineer Intern",
