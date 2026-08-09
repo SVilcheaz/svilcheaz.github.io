@@ -85,13 +85,20 @@
       "tech": "Python, Pytorch, Transformers",
       "description": "Implementierung der GPT 1- und 2-Architekturen aus dem ursprünglichen OpenAI-Papier. Die Modelle wurden anhand des Shakespeare- und Game of Thrones-Datensatzes trainiert und getestet, damit sie Inhalte in diesem Stil produzieren können. Zusätzlich wurde ein SIEM-Abfrage-LLM-Generator implementiert und trainiert.",
       "demo": "Github"
+    },
+    "project7": {
+      "title": "Inference Pipeline - Autonomes Fahrzeug",
+      "tech": "C++, RPi5 + Hailo AI Accelerator, YoloV8, Depth Anything V2",
+      "details": "Für das autonome RC-Car-Projekt habe ich eine Real-Time Perception-to-Actuation Pipeline entworfen und gebaut, die auf einem Raspberry Pi 5 in Kombination mit einem Hailo-8L AI Accelerator läuft. Sie basiert auf einer custom Vier-Thread-C++-Architektur, die Image Capture, Inference, Planning und Actuation parallel verarbeitet, um mit niedriger Latenz auf die Umgebung reagieren zu können. Die Perception-Stage nutzt YOLOv8 für Object Detection zusammen mit Depth Anything V2 für monokulare Depth Estimation, wobei die daraus resultierenden Tiefendaten einen PD-Steering-Controller und einen PI-Throttle-Controller speisen, sodass das Fahrzeug auch ganz ohne dedizierte Abstandssensoren flüssig navigieren und Hindernissen ausweichen kann. Ein autonomer Person-Following-Modus auf Basis von SORT- und ByteTrack-Multi-Object-Tracking lässt das Fahrzeug außerdem eine bestimmte Person erkennen und ihr in sicherem Abstand folgen. Abgesichert wird das Ganze durch CRSF-Protokollkommunikation über eine 420-kBaud-Hardware-UART, die mit einem RadioMaster RP1/TX12-ELRS-Sender verbunden ist und ein nahtloses manuelles Override ermöglicht. Abgerundet wird das System durch eine freihändige Sprachsteuerung mittels OpenWakeWord mit custom ONNX-Modellen (follow-me, stop-engines, three-sixty, autopilot, full-stop), die über eine named FIFO in die Pipeline eingespeist werden. Zusammen ergibt das einen vollständigen Autonomous-Driving-Stack, der Computer Vision, tiefenbasierte Planung, robustes RC-Failover und Sprachinteraktion vollständig auf Embedded Edge Hardware vereint.",
+      "description": "Autonomes Fahrzeug auf Basis eines Raspberry Pi 5 und eines Hailo-8L AI Accelerators, das Real-Time Object Detection mit monokularer Depth Estimation kombiniert, um eine Navigation mit Hinderniserkennung sowie Person-Following ganz ohne dedizierte Abstandssensoren zu ermöglichen.",
+      "demo": "Github"
     }
   },
   "experience": {
     "title": "Berufserfahrung",
     "recommandation": "Referenzschreiben",
     "job1": {
-      "title": "Softwarentwicklungspraktikant",
+      "title": "Softwarentwickler",
       "company": "Porsche Engineering",
       "date": "2025 - Heute",
       "responsibilities0": "Entwurf, Entwicklung und Einsatz eines KI-Agenten, der mithilfe von LLMs, VLMs und klassischen Computer-Vision-Ansätzen autonom HMI-Testfälle für alle Porsche-Infotainmentsysteme ausführt.",
@@ -100,7 +107,7 @@
       "responsibilities3": "Unterstützung bei der Entwicklung von ESP32-Mikrocontroller-basierter Testhardware zum Auslösen und Validieren von primären Fahrzeug- und Infotainment-Funktionen."
     },
     "job2": {
-      "title": "Automobil IT-Sicherheit Praktikant",
+      "title": "Softwarentwicklungspraktikant",
       "company": "ETAS GmbH",
       "date": "2024 - 2025",
       "responsibilities0": "Analyse realer Cyberangriffe auf Automobile und Zuordnung zu Frameworks wie MITRE ATT&CK, EMB3D, Auto-ISAC ATM und VATT&EK, um die Erkennungsstrategien in der VSOC-Lösung von ETAS zu verbessern.",

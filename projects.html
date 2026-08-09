@@ -50,6 +50,20 @@
   <div class="section active" id="projects">
     <h1 data-i18n="projects.title">My Projects</h1>
     <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3 data-i18n="projects.project7.title">Inference Pipeline - Autonomous Car</h3>
+          <p class="project-tech" data-i18n="projects.project7.tech">C++, RPi5 + Hailo AI Accelerator, YoloV8, Depth Anything V2</p>
+          <p data-i18n="projects.project7.description">Autonomous car built on a RPi 5 and Hailo-8L AI accelerator, combining real-time object detection and monocular depth estimation to enable obstacle-aware navigation and person-following without dedicated distance sensors.</p>
+          <p class="project-details" data-i18n="projects.project7.details" hidden></p>
+          <div class="profile-info contact-section" style="margin-top: 10px;"></div>
+          <div class="project-links">
+            <a href="https://github.com/SVilcheaz/autonomous_vehicle" target="_blank" class="project-link" data-i18n="projects.project7.demo">Github</a>
+          </div>
+        </div>
+      </div>
+
       <div class="project-card">
         <div class="project-content">
           <h3 data-i18n="projects.project1.title">Determining Vehicle Position Over Lane Segmentation</h3>
@@ -169,12 +183,14 @@
       function fillModal(card) {
         const title = card.querySelector('h3')?.textContent || '';
         const tech = card.querySelector('.project-tech')?.textContent || '';
-        const description = card.querySelector('.project-content > p:not(.project-tech)')?.textContent || '';
+        const description = card.querySelector('.project-content > p:not(.project-tech):not(.project-details)')?.textContent || '';
+        // Longer write-up shown in the popup instead of the card's short description, when a project has one
+        const details = card.querySelector('.project-details')?.textContent.trim() || '';
         const link = card.querySelector('.project-link');
 
         modalTitle.textContent = title;
         modalTech.textContent = tech;
-        modalDescription.textContent = description;
+        modalDescription.textContent = details || description;
 
         if (link) {
           modalLink.href = link.getAttribute('href');

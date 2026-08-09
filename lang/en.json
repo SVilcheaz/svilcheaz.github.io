@@ -84,13 +84,20 @@
       "tech": "Python, Pytorch, Transformers",
       "description": "Reimplemented the GPT 1 & 2 architectures from the original OpenAI paper. Trained and tested the models on the Shakespeare and Game of Thrones dataset, in order to let the models produce such-styled content. Similarly, a SIEM query LLM generator was implemented and trained.",
       "demo": "Github"
+    },
+    "project7": {
+      "title": "Inference Pipeline - Autonomous Car",
+      "tech": "C++, RPi5 & Hailo AI Accelerator, YoloV8, Depth Anything V2",
+      "details": "For the autonomous RC car project, I designed and built a real-time perception-to-actuation pipeline running on a Raspberry Pi 5 paired with a Hailo-8L AI accelerator, using a custom four-thread C++ architecture that handles image capture, inference, planning, and actuation in parallel for low-latency reaction to the environment; the perception stage runs YOLOv8 for object detection alongside Depth Anything V2 for monocular depth estimation, with the resulting depth data feeding a PD steering controller and PI throttle controller so the car can navigate and avoid obstacles smoothly without dedicated distance sensors, while an autonomous person-following mode built on SORT and ByteTrack multi-object tracking lets the car identify and follow a specific person at a safe distance, all backed by CRSF protocol communication over a 420kbaud hardware UART connected to a RadioMaster RP1/TX12 ELRS transmitter for seamless manual override, and rounded out by hands-free voice control using OpenWakeWord with custom ONNX models (follow-me, stop-engines, three-sixty, autopilot, full-stop) piped into the pipeline via a named FIFO, together forming a complete autonomous driving stack that combines computer vision, depth-based planning, robust RC failover, and voice interaction entirely on embedded edge hardware.",
+      "description": "Autonomous car built on a RPi 5 and Hailo-8L AI accelerator, combining real-time object detection and monocular depth estimation to enable obstacle-aware navigation and person-following without dedicated distance sensors.",
+      "demo": "Github"
     }
   },
   "experience": {
     "title": "Professional Experience",
     "recommandation": "Recommandation Letter",
     "job1": {
-      "title": "Software Engineer Intern",
+      "title": "Software Engineer",
       "company": "Porsche Engineering",
       "date": "2025 - Present",
       "responsibilities0": "Designed, developed, and deployed an AI Agent that autonomously executes HMI test-cases for all Porsche infotainment systems, using LLMs, VLMs and classical computer vision approaches.",
@@ -99,7 +106,7 @@
       "responsibilities3": "Assisted in designing ESP32 microcontroller-based test hardware for triggering and validating primary vehicle and infotainment functions."
     },
     "job2": {
-      "title": "Automotive Security Intern",
+      "title": "Software Engineer Intern",
       "company": "ETAS GmbH",
       "date": "2024 - 2025",
       "responsibilities0": "Analyzed real-world automotive cyberattacks and mapped them to frameworks such as MITRE ATT&CK, EMB3D, Auto-ISAC ATM, and VATT&EK, to strengthen detection strategies in ETAS’s VSOC solution.",
