@@ -98,7 +98,8 @@
       "title": "Building an FPV Drone",
       "tech": "ArduPilot, ELRS, Flight Automation, Flight Controller, Waypoint Navigation, PIDtoolbox",
       "description": "Built an FPV drone from scratch, flashing and configuring ArduPilot, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis in PIDtoolbox. Configured GPS-based autonomous waypoint navigation with ArduPilot to enable preplanned missions.",
-      "demo": "View Photo"
+      "demo": "View Photo",
+      "viewFlight": "View Flight"
     }
   },
   "experience": {
