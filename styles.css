@@ -315,6 +315,7 @@ body {
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
   align-items: center;
