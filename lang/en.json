@@ -13,13 +13,13 @@
   },
   "home": {
     "heroTitle": "Welcome To My Portfolio",
-    "heroSubtitle": "Stefan Vilceanu - AI Engineer & Software Developer",
-    "yearsExperience": "3+",
+    "heroSubtitle": "Stefan Vilceanu - Computer & AI Engineer",
+    "yearsExperience": "5",
     "yearsLabel": "Years of Experience",
-    "projectsCount": "6+",
-    "projectsLabel": "Completed Projects",
+    "projectsCount": "8+",
+    "projectsLabel": "Projects",
     "technologiesCount": "10+",
-    "technologiesLabel": "Skills Mastered"
+    "technologiesLabel": "Skills"
   },
   "about": {
     "title": "About Me",
@@ -42,7 +42,7 @@
     "contactAddress": "Address: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
     "contactEmail2": "E-Mail 2: vilceanu.stefan@yahoo.com",
     "education": "Studies",
-    "degree1": "M.Sc. in Computer Engineering & AI",
+    "degree1": "M.Sc. in Computer Engineering",
     "university1": "RWTH Aachen University 2023-2025",
     "degree2": "B.Sc. in Electrical Engineering",
     "university2": "RWTH Aachen University 2019-2023"
@@ -65,7 +65,8 @@
       "title": "Uncertainty Estimation for 3D Object Detectors",
       "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Camera, Sensor Fusion",
       "description": "Analyzed uncertainty estimation in transformer-based 3D object detectors using LiDAR, radar and camera data, evaluating baseline methods against calibration techniques to improve reliabilty without high computational cost.",
-      "demo": "Master's Thesis"
+      "demo": "Master's Thesis",
+      "paper": "Paper"
     },
     "project4": {
       "title": "Memristor-based MVM Engine",
@@ -90,7 +91,14 @@
       "tech": "C++, RPi5 & Hailo AI Accelerator, YoloV8, Depth Anything V2",
       "details": "For the autonomous RC car project, I designed and built a real-time perception-to-actuation pipeline running on a Raspberry Pi 5 paired with a Hailo-8L AI accelerator, using a custom four-thread C++ architecture that handles image capture, inference, planning, and actuation in parallel for low-latency reaction to the environment; the perception stage runs YOLOv8 for object detection alongside Depth Anything V2 for monocular depth estimation, with the resulting depth data feeding a PD steering controller and PI throttle controller so the car can navigate and avoid obstacles smoothly without dedicated distance sensors, while an autonomous person-following mode built on SORT and ByteTrack multi-object tracking lets the car identify and follow a specific person at a safe distance, all backed by CRSF protocol communication over a 420kbaud hardware UART connected to a RadioMaster RP1/TX12 ELRS transmitter for seamless manual override, and rounded out by hands-free voice control using OpenWakeWord with custom ONNX models (follow-me, stop-engines, three-sixty, autopilot, full-stop) piped into the pipeline via a named FIFO, together forming a complete autonomous driving stack that combines computer vision, depth-based planning, robust RC failover, and voice interaction entirely on embedded edge hardware.",
       "description": "Autonomous car built on a RPi 5 and Hailo-8L AI accelerator, combining real-time object detection and monocular depth estimation to enable obstacle-aware navigation and person-following without dedicated distance sensors.",
-      "demo": "Github"
+      "demo": "Github",
+      "viewDemo": "View Demo"
+    },
+    "project8": {
+      "title": "Building an FPV Drone",
+      "tech": "ArduPilot, ELRS, Flight Automation, Flight Controller, Waypoint Navigation, PIDtoolbox",
+      "description": "Built an FPV drone from scratch, flashing and configuring ArduPilot, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis in PIDtoolbox. Configured GPS-based autonomous waypoint navigation with ArduPilot to enable preplanned missions.",
+      "demo": "View Photo"
     }
   },
   "experience": {

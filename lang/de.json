@@ -13,11 +13,11 @@
   },
   "home": {
     "heroTitle": "Willkommen Zu Meinem Portfolio",
-    "heroSubtitle": "Stefan Vilceanu - KI Ingineur & Softwareentwickler",
-    "yearsExperience": "3+",
+    "heroSubtitle": "Stefan Vilceanu - Computer & KI Ingineur",
+    "yearsExperience": "5",
     "yearsLabel": "Jahre Erfahrung",
-    "projectsCount": "6+",
-    "projectsLabel": "Abgeschlossene Projekte",
+    "projectsCount": "8+",
+    "projectsLabel": "Projekte",
     "technologiesCount": "10+",
     "technologiesLabel": "Fähigkeiten Erworben"
   },
@@ -43,7 +43,7 @@
     "contactAddress": "Adresse: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
     "contactEmail2": "E-Mail 2: vilceanu.stefan@yahoo.com",
     "education": "Studium",
-    "degree1": "M.Sc. Computer Engineering & KI",
+    "degree1": "M.Sc. Computer Engineering",
     "university1": "RWTH Aachen Universität 2023-2025",
     "degree2": "B.Sc. Elektrotechnik",
     "university2": "RWTH Aachen Universität 2019-2023"
@@ -66,7 +66,8 @@
       "title": "Unsicherheitsabschätzung für 3D-Objektdetektoren",
       "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Kamera, Sensorfusion",
       "description": "Analysis von Unsicherheitsabschätzung in transformer-basierten 3D-Objektdetektoren unter Verwendung von LiDAR-, Radar- und Kameradaten, wobei Baseline Methods mit Kalibrierungstechniken verglichen wurden, um die Reliability ohne hohen Rechenaufwand zu verbessern.",
-      "demo": "Masterarbeit"
+      "demo": "Masterarbeit",
+      "paper": "Paper"
     },
     "project4": {
       "title": "Memristor-basierte MVM Maschine",
@@ -91,7 +92,14 @@
       "tech": "C++, RPi5 + Hailo AI Accelerator, YoloV8, Depth Anything V2",
       "details": "Für das autonome RC-Car-Projekt habe ich eine Real-Time Perception-to-Actuation Pipeline entworfen und gebaut, die auf einem Raspberry Pi 5 in Kombination mit einem Hailo-8L AI Accelerator läuft. Sie basiert auf einer custom Vier-Thread-C++-Architektur, die Image Capture, Inference, Planning und Actuation parallel verarbeitet, um mit niedriger Latenz auf die Umgebung reagieren zu können. Die Perception-Stage nutzt YOLOv8 für Object Detection zusammen mit Depth Anything V2 für monokulare Depth Estimation, wobei die daraus resultierenden Tiefendaten einen PD-Steering-Controller und einen PI-Throttle-Controller speisen, sodass das Fahrzeug auch ganz ohne dedizierte Abstandssensoren flüssig navigieren und Hindernissen ausweichen kann. Ein autonomer Person-Following-Modus auf Basis von SORT- und ByteTrack-Multi-Object-Tracking lässt das Fahrzeug außerdem eine bestimmte Person erkennen und ihr in sicherem Abstand folgen. Abgesichert wird das Ganze durch CRSF-Protokollkommunikation über eine 420-kBaud-Hardware-UART, die mit einem RadioMaster RP1/TX12-ELRS-Sender verbunden ist und ein nahtloses manuelles Override ermöglicht. Abgerundet wird das System durch eine freihändige Sprachsteuerung mittels OpenWakeWord mit custom ONNX-Modellen (follow-me, stop-engines, three-sixty, autopilot, full-stop), die über eine named FIFO in die Pipeline eingespeist werden. Zusammen ergibt das einen vollständigen Autonomous-Driving-Stack, der Computer Vision, tiefenbasierte Planung, robustes RC-Failover und Sprachinteraktion vollständig auf Embedded Edge Hardware vereint.",
       "description": "Autonomes Fahrzeug auf Basis eines Raspberry Pi 5 und eines Hailo-8L AI Accelerators, das Real-Time Object Detection mit monokularer Depth Estimation kombiniert, um eine Navigation mit Hinderniserkennung sowie Person-Following ganz ohne dedizierte Abstandssensoren zu ermöglichen.",
-      "demo": "Github"
+      "demo": "Github",
+      "viewDemo": "Demo Ansehen"
+    },
+    "project8": {
+      "title": "Bau einer FPV-Drohne",
+      "tech": "ArduPilot, ELRS, Flugautomatisierung, Flight Controller, Wegpunktnavigation, PIDtoolbox",
+      "description": "Eine FPV-Drohne von Grund auf gebaut und dabei ArduPilot, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse in PIDtoolbox verbessert. GPS-basierte autonome Wegpunktnavigation mit ArduPilot eingerichtet, um vorgeplante Missionen zu ermöglichen.",
+      "demo": "Foto Ansehen"
     }
   },
   "experience": {

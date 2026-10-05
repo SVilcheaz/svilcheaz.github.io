@@ -60,6 +60,19 @@
           <div class="profile-info contact-section" style="margin-top: 10px;"></div>
           <div class="project-links">
             <a href="https://github.com/SVilcheaz/autonomous_vehicle" target="_blank" class="project-link" data-i18n="projects.project7.demo">Github</a>
+            <a href="source/robocar_demo.mp4" target="_blank" class="project-link" data-i18n="projects.project7.viewDemo">View Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-content">
+          <h3 data-i18n="projects.project8.title">Building an FPV Drone</h3>
+          <p class="project-tech" data-i18n="projects.project8.tech">ArduPilot, ELRS, Flight Automation, Flight Controller, Waypoint Navigation, PIDtoolbox</p>
+          <p data-i18n="projects.project8.description">Built an FPV drone from scratch, flashing and configuring ArduPilot, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis in PIDtoolbox. Configured GPS-based autonomous waypoint navigation with ArduPilot to enable preplanned missions.</p>
+          <div class="profile-info contact-section" style="margin-top: 10px;"></div>
+          <div class="project-links">
+            <a href="source/drone.jpg" target="_blank" class="project-link" data-i18n="projects.project8.demo">View Photo</a>
           </div>
         </div>
       </div>
@@ -96,6 +109,7 @@
           <div class="profile-info contact-section" style="margin-top: 10px;"></div>
           <div class="project-links">
             <a href="source/MA.pdf" target="_blank" class="project-link" data-i18n="projects.project3.demo">Master's Thesis</a>
+            <a href="source/Query2Unvertainty.pdf" target="_blank" class="project-link" data-i18n="projects.project3.paper">Paper</a>
           </div>
         </div>
       </div>
@@ -146,9 +160,7 @@
       <h3 class="project-modal-title" id="projectModalTitle"></h3>
       <p class="project-modal-tech" id="projectModalTech"></p>
       <p class="project-modal-description" id="projectModalDescription"></p>
-      <div class="project-links">
-        <a id="projectModalLink" class="project-link" target="_blank"></a>
-      </div>
+      <div class="project-links" id="projectModalLinks"></div>
     </div>
   </div>
 
@@ -164,7 +176,7 @@
       const modalTitle = document.getElementById('projectModalTitle');
       const modalTech = document.getElementById('projectModalTech');
       const modalDescription = document.getElementById('projectModalDescription');
-      const modalLink = document.getElementById('projectModalLink');
+      const modalLinks = document.getElementById('projectModalLinks');
       const closeBtn = document.getElementById('projectModalClose');
       const cards = document.querySelectorAll('.project-card');
 
@@ -186,19 +198,13 @@
         const description = card.querySelector('.project-content > p:not(.project-tech):not(.project-details)')?.textContent || '';
         // Longer write-up shown in the popup instead of the card's short description, when a project has one
         const details = card.querySelector('.project-details')?.textContent.trim() || '';
-        const link = card.querySelector('.project-link');
+        const links = card.querySelectorAll('.project-link');
 
         modalTitle.textContent = title;
         modalTech.textContent = tech;
         modalDescription.textContent = details || description;
 
-        if (link) {
-          modalLink.href = link.getAttribute('href');
-          modalLink.textContent = link.textContent;
-          modalLink.style.display = '';
-        } else {
-          modalLink.style.display = 'none';
-        }
+        modalLinks.replaceChildren(...Array.from(links, link => link.cloneNode(true)));
       }
 
       function showModal() {
@@ -239,17 +245,17 @@
 
         card.addEventListener('click', () => openModal(card));
         card.addEventListener('keydown', (e) => {
+          if (e.target.closest('.project-link')) return;
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             openModal(card);
           }
         });
 
-        // Let the demo link inside the card work normally without also opening the modal
-        const link = card.querySelector('.project-link');
-        if (link) {
+        // Let each link inside the card work normally without also opening the modal
+        card.querySelectorAll('.project-link').forEach(link => {
           link.addEventListener('click', (e) => e.stopPropagation());
-        }
+        });
       });
 
       closeBtn.addEventListener('click', () => closeModal());
