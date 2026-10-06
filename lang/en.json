@@ -111,10 +111,10 @@
       "company": "Porsche Engineering",
       "date": "2025 - Present",
       "responsibilities0": "Designed and implemented an AI automation agent for testing Porsche infotainment interfaces, combining LLMs, vision-language models, and computer vision to execute HMI test cases autonomously.",
-      "responsibilities1": "Prototyped a real-time speech AI agent to test the digital assistant in Porsche infotainment systems through spoken interactions.",
+      "responsibilities1": "Created a real-time speech AI agent to automate the testing of the digital assistant domain in the Porsche infotainment system through spoken interactions",
       "responsibilities2": "Developed an AI resolver to repair broken test cases within the existing testing framework, reducing manual maintenance effort.",
-      "responsibilities3": "Integrated Jira into the automated testing workflow to retrieve test cases, execute them, and upload results, connecting test management with execution and reporting.",
-      "responsibilities4": "Built CI/CD pipelines and automation scripts for software flashing and testing on infotainment ECUs, streamlining deployment and validation.",
+      "responsibilities3": "Developed continuous integration and continuous testing (CI/CT) workflows with Jira integration, automating test case retrieval, execution, and result reporting to connect test management with continuous validation.",
+      "responsibilities4": "Built automated deployment and testing pipelines for infotainment ECUs, including scripts for software flashing and test execution, streamlining software validation.",
       "responsibilities5": "Contributed to ESP32-based test hardware for triggering and validating vehicle and infotainment functions."
     },
     "job2": {
@@ -122,7 +122,7 @@
       "company": "ETAS GmbH",
       "date": "2024 - 2025",
       "responsibilities0": "Analyzed real-world automotive cyberattacks and mapped them to frameworks such as MITRE ATT&CK, EMB3D, Auto-ISAC ATM, and VATT&EK, to strengthen detection strategies in ETAS’s VSOC solution.",
-      "responsibilities1": "Designed detection queries and an alert library for identifying attacks from security events (AUTOSAR Security Events, DTCs, Linux Audit, CAN logs), improving the ability of VSOC analysts to detect intrusions and reduce false positives.",
+      "responsibilities1": "Designed detection queries and an alert library for identifying attacks from security events (AUTOSAR Security Events, DTCs, Linux Audit, CAN logs), improving intrusion detection and reducing false positives while developing familiarity with common automotive communication protocols and interfaces, including CAN, Ethernet, UART, and SPI.",
       "responsibilities2": "Developed a prototype LLM-based tool that translates natural language into VSOC specific queries, showcasing how AI can automate and accelerate VSOC workflows.",
       "responsibilities3": "Generated demo data and simulated cyberattacks (e.g., EPS and TPMS hacks) to demonstrate how the tool can detect real-world intrusions in connected vehicles."
     },

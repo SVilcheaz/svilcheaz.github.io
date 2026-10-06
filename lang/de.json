@@ -112,10 +112,10 @@
       "company": "Porsche Engineering",
       "date": "2025 - Heute",
       "responsibilities0": "Entwurf und Implementierung eines KI-Agenten zur Automatisierung von Tests für Porsche-Infotainmentoberflächen, der LLMs, Vision-Language-Modelle und Computer Vision kombiniert, um HMI-Testfälle autonom auszuführen.",
-      "responsibilities1": "Entwicklung eines Prototyps für einen Echtzeit-Sprach-KI-Agenten, der den digitalen Assistenten in Porsche-Infotainmentsystemen durch gesprochene Interaktionen testet.",
+      "responsibilities1": "Entwicklung eines Echtzeit-Sprach-KI-Agenten zur Automatisierung der Tests der Domäne des digitalen Assistenten im Infotainmentsystem von Porsche durch gesprochene Interaktionen",
       "responsibilities2": "Entwicklung eines KI-Resolvers zur Reparatur fehlerhafter Testfälle innerhalb des bestehenden Testframeworks, um den manuellen Wartungsaufwand zu reduzieren.",
-      "responsibilities3": "Integration von Jira in den automatisierten Testablauf zum Abrufen und Ausführen von Testfällen sowie zum Hochladen der Ergebnisse, um Testmanagement, Ausführung und Berichterstattung zu verbinden.",
-      "responsibilities4": "Entwicklung von CI/CD-Pipelines und Automatisierungsskripten für das Flashen und Testen von Software auf Infotainment-Steuergeräten, um Bereitstellung und Validierung zu vereinfachen.",
+      "responsibilities3": "Entwicklung von Workflows für kontinuierliche Integration und kontinuierliches Testen (CI/CT) mit Jira-Anbindung zur Automatisierung des Abrufens und Ausführens von Testfällen sowie der Ergebnisberichterstattung, um Testmanagement mit kontinuierlicher Validierung zu verbinden.",
+      "responsibilities4": "Entwicklung automatisierter Bereitstellungs- und Testpipelines für Infotainment-Steuergeräte, einschließlich Skripten zum Flashen von Software und zur Testausführung, um die Softwarevalidierung zu vereinfachen.",
       "responsibilities5": "Mitwirkung an ESP32-basierter Testhardware zum Auslösen und Validieren von Fahrzeug- und Infotainmentfunktionen."
     },
     "job2": {
@@ -123,7 +123,7 @@
       "company": "ETAS GmbH",
       "date": "2024 - 2025",
       "responsibilities0": "Analyse realer Cyberangriffe auf Automobile und Zuordnung zu Frameworks wie MITRE ATT&CK, EMB3D, Auto-ISAC ATM und VATT&EK, um die Erkennungsstrategien in der VSOC-Lösung von ETAS zu verbessern.",
-      "responsibilities1": "Entwicklung von Erkennungsabfragen und einer Warnungsbibliothek zur Identifizierung von Angriffen anhand von Sicherheitsereignissen (AUTOSAR-Sicherheitsereignisse, DTCs, Linux-Audit, CAN-Protokolle), wodurch die Fähigkeit der VSOC-Analysten zur Erkennung von Eindringlingen verbessert und Fehlalarme reduziert werden konnten.",
+      "responsibilities1": "Entwicklung von Erkennungsabfragen und einer Warnungsbibliothek zur Identifizierung von Angriffen anhand von Sicherheitsereignissen (AUTOSAR-Sicherheitsereignisse, DTCs, Linux-Audit, CAN-Protokolle), um die Angriffserkennung zu verbessern und Fehlalarme zu reduzieren. Dabei Kenntnisse gängiger Kommunikationsprotokolle und Schnittstellen im Automobilbereich erworben, darunter CAN, Ethernet, UART und SPI.",
       "responsibilities2": "Entwicklung eines Prototyps eines LLM-basierten Tools, das natürliche Sprache in VSOC-spezifische Abfragen übersetzt und damit zeigt, wie KI VSOC-Workflows automatisieren und beschleunigen kann.",
       "responsibilities3": "Generierung von Demodaten und simulierte Cyberangriffe (z. B. EPS- und TPMS-Hacks), um zu demonstrieren, wie das Tool reale Angriffe auf vernetzte Fahrzeuge erkennen kann."
     },
