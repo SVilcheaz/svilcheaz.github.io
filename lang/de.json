@@ -101,7 +101,7 @@
       "tech": "ArduPilot, ELRS, Flugautomatisierung, Flight Controller, Wegpunktnavigation, PIDtoolbox",
       "description": "Eine FPV-Drohne von Grund auf gebaut und dabei ArduPilot, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse in PIDtoolbox verbessert. GPS-basierte autonome Wegpunktnavigation mit ArduPilot eingerichtet, um vorgeplante Missionen zu ermöglichen.",
       "demo": "Foto Ansehen",
-      "viewFlight": "Flug Ansehen"
+      "viewFlight": "FPV Demo"
     }
   },
   "experience": {
