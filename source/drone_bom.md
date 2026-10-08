@@ -1,0 +1,13 @@
+# 5-inch FPV Drone BOM
+
+- **Frame:** GEPRC Mark5 Pro 5 inch
+- **Flight Controller:** Holybro Kakute H7 v1.5
+- **ESC:** Holybro Tekko32 4 in 1
+- **Motors:** T-Motor Velox 2207 1750KV
+- **Props:** Gemfan Hurricane 51433 & 51466
+- **Receiver:** Radiomaster RP3 v2 ELRS 2.4 GHz
+- **Transmitter:** Radiomaster Tx12 MK2 2.4 GHz
+- **GPS & Magnetometer:** GEPRC M10Q
+- **LiPo Batteries:** TATTU R-Line 6S 1550 mAh
+- **Buzzer:** from iFlight
+- **Video System:** DJI Air Unit O4 Pro + DJI Goggles 3

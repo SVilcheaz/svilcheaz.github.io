@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5-inch FPV Drone BOM</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (_) {}
+  </script>
+  <style>
+    body { margin: 0; padding: 2rem 1rem; background: var(--bg-color); color: var(--text-color); font-family: system-ui, sans-serif; line-height: 1.7; }
+    main { max-width: 760px; margin: 0 auto; padding: clamp(1.25rem, 4vw, 3rem); background: var(--light-bg); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: var(--shadow-sm); }
+    #bom h1 { margin: 1.5rem 0; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 700; line-height: 1.2; color: var(--text-color); }
+    #bom ul { padding-left: 1.25rem; }
+    #bom li { margin: 0.7rem 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <article id="bom" aria-live="polite">Loading bill of materials…</article>
+  </main>
+  <script>
+    // Render the heading and bold-label list used by drone_bom.md with safe DOM APIs.
+    async function loadBom() {
+      const container = document.getElementById('bom');
+      try {
+        const response = await fetch('drone_bom.md');
+        if (!response.ok) throw new Error('Unable to load BOM');
+        const markdown = await response.text();
+        const content = document.createDocumentFragment();
+        let list;
+        for (const line of markdown.split(/\r?\n/)) {
+          if (line.startsWith('# ')) {
+            const heading = document.createElement('h1');
+            heading.textContent = line.slice(2);
+            content.append(heading);
+            list = null;
+          } else if (line.startsWith('- ')) {
+            if (!list) {
+              list = document.createElement('ul');
+              content.append(list);
+            }
+            const item = document.createElement('li');
+            const match = line.slice(2).match(/^\*\*(.+?)\*\*(.*)$/);
+            if (match) {
+              const label = document.createElement('strong');
+              label.textContent = match[1];
+              item.append(label, document.createTextNode(match[2]));
+            } else {
+              item.textContent = line.slice(2);
+            }
+            list.append(item);
+          }
+        }
+        container.replaceChildren(content);
+      } catch (_) {
+        container.textContent = 'The bill of materials could not be loaded. Please try again.';
+      }
+    }
+    loadBom();
+  </script>
+</body>
+</html>

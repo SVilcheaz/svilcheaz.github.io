@@ -92,6 +92,7 @@
       "details": "For the autonomous RC car project, I designed and built a real-time perception-to-actuation pipeline running on a Raspberry Pi 5 paired with a Hailo-8L AI accelerator, using a custom four-thread C++ architecture that handles image capture, inference, planning, and actuation in parallel for low-latency reaction to the environment; the perception stage runs YOLOv8 for object detection alongside Depth Anything V2 for monocular depth estimation, with the resulting depth data feeding a PD steering controller and PI throttle controller so the car can navigate and avoid obstacles smoothly without dedicated distance sensors, while an autonomous person-following mode built on SORT and ByteTrack multi-object tracking lets the car identify and follow a specific person at a safe distance, all backed by CRSF protocol communication over a 420kbaud hardware UART connected to a RadioMaster RP1/TX12 ELRS transmitter for seamless manual override, and rounded out by hands-free voice control using OpenWakeWord with custom ONNX models (follow-me, stop-engines, three-sixty, autopilot, full-stop) piped into the pipeline via a named FIFO, together forming a complete autonomous driving stack that combines computer vision, depth-based planning, robust RC failover, and voice interaction entirely on embedded edge hardware.",
       "description": "Autonomous car built on a RPi 5 and Hailo-8L AI accelerator, combining real-time object detection and monocular depth estimation to enable obstacle-aware navigation and person-following without dedicated distance sensors.",
       "demo": "Github",
+      "viewCar": "View Car",
       "viewDemo": "View Demo",
       "demoLogs": "Demo Logs"
     },
@@ -100,7 +101,8 @@
       "tech": "Betaflight, ArduPilot, ELRS, Flight Automation, Waypoint Navigation, PIDtoolbox",
       "description": "Built an FPV drone from scratch, flashing and configuring Betaflight, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis in PIDtoolbox. Additionally, flashed, configured, and PID-tuned ArduPilot to enable GPS-based autonomous waypoint navigation for preplanned missions.",
       "demo": "View Photo",
-      "viewFlight": "FPV Demo"
+      "viewFlight": "FPV Demo",
+      "bomDrone": "BOM Drone"
     }
   },
   "experience": {

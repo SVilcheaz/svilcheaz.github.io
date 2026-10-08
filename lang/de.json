@@ -54,7 +54,7 @@
       "title": "Bestimmung der Fahrzeugposition über Fahrbahnsegmentierung",
       "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
       "description": "Das YOLOPv2-Modell wurde für die Lane Line Segmentation verwendet. IPM wurde angewendet, um die Perspektive des Bildes in eine Bird’s Eye View-Perspektive zu ändern, und Bayesian Filtering wurde eingesetzt, um den Lane Localization- und Assignment-Algorithmus stabil zu halten.",
-      "demo": "Demo Ansehen"
+      "demo": "View Demo"
     },
     "project2": {
       "title": "Vergleich von Neural Networks zur effizienten Identifikation inverser Dynamik",
@@ -66,20 +66,20 @@
       "title": "Unsicherheitsabschätzung für 3D-Objektdetektoren",
       "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Kamera, Sensorfusion",
       "description": "Analysis von Unsicherheitsabschätzung in transformer-basierten 3D-Objektdetektoren unter Verwendung von LiDAR-, Radar- und Kameradaten, wobei Baseline Methods mit Kalibrierungstechniken verglichen wurden, um die Reliability ohne hohen Rechenaufwand zu verbessern.",
-      "demo": "Masterarbeit",
+      "demo": "Master's Thesis",
       "paper": "Paper"
     },
     "project4": {
       "title": "Memristor-basierte MVM Maschine",
       "tech": "Cadence, SPICE, C++, Python, Memristor Arrays",
       "description": "Entwicklung und Untersuchung einer auf Memristoren basierenden Matrix-Vektor-Multiplikationsmaschine für In-Memory-Computing und Vergleich der Effizienz, Genauigkeit und Ressourcennutzung mit den klassischen Von-Neumann-Ansätzen.",
-      "demo": "Bachelorarbeit"
+      "demo": "Bachelor's Thesis"
     },
     "project5": {
       "title": "Über die Form und Textur-Verzerrung bei der Objekterkennung",
       "tech": "CNN, ViT, ImageNet",
       "description": "Untersuchte, wie CNNs im Gegensatz zu Menschen bei der Erkennung von Objekten eher auf Texturen als auf Formen ausgerichtet sind. Zusätzlich wurden zwei Transformer-basierte Methoden vorgestellt, um diese Verzerrung zu reduzieren und die Genauigkeit zu verbessern.",
-      "demo": "Bericht"
+      "demo": "Report"
     },
     "project6": {
       "title": "Nachbauen von GPT 1 & 2",
@@ -93,15 +93,17 @@
       "details": "Für das autonome RC-Car-Projekt habe ich eine Real-Time Perception-to-Actuation Pipeline entworfen und gebaut, die auf einem Raspberry Pi 5 in Kombination mit einem Hailo-8L AI Accelerator läuft. Sie basiert auf einer custom Vier-Thread-C++-Architektur, die Image Capture, Inference, Planning und Actuation parallel verarbeitet, um mit niedriger Latenz auf die Umgebung reagieren zu können. Die Perception-Stage nutzt YOLOv8 für Object Detection zusammen mit Depth Anything V2 für monokulare Depth Estimation, wobei die daraus resultierenden Tiefendaten einen PD-Steering-Controller und einen PI-Throttle-Controller speisen, sodass das Fahrzeug auch ganz ohne dedizierte Abstandssensoren flüssig navigieren und Hindernissen ausweichen kann. Ein autonomer Person-Following-Modus auf Basis von SORT- und ByteTrack-Multi-Object-Tracking lässt das Fahrzeug außerdem eine bestimmte Person erkennen und ihr in sicherem Abstand folgen. Abgesichert wird das Ganze durch CRSF-Protokollkommunikation über eine 420-kBaud-Hardware-UART, die mit einem RadioMaster RP1/TX12-ELRS-Sender verbunden ist und ein nahtloses manuelles Override ermöglicht. Abgerundet wird das System durch eine freihändige Sprachsteuerung mittels OpenWakeWord mit custom ONNX-Modellen (follow-me, stop-engines, three-sixty, autopilot, full-stop), die über eine named FIFO in die Pipeline eingespeist werden. Zusammen ergibt das einen vollständigen Autonomous-Driving-Stack, der Computer Vision, tiefenbasierte Planung, robustes RC-Failover und Sprachinteraktion vollständig auf Embedded Edge Hardware vereint.",
       "description": "Autonomes Fahrzeug auf Basis eines Raspberry Pi 5 und eines Hailo-8L AI Accelerators, das Real-Time Object Detection mit monokularer Depth Estimation kombiniert, um eine Navigation mit Hinderniserkennung sowie Person-Following ganz ohne dedizierte Abstandssensoren zu ermöglichen.",
       "demo": "Github",
-      "viewDemo": "Demo Ansehen",
-      "demoLogs": "Demo-Logs"
+      "viewCar": "View Car",
+      "viewDemo": "View Demo",
+      "demoLogs": "Demo Logs"
     },
     "project8": {
       "title": "Bau einer FPV-Drohne",
       "tech": "Betaflight, ArduPilot, ELRS, Flugautomatisierung, Wegpunktnavigation, PIDtoolbox",
       "description": "Eine FPV-Drohne von Grund auf gebaut und dabei Betaflight, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse in PIDtoolbox verbessert. Zusätzlich ArduPilot geflasht, konfiguriert und die PID-Regler abgestimmt, um GPS-basierte autonome Wegpunktnavigation für vorgeplante Missionen zu ermöglichen.",
-      "demo": "Foto Ansehen",
-      "viewFlight": "FPV Demo"
+      "demo": "View Photo",
+      "viewFlight": "FPV Demo",
+      "bomDrone": "BOM Drone"
     }
   },
   "experience": {
