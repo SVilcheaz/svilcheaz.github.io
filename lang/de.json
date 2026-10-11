@@ -99,7 +99,7 @@
     },
     "project8": {
       "title": "Bau einer FPV-Drohne",
-      "tech": "Betaflight, ArduPilot, ELRS, Flugautomatisierung, Wegpunktnavigation, PIDtoolbox",
+      "tech": "Betaflight, ArduPilot, ELRS, Flugautomatisierung, Wegpunktnavigation, PID Tuning",
       "description": "Eine FPV-Drohne von Grund auf gebaut und dabei Betaflight, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse in PIDtoolbox verbessert. Zusätzlich ArduPilot geflasht, konfiguriert und die PID-Regler abgestimmt, um GPS-basierte autonome Wegpunktnavigation für vorgeplante Missionen zu ermöglichen.",
       "demo": "View Photo",
       "viewFlight": "FPV Demo",
