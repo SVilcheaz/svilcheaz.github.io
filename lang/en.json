@@ -61,6 +61,12 @@
       "description": "Developed, trained, tested and compared several neural network architectures for predicting torque in robot joints of a 6-axis industrial robot using the position, velocity and acceleration of the joint as input data.",
       "demo": "Paper"
     },
+    "project9": {
+      "title": "State Estimation with Kalman Filters",
+      "tech": "Python, Kalman Filtering, State Estimation",
+      "description": "Implemented constant velocity and constant acceleration Kalman filters for 3D position estimation and compared both against a baseline on two datasets using mean Euclidean position error.",
+      "demo": "GitHub Code"
+    },
     "project3": {
       "title": "Uncertainty Estimation for 3D Object Detectors",
       "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Camera, Sensor Fusion",
