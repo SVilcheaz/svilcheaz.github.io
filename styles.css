@@ -8,7 +8,7 @@
   --serif: Georgia, 'Times New Roman', serif;
   --sans: 'DM Sans', 'Segoe UI', sans-serif;
   --display: 'Manrope', 'Segoe UI', sans-serif;
-  /* Shared with the standalone bill of materials. */
+  /* Shared with the standalone bill of materials */
   --bg-color: var(--paper); --text-color: var(--ink); --light-bg: var(--surface); --border-color: var(--line); --shadow-sm: none;
 }
 [data-theme='dark'] {
