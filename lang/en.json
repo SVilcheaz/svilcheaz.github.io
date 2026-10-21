@@ -154,7 +154,7 @@
       "summary": "An autonomous car that sees obstacles and follows people using onboard AI."
     },
     "project8": {
-      "title": "Building an FPV Drone",
+      "title": "Building an (autonomous) FPV Drone",
       "tech": "Betaflight, ArduPilot, ELRS, Flight Automation, Waypoint Navigation, PID Tuning",
       "description": "Built an FPV drone from scratch, flashing and configuring Betaflight, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis. Additionally, flashed, configured, and PID-tuned ArduPilot to enable GPS-based autonomous waypoint navigation for preplanned missions.",
       "demo": "View Photo",
