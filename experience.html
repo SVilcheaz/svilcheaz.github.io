@@ -1,233 +1,108 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n="app.lang">
+<html lang="en">
 <head>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Software engineering, applied AI, and robotics experience at Porsche Engineering, ETAS, and RWTH Aachen.">
+  <meta name="theme-color" content="#f7f8f4">
+  <title data-i18n="app.experienceTitle">Experience — Stefan Vilceanu</title>
+  <link rel="icon" href="source/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = ['light','dark'].includes(saved) ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (_) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <script src="script.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HDJ3Y64YG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-1HDJ3Y64YG');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="app.experienceTitle">Experience - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    // Apply theme immediately to prevent flash of incorrect theme
-    (function() {
-      try {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', initialTheme);
-      } catch (e) {
-        // Fallback to default theme if localStorage is not available
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
   </script>
 </head>
 <body>
-  <script src="script.js"></script>
-  <nav>
-    <ul>
-      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-      <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
-      <li><a href="experience.html" class="active" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
-    </ul>
-    <div class="language-switcher">
-      <button class="lang-btn" data-lang="en">EN</button>
-      <span>|</span>
-      <button class="lang-btn" data-lang="de">DE</button>
-    </div>
-  </nav>
-  <button class="theme-toggle" aria-label="Toggle theme"></button>
-  <div class="section active" id="experience">
-    <h1 data-i18n="experience.title">Professional Experience</h1>
-    <div class="experience-carousel">
-      <div class="carousel-container">
-        <!-- Experience 1 -->
-        <div class="carousel-slide active">
-          <div class="timeline-content">
-            <h3 data-i18n="experience.job1.title"></h3>
-            <p class="company" data-i18n="experience.job1.company"></p>
-            <p class="date" data-i18n="experience.job1.date"></p>
-            <ul class="responsibilities">
-              <li data-i18n="experience.job1.responsibilities0"></li>
-              <li data-i18n="experience.job1.responsibilities1"></li>
-              <li data-i18n="experience.job1.responsibilities2"></li>
-              <li data-i18n="experience.job1.responsibilities3"></li>
-              <li data-i18n="experience.job1.responsibilities4"></li>
-              <li data-i18n="experience.job1.responsibilities5"></li>
-            </ul>
-          </div>
+  <a data-i18n="ui.skip" href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Stefan Vilceanu — Projects"><span class="brand-mark" aria-hidden="true">sv.</span>Stefan Vilceanu</a>
+      <nav class="site-nav" aria-label="Main navigation" data-i18n="[aria-label]ui.navigation"><a data-i18n="nav.projects" href="index.html">Projects</a><a data-i18n="nav.experience" href="experience.html" aria-current="page">Experience</a><a data-i18n="nav.about" href="about.html">About</a></nav>
+      <div class="header-tools">
+        <div class="language-switcher" role="group" aria-label="Language" data-i18n="[aria-label]ui.language">
+          <button class="lang-btn active" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button class="lang-btn" data-lang="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
         </div>
-        <!-- Experience 2 -->
-        <div class="carousel-slide">
-          <div class="timeline-content">
-            <div class="experience-header">
-              <h3 data-i18n="experience.job2.title"></h3>
-              <a href="source/Recommendation_ETAS.pdf" target="_blank" class="recommendation-btn" data-i18n="experience.recommandation">
-                Recommendation Letter
-              </a>
-            </div>
-            <p class="company" data-i18n="experience.job2.company"></p>
-            <p class="date" data-i18n="experience.job2.date"></p>
-            <ul class="responsibilities">
-              <li data-i18n="experience.job2.responsibilities0"></li>
-              <li data-i18n="experience.job2.responsibilities1"></li>
-              <li data-i18n="experience.job2.responsibilities2"></li>
-              <li data-i18n="experience.job2.responsibilities3"></li>
-            </ul>
-          </div>
-        </div>
-        <!-- Experience 3 -->
-        <div class="carousel-slide">
-          <div class="timeline-content">
-            <div class="experience-header">
-              <h3 data-i18n="experience.job3.title"></h3>
-              <a href="source/Recommendation_IKA.pdf" target="_blank" class="recommendation-btn" data-i18n="experience.recommandation">
-                Recommendation Letter
-              </a>
-            </div>
-            <p class="company" data-i18n="experience.job3.company"></p>
-            <p class="date" data-i18n="experience.job3.date"></p>
-            <ul class="responsibilities">
-              <li data-i18n="experience.job3.responsibilities0"></li>
-              <li data-i18n="experience.job3.responsibilities1"></li>
-              <li data-i18n="experience.job3.responsibilities2"></li>
-              <li data-i18n="experience.job3.responsibilities3"></li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Experience 4 -->
-        <div class="carousel-slide">
-          <div class="timeline-content">
-            <div class="experience-header">
-              <h3 data-i18n="experience.job4.title"></h3>
-              <a href="source/Recommendation_WZL.pdf" target="_blank" class="recommendation-btn" data-i18n="experience.recommandation">
-                Recommendation Letter
-              </a>
-            </div>
-            <p class="company" data-i18n="experience.job4.company"></p>
-            <p class="date" data-i18n="experience.job4.date"></p>
-            <ul class="responsibilities">
-              <li data-i18n="experience.job4.responsibilities0"></li>
-              <li data-i18n="experience.job4.responsibilities1"></li>
-              <li data-i18n="experience.job4.responsibilities2"></li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Experience 5 -->
-        <div class="carousel-slide">
-          <div class="timeline-content">
-            <h3 data-i18n="experience.job5.title"></h3>
-            <p class="company" data-i18n="experience.job5.company"></p>
-            <p class="date" data-i18n="experience.job5.date"></p>
-            <ul class="responsibilities">
-              <li data-i18n="experience.job5.responsibilities0"></li>
-              <li data-i18n="experience.job5.responsibilities1"></li>
-              <li data-i18n="experience.job5.responsibilities2"></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Experience 6 -->
-        <div class="carousel-slide">
-          <div class="timeline-content">
-            <div class="experience-header">
-              <h3 data-i18n="experience.job6.title"></h3>
-              <a href="source/Recommendation_IAEW.pdf" target="_blank" class="recommendation-btn" data-i18n="experience.recommandation">
-                Recommendation Letter
-              </a>
-            </div>
-            <p class="company" data-i18n="experience.job6.company"></p>
-            <p class="date" data-i18n="experience.job6.date"></p>
-            <ul class="responsibilities">
-              <li data-i18n="experience.job6.responsibilities0"></li>
-              <li data-i18n="experience.job6.responsibilities1"></li>
-              <li data-i18n="experience.job6.responsibilities2"></li>
-            </ul>
-          </div>
-        </div>
+        <button class="theme-toggle" aria-label="Toggle theme" data-i18n="[aria-label]themeToggle" aria-pressed="false">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
       </div>
-      
-      <!-- Navigation Controls -->
-      <div class="carousel-controls">
-        <button class="carousel-btn prev-btn" onclick="changeExperience(-1)">❮</button>
-        <button class="carousel-btn next-btn" onclick="changeExperience(1)">❯</button>
-      </div>
-      
-      <!-- Indicators -->
-      <div class="carousel-indicators"></div>
     </div>
-  </div>
-  
-  <script>
-    let currentSlide = 0;
-
-    function setupCarousel() {
-      const slides = document.querySelectorAll('.carousel-slide');
-      const indicatorsContainer = document.querySelector('.carousel-indicators');
-      const totalSlides = slides.length;
-
-      // Clear any existing indicators
-      indicatorsContainer.innerHTML = '';
-
-      // Create and append new indicators
-      for (let i = 0; i < totalSlides; i++) {
-        const indicator = document.createElement('span');
-        indicator.classList.add('indicator');
-        indicator.setAttribute('onclick', `currentExperience(${i + 1})`);
-        indicatorsContainer.appendChild(indicator);
-      }
-
-      // Show the first slide and indicator initially
-      showExperience(0, totalSlides);
-    }
-
-    function changeExperience(n) {
-      const totalSlides = document.querySelectorAll('.carousel-slide').length;
-      showExperience(currentSlide + n, totalSlides);
-    }
-
-    function currentExperience(n) {
-      const totalSlides = document.querySelectorAll('.carousel-slide').length;
-      showExperience(n - 1, totalSlides);
-    }
-
-    function showExperience(n, totalSlides) {
-      const slides = document.querySelectorAll('.carousel-slide');
-      const indicators = document.querySelectorAll('.indicator');
-
-      if (n >= totalSlides) {
-        currentSlide = 0;
-      } else if (n < 0) {
-        currentSlide = totalSlides - 1;
-      } else {
-        currentSlide = n;
-      }
-
-      slides.forEach(slide => slide.classList.remove('active'));
-      indicators.forEach(indicator => indicator.classList.remove('active'));
-
-      if (slides[currentSlide]) {
-        slides[currentSlide].classList.add('active');
-      }
-      if (indicators[currentSlide]) {
-        indicators[currentSlide].classList.add('active');
-      }
-    }
-
-    // Initialize the carousel when the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', setupCarousel);
-  </script>
+  </header>
+  <main id="main" class="container reading-page">
+    <div class="page-intro">
+      <h1 data-i18n="nav.experience">Experience</h1>
+      <p data-i18n="experience.intro">Applied AI and software engineering, from research to automotive systems.</p>
+    </div>
+    <div class="experience-list">
+      <details class="experience-entry" id="job1">
+        <summary>
+          <div class="job-heading"><h2 data-i18n="experience.job1.company">Porsche Engineering</h2><p data-i18n="experience.job1.title" class="job-role">Software Engineer</p></div>
+          <span class="job-timing"><span data-i18n="experience.job1.date" class="job-date">2025 - Present</span><span class="job-duration" data-job-start="2025-04">1 year 7 months</span></span>
+        </summary>
+        <div class="job-details"><ul class="responsibilities"><li data-i18n="experience.job1.responsibilities0">Designed and implemented an AI automation agent for testing Porsche infotainment interfaces, combining LLMs, vision-language models, and computer vision to execute HMI test cases autonomously.</li><li data-i18n="experience.job1.responsibilities1">Created a real-time speech AI agent to automate the testing of the digital assistant domain in the Porsche infotainment system through spoken interactions</li><li data-i18n="experience.job1.responsibilities2">Developed an AI resolver to repair broken test cases within the existing testing framework, reducing manual maintenance effort.</li><li data-i18n="experience.job1.responsibilities3">Developed continuous integration and continuous testing (CI/CT) workflows with Jira integration, automating test case retrieval, execution, and result reporting to connect test management with continuous validation.</li><li data-i18n="experience.job1.responsibilities4">Built automated deployment and testing pipelines for infotainment ECUs, including scripts for software flashing and test execution, streamlining software validation.</li><li data-i18n="experience.job1.responsibilities5">Contributed to ESP32-based test hardware for triggering and validating vehicle and infotainment functions.</li></ul></div>
+      </details>
+      <details class="experience-entry" id="job2">
+        <summary>
+          <div class="job-heading"><h2 data-i18n="experience.job2.company">ETAS GmbH</h2><p data-i18n="experience.job2.title" class="job-role">Software Engineer Intern</p></div>
+          <span class="job-timing"><span data-i18n="experience.job2.date" class="job-date">2024 - 2025</span><span class="job-duration" data-job-start="2024-12" data-job-end="2025-04">5 months</span></span>
+        </summary>
+        <div class="job-details"><ul class="responsibilities"><li data-i18n="experience.job2.responsibilities0">Analyzed real-world automotive cyberattacks and mapped them to frameworks such as MITRE ATT&amp;CK, EMB3D, Auto-ISAC ATM, and VATT&amp;EK, to strengthen detection strategies in ETAS’s VSOC solution.</li><li data-i18n="experience.job2.responsibilities1">Designed detection queries and an alert library for identifying attacks from security events (AUTOSAR Security Events, DTCs, Linux Audit, CAN logs), improving intrusion detection and reducing false positives while developing familiarity with common automotive communication protocols and interfaces, including CAN, Ethernet, UART, and SPI.</li><li data-i18n="experience.job2.responsibilities2">Developed a prototype LLM-based tool that translates natural language into VSOC specific queries, showcasing how AI can automate and accelerate VSOC workflows.</li><li data-i18n="experience.job2.responsibilities3">Generated demo data and simulated cyberattacks (e.g., EPS and TPMS hacks) to demonstrate how the tool can detect real-world intrusions in connected vehicles.</li></ul><a data-i18n="experience.recommandation" class="recommendation-btn" href="source/Recommendation_ETAS.pdf" target="_blank" rel="noopener noreferrer">Recommendation letter</a></div>
+      </details>
+      <details class="experience-entry" id="job3">
+        <summary>
+          <div class="job-heading"><h2 data-i18n="experience.job3.company">IKA RWTH Aachen</h2><p data-i18n="experience.job3.title" class="job-role">Computer Vision Research Assistant</p></div>
+          <span class="job-timing"><span data-i18n="experience.job3.date" class="job-date">2024</span><span class="job-duration" data-job-start="2024-04" data-job-end="2024-11">8 months</span></span>
+        </summary>
+        <div class="job-details"><ul class="responsibilities"><li data-i18n="experience.job3.responsibilities0">Developed ROS2 nodes in Python to integrate YOLOPv2-based lane segmentation and drivable area detection into a semi-autonomous vehicle.</li><li data-i18n="experience.job3.responsibilities1">Applied Inverse Perspective Mapping (IPM) to transform the camera feed into a top-down (Bird’s Eye View) perspective, enabling more reliable lane analysis.</li><li data-i18n="experience.job3.responsibilities2">Designed a lane detection algorithm that determines vehicle lane position from the Bird’s Eye View by analyzing lanes relative to the image midpoint.</li><li data-i18n="experience.job3.responsibilities3">Implemented Bayesian filtering to smooth lane position estimates, reducing noise and improving localization accuracy and overall stability.</li></ul><a data-i18n="experience.recommandation" class="recommendation-btn" href="source/Recommendation_IKA.pdf" target="_blank" rel="noopener noreferrer">Recommendation letter</a></div>
+      </details>
+      <details class="experience-entry" id="job4">
+        <summary>
+          <div class="job-heading"><h2 data-i18n="experience.job4.company">WZL RWTH Aachen</h2><p data-i18n="experience.job4.title" class="job-role">Robotics Research Assistant</p></div>
+          <span class="job-timing"><span data-i18n="experience.job4.date" class="job-date">2023 - 2024</span><span class="job-duration" data-job-start="2023-03" data-job-end="2024-04">1 year 2 months</span></span>
+        </summary>
+        <div class="job-details"><ul class="responsibilities"><li data-i18n="experience.job4.responsibilities0">Designed, trained, and benchmarked multiple neural network architectures for predicting torque in a 6-axis industrial robot, using joint position, velocity, and acceleration as input features, to improve modeling accuracy and performance.</li><li data-i18n="experience.job4.responsibilities1">Performed measurements using Siemens SINUMERIK and the MABI 100 industrial robot to capture joint position, velocity, acceleration, and friction torque data, creating training datasets for developing and validating neural network models.</li><li data-i18n="experience.job4.responsibilities2">Developed MATLAB scripts to generate G-code trajectories for robotic experiments, enabling precise path execution and repeatable motion control.</li></ul><a data-i18n="experience.recommandation" class="recommendation-btn" href="source/Recommendation_WZL.pdf" target="_blank" rel="noopener noreferrer">Recommendation letter</a></div>
+      </details>
+      <details class="experience-entry" id="job5">
+        <summary>
+          <div class="job-heading"><h2 data-i18n="experience.job5.company">MMI RWTH Aachen</h2><p data-i18n="experience.job5.title" class="job-role">C++ Teaching Assistant</p></div>
+          <span class="job-timing"><span data-i18n="experience.job5.date" class="job-date">2022 - 2023</span><span class="job-duration" data-job-months="8">8 months</span></span>
+        </summary>
+        <div class="job-details"><ul class="responsibilities"><li data-i18n="experience.job5.responsibilities0">Aided students with understanding object-oriented programming, data structures, and algorithm implementation in C++.</li><li data-i18n="experience.job5.responsibilities1">Provided one-on-one and group support to help students strengthen coding skills, debug programs, and improve problem-solving approaches.</li><li data-i18n="experience.job5.responsibilities2">Developed strong communication and teaching skills by explaining complex programming concepts in an accessible and supportive way.</li></ul></div>
+      </details>
+      <details class="experience-entry" id="job6">
+        <summary>
+          <div class="job-heading"><h2 data-i18n="experience.job6.company">IAEW RWTH Aachen</h2><p data-i18n="experience.job6.title" class="job-role">Smart Grid Research Assistant</p></div>
+          <span class="job-timing"><span data-i18n="experience.job6.date" class="job-date">2021 - 2022</span><span class="job-duration" data-job-start="2021-06" data-job-end="2022-07">1 year 2 months</span></span>
+        </summary>
+        <div class="job-details"><ul class="responsibilities"><li data-i18n="experience.job6.responsibilities0">Developed a Python framework to visualize hybrid AC/DC distribution grids using OpenStreetMap, enhancing accessibility and analysis of grid layouts.</li><li data-i18n="experience.job6.responsibilities1">Extended and validated C++-based metaheuristic planning models (Genetic Algorithm) for hybrid AC/DC grids, improving accuracy and efficiency of grid planning.</li><li data-i18n="experience.job6.responsibilities2">Contributed to the development and integration of interfaces for grid data models, supporting the expansion of modeling procedures for DC distribution networks.</li></ul><a data-i18n="experience.recommandation" class="recommendation-btn" href="source/Recommendation_IAEW.pdf" target="_blank" rel="noopener noreferrer">Recommendation letter</a></div>
+      </details>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Stefan Vilceanu</span>
+      <div class="footer-links">
+        <a href="mailto:stefan.vilceanu@rwth-aachen.de" data-i18n="ui.contact">Get in touch</a>
+        <a href="https://www.linkedin.com/in/stefan-vilceanu-65b45b213/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/SVilcheaz" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="source/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

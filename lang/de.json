@@ -1,31 +1,36 @@
 {
   "app": {
-    "title": "Stefan's Portfolio",
-    "aboutTitle": "Über mich - Portfolio",
-    "projectsTitle": "Projekte - Portfolio",
-    "experienceTitle": "Berufserfahrung - Portfolio"
+    "title": "Stefan Vilceanu — KI, Robotik & autonome Systeme",
+    "aboutTitle": "Über mich — Stefan Vilceanu",
+    "experienceTitle": "Erfahrung — Stefan Vilceanu",
+    "projectsTitle": "Projekte — Stefan Vilceanu"
   },
   "nav": {
-    "home": "Startseite",
-    "about": "Über mich",
-    "experience": "Berufserfahrung",
-    "projects": "Projekte"
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "about": "Über mich"
   },
   "home": {
-    "heroTitle": "Willkommen Zu Meinem Portfolio",
-    "heroSubtitle": "Stefan Vilceanu - Computer Engineer | Begeistert von Drohnen & autonomen Systemen",
-    "yearsExperience": "5",
-    "yearsLabel": "Jahre Erfahrung",
-    "projectsCount": "8+",
-    "projectsLabel": "Projekte",
-    "technologiesCount": "10+",
-    "technologiesLabel": "Fähigkeiten Erworben"
+    "eyebrow": "Computer Engineer · KI & Autonomie",
+    "headline1": "Systeme bauen,",
+    "headline2": "die sehen, lernen & sich bewegen.",
+    "headline3": "& sich bewegen.",
+    "intro1": "Ich bin Stefan Vilceanu.",
+    "intro2": "Computer Engineer mit Fokus auf KI, Robotik und autonome Systeme.",
+    "imageLabel": "Von Grund auf selbst gebaut",
+    "imageCaption": "FPV-Drohne · Vom Aufbau zum autonomen Flug",
+    "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+    "currently": "Aktuell",
+    "currentRole": "Softwareentwickler bei",
+    "experienceLink": "Meine Erfahrung",
+    "workKicker": "Ideen, entwickelt und erprobt",
+    "workTitle": "Ausgewählte Projekte"
   },
   "about": {
     "title": "Über mich",
-    "role": "Wer bin ich?",
+    "role": "Hi, ich bin Stefan.",
     "description": "Mein Name ist Stefan Vilceanu, und ich bin Computer Engineer mit einer Leidenschaft für Drohnen und autonome Systeme. Mein Hintergrund umfasst maschinelles Lernen, Computer Vision, Robotik und eingebettete Systeme. Ich arbeite gerne über den gesamten Technologie-Stack hinweg – von der Entwicklung von Deep-Learning-Modellen und Automatisierungspipelines bis hin zur Erstellung robuster Software für vernetzte und autonome Systeme. Es motiviert mich, komplexe Probleme zu lösen, neue Tools und Frameworks zu erlernen und in interdisziplinären Teams zusammenzuarbeiten, um innovative und zuverlässige Lösungen zu schaffen, die einen echten Unterschied machen.",
-    "skillsTitle": "Fähigkeiten",
+    "skillsTitle": "Meine Werkzeuge",
     "skills0": "C++ & Python",
     "skills1": "Robotik & ROS2",
     "skills2": "PX4 & ArduPilot",
@@ -36,8 +41,7 @@
     "skills7": "Flugregelung & Navigation",
     "skills8": "KI-Agenten & LLMs",
     "skills9": "Linux, Docker & CI/CD",
-
-    "contactTitle": "Kontakt",
+    "contactTitle": "In Kontakt bleiben",
     "contactEmail1": "E-Mail 1: stefan.vilceanu@rwth-aachen.de",
     "contactPhone": "Handy: +40 734588720",
     "contactAddress": "Adresse: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany",
@@ -46,77 +50,127 @@
     "degree1": "M.Sc. Computer Engineering",
     "university1": "RWTH Aachen Universität 2023-2025",
     "degree2": "B.Sc. Elektrotechnik",
-    "university2": "RWTH Aachen Universität 2019-2023"
+    "university2": "RWTH Aachen Universität 2019-2023",
+    "eyebrow": "Ein bisschen über mich",
+    "headline1": "Neugier,",
+    "headline2": "die etwas bewegt.",
+    "intro": "Computer Engineer, begeisterter Tüftler und immer neugierig auf das, was als Nächstes kommt.",
+    "lead": "Ich mache aus Ideen gerne etwas, das funktioniert, auf einer GPU, auf vier Rädern oder in der Luft.",
+    "bio1": "Mein Hintergrund umfasst maschinelles Lernen, Computer Vision, Robotik und eingebettete Systeme. Ich verbinde diese Disziplinen gerne, um zuverlässige Software zu entwickeln und Ideen in die Praxis umzusetzen.",
+    "bio2": "Ich arbeite gerne über den gesamten Technologie-Stack hinweg, lerne neue Werkzeuge kennen und löse Probleme in interdisziplinären Teams. Neben meiner beruflichen Arbeit baue ich Drohnen und erkunde das Zusammenspiel von Wahrnehmung, Regelung und Hardware.",
+    "profileAlt": "Porträt von Stefan Vilceanu",
+    "universityName": "RWTH Aachen",
+    "studyPeriod1": "2023–2025",
+    "studyPeriod2": "2019–2023",
+    "cvLabel": "Lebenslauf ansehen",
+    "workGroups": {
+      "software": {
+        "label": "Software & Entwicklung",
+        "tools": "C++, Python, Linux, Docker, CI/CD, automatisierte Tests"
+      },
+      "vision": {
+        "label": "KI & Computer Vision",
+        "tools": "PyTorch, JAX, OpenCV, YOLO, Transformers, Agentic AI, RAG, KI-Automatisierung"
+      },
+      "robotics": {
+        "label": "Robotik & Flugsteuerung",
+        "tools": "ROS2, Gazebo, MAVLink, PX4, ArduPilot, Betaflight, Sensorfusion, Kalman-Filter"
+      },
+      "edge": {
+        "label": "Embedded & Edge AI",
+        "tools": "Raspberry Pi, ESP32, NVIDIA Jetson, Hailo, TensorRT, ONNX, Kameras, Radar, LiDAR"
+      }
+    }
   },
   "projects": {
     "title": "Meine Projekte",
     "project1": {
       "title": "Bestimmung der Fahrzeugposition über Fahrbahnsegmentierung",
       "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
-      "description": "Das YOLOPv2-Modell wurde für die Lane Line Segmentation verwendet. IPM wurde angewendet, um die Perspektive des Bildes in eine Bird’s Eye View-Perspektive zu ändern, und Bayesian Filtering wurde eingesetzt, um den Lane Localization- und Assignment-Algorithmus stabil zu halten.",
-      "demo": "View Demo"
+      "description": "YOLOPv2 segmentiert Fahrbahnmarkierungen. Inverse Perspective Mapping überführt das Kamerabild in eine Vogelperspektive; Bayes-Filter stabilisieren die Lokalisierung und Zuordnung der Fahrspur.",
+      "demo": "Demo ansehen",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Kamerabasierte Fahrspurerkennung und stabile Fahrzeuglokalisierung mit Perspektivtransformation und Bayes-Filtern."
     },
     "project2": {
       "title": "Vergleich von Neural Networks zur effizienten Identifikation inverser Dynamik",
       "tech": "Python, Pytorch, JAX, LSTM, MLP",
-      "description": "Entwicklung, Training, Test und Vergleich mehrerer Neural Network-Architekturen zur Vorhersage des Drehmoments in Roboterachsen eines 6-Achs-Industrieroboters unter Verwendung von Positions-, Geschwindigkeits- und Beschleunigungsdaten der Achsen als Input Data.",
-      "demo": "Paper"
+      "description": "Verschiedene neuronale Netzarchitekturen entwickelt, trainiert und verglichen, um das Gelenkdrehmoment eines 6-Achs-Industrieroboters aus Gelenkposition, Geschwindigkeit und Beschleunigung vorherzusagen.",
+      "demo": "Paper",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Neuronale Netze zur Vorhersage des Gelenkdrehmoments eines Sechsachs-Industrieroboters."
     },
     "project9": {
       "title": "Zustandsschätzung mit Kalman-Filtern",
       "tech": "Python, Kalman-Filter, Zustandsschätzung",
       "description": "Implementierung von Kalman-Filtern mit konstanter Geschwindigkeit und konstanter Beschleunigung zur 3D-Positionsschätzung. Beide wurden anhand des mittleren euklidischen Positionsfehlers auf zwei Datensätzen mit einer Baseline verglichen.",
-      "demo": "GitHub-Code"
+      "demo": "GitHub-Code",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Vergleich verschiedener Kalman-Filtermodelle für genauere 3D-Positionsschätzungen."
     },
     "project3": {
       "title": "Unsicherheitsabschätzung für 3D-Objektdetektoren",
       "tech": "Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Kamera, Sensorfusion",
-      "description": "Analysis von Unsicherheitsabschätzung in transformer-basierten 3D-Objektdetektoren unter Verwendung von LiDAR-, Radar- und Kameradaten, wobei Baseline Methods mit Kalibrierungstechniken verglichen wurden, um die Reliability ohne hohen Rechenaufwand zu verbessern.",
-      "demo": "Master's Thesis",
-      "paper": "Paper"
+      "description": "Unsicherheitsschätzung in transformerbasierten 3D-Objektdetektoren mit LiDAR-, Radar- und Kameradaten untersucht. Basismethoden mit Kalibrierungsverfahren verglichen, um die Zuverlässigkeit bei geringem zusätzlichem Rechenaufwand zu verbessern.",
+      "demo": "Masterarbeit",
+      "paper": "Paper",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Untersuchung von Unsicherheit und Kalibrierung in multimodalen 3D-Objektdetektoren."
     },
     "project4": {
       "title": "Memristor-basierte MVM Maschine",
       "tech": "Cadence, SPICE, C++, Python, Memristor Arrays",
       "description": "Entwicklung und Untersuchung einer auf Memristoren basierenden Matrix-Vektor-Multiplikationsmaschine für In-Memory-Computing und Vergleich der Effizienz, Genauigkeit und Ressourcennutzung mit den klassischen Von-Neumann-Ansätzen.",
-      "demo": "Bachelor's Thesis"
+      "demo": "Bachelorarbeit",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Eine memristorbasierte Recheneinheit für effiziente Matrix-Vektor-Multiplikation."
     },
     "project5": {
       "title": "Über die Form und Textur-Verzerrung bei der Objekterkennung",
       "tech": "CNN, ViT, ImageNet",
       "description": "Untersuchte, wie CNNs im Gegensatz zu Menschen bei der Erkennung von Objekten eher auf Texturen als auf Formen ausgerichtet sind. Zusätzlich wurden zwei Transformer-basierte Methoden vorgestellt, um diese Verzerrung zu reduzieren und die Genauigkeit zu verbessern.",
-      "demo": "Report"
+      "demo": "Bericht",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Untersuchung, wie neuronale Netze Form und Textur zur Objekterkennung nutzen."
     },
     "project6": {
       "title": "Nachbauen von GPT 1 & 2",
       "tech": "Python, Pytorch, Transformers",
       "description": "Implementierung der GPT 1- und 2-Architekturen aus dem ursprünglichen OpenAI-Papier. Die Modelle wurden anhand des Shakespeare- und Game of Thrones-Datensatzes trainiert und getestet, damit sie Inhalte in diesem Stil produzieren können. Zusätzlich wurde ein SIEM-Abfrage-LLM-Generator implementiert und trainiert.",
-      "demo": "Github"
+      "demo": "GitHub",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Nachbau von Transformer-Sprachmodellen zur Erzeugung von Texten und Sicherheitsabfragen."
     },
     "project7": {
       "title": "Inference Pipeline - Autonomes Fahrzeug",
       "tech": "C++, RPi5 + Hailo AI Accelerator, YoloV8, Depth Anything V2",
-      "details": "Für das autonome RC-Car-Projekt habe ich eine Real-Time Perception-to-Actuation Pipeline entworfen und gebaut, die auf einem Raspberry Pi 5 in Kombination mit einem Hailo-8L AI Accelerator läuft. Sie basiert auf einer custom Vier-Thread-C++-Architektur, die Image Capture, Inference, Planning und Actuation parallel verarbeitet, um mit niedriger Latenz auf die Umgebung reagieren zu können. Die Perception-Stage nutzt YOLOv8 für Object Detection zusammen mit Depth Anything V2 für monokulare Depth Estimation, wobei die daraus resultierenden Tiefendaten einen PD-Steering-Controller und einen PI-Throttle-Controller speisen, sodass das Fahrzeug auch ganz ohne dedizierte Abstandssensoren flüssig navigieren und Hindernissen ausweichen kann. Ein autonomer Person-Following-Modus auf Basis von SORT- und ByteTrack-Multi-Object-Tracking lässt das Fahrzeug außerdem eine bestimmte Person erkennen und ihr in sicherem Abstand folgen. Abgesichert wird das Ganze durch CRSF-Protokollkommunikation über eine 420-kBaud-Hardware-UART, die mit einem RadioMaster RP1/TX12-ELRS-Sender verbunden ist und ein nahtloses manuelles Override ermöglicht. Abgerundet wird das System durch eine freihändige Sprachsteuerung mittels OpenWakeWord mit custom ONNX-Modellen (follow-me, stop-engines, three-sixty, autopilot, full-stop), die über eine named FIFO in die Pipeline eingespeist werden. Zusammen ergibt das einen vollständigen Autonomous-Driving-Stack, der Computer Vision, tiefenbasierte Planung, robustes RC-Failover und Sprachinteraktion vollständig auf Embedded Edge Hardware vereint.",
-      "description": "Autonomes Fahrzeug auf Basis eines Raspberry Pi 5 und eines Hailo-8L AI Accelerators, das Real-Time Object Detection mit monokularer Depth Estimation kombiniert, um eine Navigation mit Hinderniserkennung sowie Person-Following ganz ohne dedizierte Abstandssensoren zu ermöglichen.",
-      "demo": "Github",
-      "viewCar": "View Car",
-      "viewDemo": "View Demo",
-      "demoLogs": "Demo Logs"
+      "details": "Für dieses autonome RC-Fahrzeug habe ich eine Echtzeit-Pipeline von der Wahrnehmung bis zur Aktorik auf einem Raspberry Pi 5 mit Hailo-8L-KI-Beschleuniger entwickelt. Eine C++-Architektur mit vier Threads verarbeitet Bildaufnahme, Inferenz, Planung und Aktorik parallel.\n\nYOLOv8 erkennt Objekte; Depth Anything V2 schätzt die monokulare Tiefe. Die Tiefendaten fließen in einen PD-Lenkregler und einen PI-Geschwindigkeitsregler für eine hindernisbewusste Navigation ohne eigene Abstandssensoren. SORT und ByteTrack ermöglichen die autonome Verfolgung einer Person.\n\nCRSF-Kommunikation über eine 420-kBaud-Hardware-UART mit einem RadioMaster-RP1/TX12-ELRS-System erlaubt die manuelle Übernahme. OpenWakeWord und eigene ONNX-Modelle ergänzen Sprachbefehle zum Folgen, Stoppen, Drehen und für den Autopiloten. Diese werden über eine Named Pipe an die Pipeline übergeben.\n\nSo verbindet das System Computer Vision, tiefenbasierte Planung, RC-Failover und Sprachinteraktion vollständig auf eingebetteter Hardware.",
+      "description": "Autonomes Fahrzeug mit Raspberry Pi 5 und Hailo-8L-KI-Beschleuniger. Echtzeit-Objekterkennung und monokulare Tiefenschätzung ermöglichen Hinderniserkennung und Personenverfolgung ohne eigene Abstandssensoren.",
+      "demo": "GitHub",
+      "viewCar": "Fahrzeug ansehen",
+      "viewDemo": "Demo ansehen",
+      "demoLogs": "Demo-Protokolle",
+      "imageAlt": "Mein autonomes RC-Fahrzeug mit Raspberry Pi und Bordkamera",
+      "summary": "Ein autonomes Fahrzeug, das mit KI Hindernisse erkennt und Personen folgt."
     },
     "project8": {
       "title": "Bau einer FPV-Drohne",
       "tech": "Betaflight, ArduPilot, ELRS, Flugautomatisierung, Wegpunktnavigation, PID Tuning",
       "description": "Eine FPV-Drohne von Grund auf gebaut und dabei Betaflight, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse verbessert. Zusätzlich ArduPilot geflasht, konfiguriert und die PID-Regler abgestimmt, um GPS-basierte autonome Wegpunktnavigation für vorgeplante Missionen zu ermöglichen.",
-      "demo": "View Photo",
+      "demo": "Foto ansehen",
       "viewFlight": "FPV Demo",
-      "bomDrone": "BOM Drone"
+      "bomDrone": "Stückliste",
+      "viewFlight1": "Flugdemo",
+      "viewFlight2": "FPV-Demo",
+      "imageAlt": "Meine selbstgebaute FPV-Drohne mit Videobrille und Fernsteuerung im Freien",
+      "summary": "Eine selbstgebaute FPV-Drohne — vom Aufbau und der Flugabstimmung bis zur autonomen Navigation."
     }
   },
   "experience": {
     "title": "Berufserfahrung",
     "recommandation": "Referenzschreiben",
     "job1": {
-      "title": "Softwarentwickler",
+      "title": "Softwareentwickler",
       "company": "Porsche Engineering",
       "date": "2025 - Heute",
       "responsibilities0": "Entwurf und Implementierung eines KI-Agenten zur Automatisierung von Tests für Porsche-Infotainmentoberflächen, der LLMs, Vision-Language-Modelle und Computer Vision kombiniert, um HMI-Testfälle autonom auszuführen.",
@@ -127,7 +181,7 @@
       "responsibilities5": "Mitwirkung an ESP32-basierter Testhardware zum Auslösen und Validieren von Fahrzeug- und Infotainmentfunktionen."
     },
     "job2": {
-      "title": "Softwarentwicklungspraktikant",
+      "title": "Praktikant in der Softwareentwicklung",
       "company": "ETAS GmbH",
       "date": "2024 - 2025",
       "responsibilities0": "Analyse realer Cyberangriffe auf Automobile und Zuordnung zu Frameworks wie MITRE ATT&CK, EMB3D, Auto-ISAC ATM und VATT&EK, um die Erkennungsstrategien in der VSOC-Lösung von ETAS zu verbessern.",
@@ -136,16 +190,16 @@
       "responsibilities3": "Generierung von Demodaten und simulierte Cyberangriffe (z. B. EPS- und TPMS-Hacks), um zu demonstrieren, wie das Tool reale Angriffe auf vernetzte Fahrzeuge erkennen kann."
     },
     "job3": {
-      "title": "Computer Vision Wissenschaftlicher Mitarbeiter",
+      "title": "Wissenschaftlicher Mitarbeiter · Computer Vision",
       "company": "IKA RWTH Aachen",
-      "date": "2024 - 2024",
+      "date": "2024",
       "responsibilities0": "Entwicklung von ROS2-Knoten in Python zur Integration der YOLOPv2-basierten Fahrspursegmentierung und Erkennung befahrbarer Bereiche in ein halbautonomes Fahrzeug.",
       "responsibilities1": "Anwendung der inversen Perspektivkartierung (IPM) zur Umwandlung des Kamerabildes in eine Top-Down-Perspektive (Vogelperspektive), wodurch eine zuverlässigere Spuranalyse ermöglicht wird.",
       "responsibilities2": "Entwicklung eines Algorithmus zur Fahrspurerkennung, der die Position eines Fahrzeugs auf der Fahrspur aus der Vogelperspektive bestimmt, indem er die Fahrspuren relativ zum Bildmittelpunkt analysiert.",
       "responsibilities3": "Implementation von Bayesianische Filterung, um die Schätzung der Fahrspurposition zu glätten, Störungen zu reduzieren und die Lokalisierungsgenauigkeit sowie die allgemeine Stabilität zu verbessern."
     },
     "job4": {
-      "title": "Robotik Wissenschaftlicher Mitarbeiter",
+      "title": "Wissenschaftlicher Mitarbeiter · Robotik",
       "company": "WZL RWTH Aachen",
       "date": "2023 - 2024",
       "responsibilities0": "Entwurf, Training und Benchmarking mehrerer neuronaler Netzwerkarchitekturen zur Vorhersage des Drehmoments in einem 6-achsigen Industrieroboter unter Verwendung von Gelenkposition, Geschwindigkeit und Beschleunigung als Eingabemerkmale, um die Modellierungsgenauigkeit und -leistung zu verbessern.",
@@ -160,15 +214,59 @@
       "responsibilities1": "Bot Einzel- und Gruppenunterstützung, um Schülern dabei zu helfen, ihre Programmierkenntnisse zu verbessern, Programme zu debuggen und ihre Problemlösungsansätze zu optimieren.",
       "responsibilities2": "Selbstentwicklung starker Kommunikations- und Lehrfähigkeiten durch die verständliche und unterstützende Vermittlung komplexer Programmierkonzepte."
     },
-
     "job6": {
-      "title": "Intelligente Netze Wissenschaftlicher Mitarbeiter",
+      "title": "Wissenschaftlicher Mitarbeiter · Intelligente Netze",
       "company": "IAEW RWTH Aachen",
       "date": "2021 - 2022",
       "responsibilities0": "Entwicklung eines Python-Frameworks zur Visualisierung hybrider AC/DC-Verteilungsnetze unter Verwendung von OpenStreetMap, wodurch die Zugänglichkeit und Analyse von Netzlayouts verbessert wird.",
       "responsibilities1": "Erweiterung und Validierung der C++-basierten metaheuristischen Planungsmodelle (Genetischer Algorithmus) für hybride AC/DC-Netze, die die Genauigkeit und Effizienz der Netzplanung verbessern.",
       "responsibilities2": "Beitrag zur Entwicklung und Integration von Schnittstellen für Netzdatenmodelle, Unterstützung der Erweiterung von Modellierungsverfahren für Gleichstromverteilungsnetze."
-    }
+    },
+    "eyebrow": "Die Erfahrung hinter den Projekten",
+    "headline1": "Von der Forschung",
+    "headline2": "in die Praxis.",
+    "intro": "Angewandte KI und Softwareentwicklung — von der Forschung bis zu Fahrzeugsystemen."
   },
-  "themeToggle": "Thema wechseln"
+  "themeToggle": "Thema wechseln",
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "navigation": "Hauptnavigation",
+    "language": "Sprache",
+    "cv": "Lebenslauf ansehen",
+    "contact": "Kontakt aufnehmen",
+    "footer": "Stefan Vilceanu · Computer Engineer",
+    "contactTitle": "Eine Idee im Kopf?",
+    "contactDescription": "Sprechen wir über KI, Robotik oder die nächste technische Herausforderung.",
+    "details": "Projekt entdecken",
+    "close": "Projekt schließen",
+    "viewWork": "Meine Projekte",
+    "aboutLink": "Mehr über mich",
+    "all": "Alle Projekte",
+    "autonomy": "Robotik & Autonomie",
+    "ai": "KI & Forschung",
+    "embedded": "Eingebettete Systeme",
+    "filterLabel": "Projekte filtern",
+    "filterStatus": "{count} Projekte angezeigt",
+    "autonomyCategory": "Robotik & Autonomie",
+    "aiCategory": "KI & Forschung",
+    "embeddedCategory": "Eingebettete Systeme",
+    "softwareCategory": "KI & Software",
+    "researchCategory": "Computer Vision",
+    "readPaper": "Paper lesen",
+    "watchDemo": "Demo ansehen",
+    "viewCode": "Code ansehen",
+    "readThesis": "Abschlussarbeit lesen",
+    "readReport": "Bericht lesen",
+    "present": "Aktuelle Position",
+    "careerIndex": "Mein Werdegang",
+    "based": "Stuttgart, Deutschland",
+    "back": "Zurück zu den Projekten",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adresse",
+    "moreProjects": "Weitere Projekte",
+    "technicalDetails": "Technische Details",
+    "technicalBackground": "Technischer Hintergrund",
+    "contactDetails": "Kontaktdaten"
+  }
 }

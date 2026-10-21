@@ -1,253 +1,262 @@
-// i18n functionality
+// Preferences are optional: the portfolio also works when storage is disabled.
+const preferences = {
+  get(key) { try { return localStorage.getItem(key); } catch (_) { return null; } },
+  set(key, value) { try { localStorage.setItem(key, value); } catch (_) { /* Session-only preference. */ } }
+};
+
 const i18n = {
   currentLanguage: 'en',
-  fallbackLanguage: 'en',
   translations: {},
-  
-  // Helper function to safely get nested object properties
-  getNestedValue(obj, keys) {
-    let result = obj;
-    for (const key of keys) {
-      if (result && typeof result === 'object' && key in result) {
-        result = result[key];
-      } else {
-        return null;
-      }
-    }
-    return result;
+  request: 0,
+  get(key, fallback = '') {
+    const find = language => key.split('.').reduce((value, part) => value?.[part], this.translations[language]);
+    return find(this.currentLanguage) ?? find('en') ?? fallback;
   },
-  
-  // Load translations for a specific language
-  async loadLanguage(lang) {
+  async load(language) {
+    if (this.translations[language]) return true;
     try {
-      const response = await fetch(`/lang/${lang}.json`);
-      if (!response.ok) {
-        throw new Error(`Failed to load ${lang} translations`);
-      }
-      this.translations[lang] = await response.json();
+      const response = await fetch(`lang/${language}.json`);
+      if (!response.ok) return false;
+      this.translations[language] = await response.json();
       return true;
-    } catch (error) {
-      console.error('Error loading translations:', error);
-      return false;
-    }
+    } catch (_) { return false; }
   },
-  
-  // Translate all elements with data-i18n attribute
-  async translatePage(lang) {
-    // Don't do anything if the language hasn't changed and we already have translations
-    if (this.currentLanguage === lang && this.translations[lang]) {
-      return;
-    }
-    
-    // Try to load the language if we don't have it yet
-    if (!this.translations[lang]) {
-      const loaded = await this.loadLanguage(lang);
-      if (!loaded && lang !== this.fallbackLanguage) {
-        console.warn(`Falling back to ${this.fallbackLanguage} as ${lang} could not be loaded`);
-        return this.translatePage(this.fallbackLanguage);
-      }
-    }
-    
-    this.currentLanguage = lang;
-    
-    // Update HTML lang attribute
-    document.documentElement.setAttribute('lang', lang);
-    
-    // Save language preference
-    try {
-      localStorage.setItem('preferredLanguage', lang);
-    } catch (e) {
-      console.warn('Could not save language preference to localStorage', e);
-    }
-    
-    // Update all translatable elements
+  async translatePage(language, { updateUrl = false } = {}) {
+    if (!['en', 'de'].includes(language)) language = 'en';
+    const request = ++this.request;
+    const loaded = await this.load(language);
+    if (request !== this.request) return;
+    this.currentLanguage = loaded ? language : 'en';
+    document.documentElement.lang = this.currentLanguage;
+    preferences.set('preferredLanguage', this.currentLanguage);
+
     document.querySelectorAll('[data-i18n]').forEach(element => {
-      const keys = element.getAttribute('data-i18n').split('.');
-      let translation = this.translations[lang];
-      
-      // Handle special attribute syntax: [attr]key.path
-      let attribute = null;
-      if (keys[0].startsWith('[') && keys[0].endsWith(']')) {
-        attribute = keys[0].slice(1, -1);
-        keys.shift();
-      }
-      
-      // Traverse the translation object
-      let translationFound = true;
-      for (const key of keys) {
-        if (translation && typeof translation === 'object' && key in translation) {
-          translation = translation[key];
-        } else {
-          translationFound = false;
-          break;
-        }
-      }
-      
-      // If translation not found in current language, try fallback language
-      if (!translationFound && lang !== this.fallbackLanguage) {
-        console.warn(`Translation not found for key: ${keys.join('.')} in ${lang}, trying fallback`);
-        const fallbackTranslation = this.getNestedValue(this.translations[this.fallbackLanguage], keys);
-        if (fallbackTranslation) {
-          translation = fallbackTranslation;
-          translationFound = true;
-        }
-      }
-      
-      // If still not found, show warning and skip this element
-      if (!translationFound) {
-        console.warn(`Translation not found for key: ${keys.join('.')} in any language`);
-        return; // Skip this element but continue with others
-      }
-      
-      // Handle arrays by joining with spaces
-      if (Array.isArray(translation)) {
-        translation = translation.join(' ');
-      }
-      
-      // Set the content or attribute
-      if (attribute) {
-        element.setAttribute(attribute, translation);
-      } else {
-        element.textContent = translation;
-      }
+      const match = element.dataset.i18n.match(/^(?:\[([^\]]+)\])?(.+)$/);
+      if (!match) return;
+      const value = this.get(match[2]);
+      if (typeof value !== 'string' || !value) return;
+      if (match[1]) element.setAttribute(match[1], value);
+      else element.textContent = value;
     });
-    
-    // Update active state of language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      if (btn.getAttribute('data-lang') === lang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-    
-    // Update the URL without reloading the page
-    const url = new URL(window.location);
-    if (url.searchParams.get('lang') !== lang) {
-      url.searchParams.set('lang', lang);
-      window.history.replaceState({}, '', url);
-    }
-  },
-  
-  // Initialize i18n
-  async init() {
-    // Check URL for language parameter first
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang');
-    
-    // Then check localStorage, then browser language
-    let lang = urlLang || localStorage.getItem('preferredLanguage') || 
-              navigator.language.split('-')[0];
-    
-    // Ensure the language is supported
-    if (!['en', 'de'].includes(lang)) {
-      lang = 'en';
-    }
-    
-    // Load translations and translate the page
-    await this.translatePage(lang);
-    
-    // Set up language switcher
     document.querySelectorAll('.lang-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const lang = button.getAttribute('data-lang');
-        this.translatePage(lang);
-      });
+      const active = button.dataset.lang === this.currentLanguage;
+      button.classList.toggle('active', active);
+      button.setAttribute('aria-pressed', String(active));
     });
-    
-    return lang;
+    // Carry the language across pages even when browser storage is unavailable.
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (link.getAttribute('href').startsWith('#')) return;
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin) return;
+      if (!/(?:index|about|experience)\.html$/.test(url.pathname) && !link.hasAttribute('data-project-open')) return;
+      url.searchParams.set('lang', this.currentLanguage);
+      link.href = url.pathname + url.search + url.hash;
+    });
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.set('lang', this.currentLanguage);
+      history.replaceState(history.state, '', url);
+    }
+    window.dispatchEvent(new CustomEvent('languagechange'));
+  },
+  async init() {
+    await this.load('en');
+    const language = new URL(location.href).searchParams.get('lang') ||
+      preferences.get('preferredLanguage') || navigator.language.split('-')[0];
+    await this.translatePage(language);
+    document.querySelectorAll('.lang-btn').forEach(button => {
+      button.addEventListener('click', () => this.translatePage(button.dataset.lang, { updateUrl: true }));
+    });
+    window.addEventListener('popstate', () => {
+      const language = new URL(location.href).searchParams.get('lang');
+      if (['en', 'de'].includes(language) && language !== this.currentLanguage) this.translatePage(language);
+    });
   }
 };
 
-// Navigation functionality
-function navigateToPage(pageUrl) {
-  window.location.href = pageUrl;
+function initTheme() {
+  const toggle = document.querySelector('.theme-toggle');
+  const update = theme => {
+    document.documentElement.dataset.theme = theme;
+    toggle?.setAttribute('aria-pressed', String(theme === 'dark'));
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#18201b' : '#f7f8f4');
+  };
+  update(document.documentElement.dataset.theme || 'light');
+  toggle?.addEventListener('click', () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    preferences.set('theme', theme);
+    update(theme);
+  });
+  window.addEventListener('storage', event => {
+    if (event.key === 'theme' && ['dark', 'light'].includes(event.newValue)) update(event.newValue);
+  });
 }
 
-// Theme Toggle Functionality
-function initThemeToggle() {
-  const themeToggle = document.querySelector('.theme-toggle');
-  
-  // Check for saved theme preference or respect OS preference
-  const savedTheme = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-  
-  // Only apply initial theme if not already set by inline script
-  // This prevents overriding the theme set by the early inline script
-  if (!document.documentElement.getAttribute('data-theme')) {
-    document.documentElement.setAttribute('data-theme', initialTheme);
-  }
-  
-  // Toggle theme function
-  function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    // Dispatch custom event for other scripts to listen to theme changes
-    window.dispatchEvent(new CustomEvent('themeChange', { detail: newTheme }));
-  }
-  
-  // Add event listener to toggle button
-  if (themeToggle) {
-    themeToggle.removeEventListener('click', toggleTheme); // Remove any existing listener
-    themeToggle.addEventListener('click', toggleTheme);
-  }
-  
-  // Listen for storage changes from other tabs/pages
-  window.addEventListener('storage', function(e) {
-    if (e.key === 'theme') {
-      const newTheme = e.newValue || 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
+function initDisclosures() {
+  const revealHash = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
+    const target = document.getElementById(id);
+    const disclosure = target?.closest('details');
+    if (disclosure) {
+      disclosure.open = true;
+      target.scrollIntoView({ block: 'start' });
+    }
+  };
+  window.addEventListener('hashchange', revealHash);
+  revealHash();
+}
+
+function initJobDurations() {
+  const update = () => {
+    const parts = new Intl.DateTimeFormat('en', { timeZone: 'Europe/Bucharest', year: 'numeric', month: 'numeric' }).formatToParts(new Date());
+    const currentYear = Number(parts.find(part => part.type === 'year').value);
+    const currentMonth = Number(parts.find(part => part.type === 'month').value);
+    document.querySelectorAll('.job-duration').forEach(element => {
+      let months = Number(element.dataset.jobMonths);
+      if (!months) {
+        const [startYear, startMonth] = element.dataset.jobStart.split('-').map(Number);
+        const [endYear, endMonth] = element.dataset.jobEnd ? element.dataset.jobEnd.split('-').map(Number) : [currentYear, currentMonth];
+        // The CV gives month ranges. Count calendar months inclusively to round up.
+        months = Math.max(1, (endYear - startYear) * 12 + endMonth - startMonth + 1);
+      }
+      const years = Math.floor(months / 12);
+      const remainder = months % 12;
+      const format = (count, unit) => new Intl.NumberFormat(i18n.currentLanguage, { style: 'unit', unit, unitDisplay: 'long' }).format(count);
+      element.textContent = [years ? format(years, 'year') : '', remainder ? format(remainder, 'month') : ''].filter(Boolean).join(' ');
+    });
+  };
+  window.addEventListener('languagechange', update);
+  update();
+}
+
+function initProjects() {
+  const dialog = document.getElementById('project-dialog');
+  if (!dialog) return;
+  const cards = [...document.querySelectorAll('[data-project]')];
+  const title = document.getElementById('dialog-title');
+  const tech = document.getElementById('dialog-tech');
+  const description = document.getElementById('dialog-description');
+  const extendedDescription = document.getElementById('dialog-details');
+  const technicalNotes = document.getElementById('dialog-notes');
+  const media = document.getElementById('dialog-media');
+  const links = document.getElementById('dialog-links');
+  let currentCard = null;
+  let returnFocus = null;
+  const demos = {
+    project7: { src: 'source/robocar_demo.mp4', poster: 'source/robocar-preview.jpg' },
+    project8: { src: 'source/fpv_video2.mp4', poster: 'source/drone-preview.jpg' },
+    project1: { src: 'source/LaneAnalysis.mp4', poster: 'source/lane_localication_preview.png' }
+  };
+
+  const fill = card => {
+    const id = card.dataset.project;
+    title.textContent = card.querySelector('h2').textContent;
+    tech.textContent = card.querySelector('.project-tech').textContent;
+    description.textContent = card.querySelector('.project-description').textContent;
+    extendedDescription.textContent = i18n.get(`projects.${id}.details`);
+    extendedDescription.hidden = !extendedDescription.textContent;
+    // Keep alternate demos, but omit the exact video already embedded here.
+    const embeddedVideo = demos[id]?.src;
+    const resources = [...card.querySelectorAll('.project-resources a')].filter(link =>
+      !embeddedVideo || link.href !== new URL(embeddedVideo, location.href).href
+    );
+    links.replaceChildren(...resources.map(link => link.cloneNode(true)));
+  };
+  const fillMedia = card => {
+    media.replaceChildren();
+    const demo = demos[card.dataset.project];
+    if (demo) {
+      const video = document.createElement('video');
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'none';
+      video.src = demo.src;
+      if (demo.poster) video.poster = demo.poster;
+      video.setAttribute('aria-label', card.querySelector('h2').textContent);
+      media.append(video);
+    } else {
+      const preview = card.querySelector('.project-media img');
+      if (preview) {
+        const image = preview.cloneNode();
+        image.alt = card.querySelector('h2').textContent;
+        image.loading = 'eager';
+        media.append(image);
+      }
+    }
+  };
+  const hide = () => {
+    if (!dialog.open) return;
+    dialog.close();
+    media.querySelector('video')?.pause();
+    media.replaceChildren();
+    currentCard = null;
+    if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+  };
+  const open = (card, { updateUrl = true, trigger = null } = {}) => {
+    returnFocus = trigger || card.querySelector('[data-project-open]');
+    currentCard = card;
+    technicalNotes.open = false;
+    fill(card);
+    fillMedia(card);
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.set('project', card.dataset.project);
+      history.pushState({ portfolioProject: card.dataset.project }, '', url);
+    }
+  };
+  const close = () => {
+    hide();
+    const url = new URL(location.href);
+    if (!url.searchParams.has('project')) return;
+    if (history.state?.portfolioProject) history.back();
+    else {
+      url.searchParams.delete('project');
+      history.replaceState(history.state, '', url);
+    }
+  };
+  const syncFromUrl = () => {
+    const id = new URL(location.href).searchParams.get('project');
+    const card = cards.find(item => item.dataset.project === id);
+    if (card) open(card, { updateUrl: false });
+    else hide();
+  };
+  document.querySelectorAll('[data-project-open]').forEach(trigger => {
+    trigger.addEventListener('click', event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const card = cards.find(item => item.dataset.project === trigger.dataset.projectOpen);
+      if (!card) return;
+      event.preventDefault();
+      open(card, { trigger });
+    });
+  });
+  dialog.querySelector('.dialog-close').addEventListener('click', close);
+  dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
+  dialog.addEventListener('click', event => {
+    // A native dialog backdrop targets the dialog, while its padding belongs to .dialog-inner.
+    if (event.target === dialog) {
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) close();
     }
   });
-  
-  return initialTheme;
+  window.addEventListener('popstate', syncFromUrl);
+  window.addEventListener('languagechange', () => {
+    if (currentCard) {
+      fill(currentCard);
+      media.querySelector('video')?.setAttribute('aria-label', title.textContent);
+    }
+  });
+  syncFromUrl();
 }
 
-// Initialize everything when the DOM is loaded
 async function initApp() {
-  // Initialize i18n first
+  initTheme();
   await i18n.init();
-  
-  // Then initialize theme
-  initThemeToggle();
-  
-  // Set up navigation links
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (link.getAttribute('href') && !link.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-        navigateToPage(link.getAttribute('href'));
-      }
-    });
-  });
-  
-  // Smooth scrolling for all anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+  initDisclosures();
+  initJobDurations();
+  initProjects();
 }
 
-// Start the app when the DOM is loaded, exposing the readiness promise so
-// page-specific scripts can wait for i18n/theme setup to finish first.
-function startApp() {
-  window.appReady = initApp();
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startApp);
-} else {
-  startApp();
-}
+window.appReady = initApp();

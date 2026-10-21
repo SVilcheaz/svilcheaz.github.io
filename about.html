@@ -1,113 +1,96 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n="app.lang">
+<html lang="en">
 <head>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Stefan Vilceanu, a computer engineer working across machine learning, computer vision, robotics, and embedded systems.">
+  <meta name="theme-color" content="#f7f8f4">
+  <title data-i18n="app.aboutTitle">About — Stefan Vilceanu</title>
+  <link rel="icon" href="source/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = ['light','dark'].includes(saved) ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (_) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <script src="script.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HDJ3Y64YG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-1HDJ3Y64YG');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="app.aboutTitle">About Me - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    // Apply theme immediately to prevent flash of incorrect theme
-    (function() {
-      try {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', initialTheme);
-      } catch (e) {
-        // Fallback to default theme if localStorage is not available
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
   </script>
 </head>
 <body>
-  <script src="script.js"></script>
-  <nav>
-    <ul>
-      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-      <li><a href="about.html" class="active" data-i18n="nav.about">About Me</a></li>
-      <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
-    </ul>
-    <div class="language-switcher">
-      <button class="lang-btn" data-lang="en">EN</button>
-      <span>|</span>
-      <button class="lang-btn" data-lang="de">DE</button>
-    </div>
-  </nav>
-  <button class="theme-toggle" aria-label="Toggle theme"></button>
-  <div class="section active" id="about">
-    <h1 data-i18n="about.title">About Me</h1>
-    <div class="profile-container">
-      <!-- Left Column: Profile Image -->
-      <div class="profile-image">
-        <img src="source/photo.jpg" data-i18n="[alt]about.profileAlt" alt="Profile Picture" class="profile-pic">
-      </div>
-      
-      <!-- Middle Column: Profile Info, Skills, and Contact -->
-      <div class="profile-main">
-        <div class="profile-info">
-          <h2 data-i18n="about.role">Who am I?</h2>
-          <p data-i18n="about.description">My name is Stefan Vilceanu, and I’m a computer engineer with a passion for drones and autonomous systems. My background spans machine learning, computer vision, robotics, and embedded systems, and I enjoy working across the full stack of technologies, from designing deep learning models and automation pipelines to developing robust software for connected and autonomous systems. I thrive on tackling complex problems, learning new tools and frameworks, and collaborating in multidisciplinary teams to create innovative, reliable solutions that make a difference.</p>
-
-          <div class="skills">
-            <h3 data-i18n="about.skillsTitle">Skills</h3>
-            <div class="profile-info contact-section" style="margin-top: 10px;"></div>
-            <div class="skill-tags">
-              <span class="skill" data-i18n="about.skills0">C++ & Python</span>
-              <span class="skill" data-i18n="about.skills1">Robotics & ROS2</span>
-              <span class="skill" data-i18n="about.skills2">PX4 & ArduPilot</span>
-              <span class="skill" data-i18n="about.skills3">Computer Vision & VSLAM</span>
-              <span class="skill" data-i18n="about.skills4">Machine Learning & PyTorch</span>
-              <span class="skill" data-i18n="about.skills5">Edge AI & NVIDIA Jetson</span>
-              <span class="skill" data-i18n="about.skills6">TensorRT & ONNX</span>
-              <span class="skill" data-i18n="about.skills7">Flight Control & Navigation</span>
-              <span class="skill" data-i18n="about.skills8">AI Agents & LLMs</span>
-              <span class="skill" data-i18n="about.skills9">Linux, Docker & CI/CD</span>
-            </div>
-          </div>
-          
-          <div class="profile-info">
-            <div class="profile-info contact-section" style="margin-top: 40px;"></div>
-            <h3 data-i18n="about.contactTitle">Contact Information</h3>
-            <p data-i18n="about.contactEmail1">E-Mail 1: stefan.vilceanu@rwth-aachen.de</p>
-            <p data-i18n="about.contactEmail2">E-Mail 2: vilceanu.stefan@yahoo.com</p>
-            <p data-i18n="about.contactPhone">Phone: +40 734588720</p>
-            <p data-i18n="about.contactAddress">Address: Oswald-Hesse-Str. 27, 70469 Stuttgart, Germany</p>
-            
-          </div>
-          <a href="https://www.linkedin.com/in/stefan-vilceanu-65b45b213/" target="_blank" class="linkedin-btn"> LinkedIn</a>
+  <a data-i18n="ui.skip" href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Stefan Vilceanu — Projects"><span class="brand-mark" aria-hidden="true">sv.</span>Stefan Vilceanu</a>
+      <nav class="site-nav" aria-label="Main navigation" data-i18n="[aria-label]ui.navigation"><a data-i18n="nav.projects" href="index.html">Projects</a><a data-i18n="nav.experience" href="experience.html">Experience</a><a data-i18n="nav.about" href="about.html" aria-current="page">About</a></nav>
+      <div class="header-tools">
+        <div class="language-switcher" role="group" aria-label="Language" data-i18n="[aria-label]ui.language">
+          <button class="lang-btn active" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button class="lang-btn" data-lang="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
         </div>
-      </div>
-      
-      <!-- Right Column: Education -->
-      <div class="education">
-        <h2 data-i18n="about.education">Studies</h2>
-        <div class="profile-info contact-section" style="margin-top: 10px;"></div>
-        <div class="education-item">
-          <h3 data-i18n="about.degree1">M.Sc. in Computer Engineering & AI</h3>
-          <p data-i18n="about.university1">RWTH Aachen University 2023 – 2025</p>
-        </div>
-        <div class="education-item">
-          <h3 data-i18n="about.degree2">B.Sc. in Electrical Engineering</h3>
-          <p data-i18n="about.university2">RWTH Aachen University 2019 – 2023</p>
-        </div>
-        <div class="project-links">
-          <a href="source/CV.pdf" target="_blank" class="project-link">View CV</a>
-        </div>
+        <button class="theme-toggle" aria-label="Toggle theme" data-i18n="[aria-label]themeToggle" aria-pressed="false">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
       </div>
     </div>
-  </div>
+  </header>
+  <main id="main" class="container about-page">
+    <div class="about-overview">
+      <div class="profile-image"><img class="profile-pic" src="source/portrait-preview.jpg" width="600" height="792" alt="Portrait of Stefan Vilceanu" data-i18n="[alt]about.profileAlt"></div>
+      <div class="biography">
+        <div class="about-heading">
+          <h1 data-i18n="about.role">Hi, I’m Stefan.</h1>
+          <a class="button about-cv" href="source/CV.pdf" target="_blank" rel="noopener noreferrer"><span data-i18n="about.cvLabel">View my CV</span></a>
+        </div>
+        <p data-i18n="about.lead" class="bio-lead">I like turning an idea into something that works, whether it runs on a GPU, drives on four wheels, or takes flight.</p>
+        <p data-i18n="about.bio1" class="bio">My background spans machine learning, computer vision, robotics, and embedded systems. I enjoy connecting these disciplines to build reliable software and bring ideas into the real world.</p>
+      </div>
+    </div>
+    <div class="about-sections">
+      <section class="education-panel" aria-labelledby="education-title">
+        <h2 data-i18n="about.education" id="education-title">Education</h2>
+        <p data-i18n="about.universityName" class="university-name">RWTH Aachen</p>
+        <div class="education-item"><h3 data-i18n="about.degree1">M.Sc. in Computer Engineering</h3><p data-i18n="about.studyPeriod1">2023–2025</p></div><div class="education-item"><h3 data-i18n="about.degree2">B.Sc. in Electrical Engineering</h3><p data-i18n="about.studyPeriod2">2019–2023</p></div>
+      </section>
+      <section class="skills-section" aria-labelledby="skills-title">
+        <h2 data-i18n="about.skillsTitle" id="skills-title">What I work with</h2>
+        <dl class="work-groups">
+          <div><dt data-i18n="about.workGroups.software.label">Software &amp; delivery</dt><dd data-i18n="about.workGroups.software.tools">C++, Python, Linux, Docker, CI/CD, automated testing</dd></div>
+          <div><dt data-i18n="about.workGroups.vision.label">AI &amp; computer vision</dt><dd data-i18n="about.workGroups.vision.tools">PyTorch, JAX, OpenCV, YOLO, Transformers, Agentic AI, RAG, AI automation</dd></div>
+          <div><dt data-i18n="about.workGroups.robotics.label">Robotics &amp; flight</dt><dd data-i18n="about.workGroups.robotics.tools">ROS2, Gazebo, MAVLink, PX4, ArduPilot, Betaflight, sensor fusion, Kalman filters</dd></div>
+          <div><dt data-i18n="about.workGroups.edge.label">Embedded &amp; edge AI</dt><dd data-i18n="about.workGroups.edge.tools">Raspberry Pi, ESP32, NVIDIA Jetson, Hailo, TensorRT, ONNX, cameras, radar, LiDAR</dd></div>
+        </dl>
+      </section>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <h2 data-i18n="about.contactTitle" id="contact-title">Let’s connect</h2>
+        <div class="contact-list">
+            <a href="mailto:stefan.vilceanu@rwth-aachen.de">stefan.vilceanu@rwth-aachen.de ↗</a>
+            <a href="mailto:vilceanu.stefan@yahoo.com">vilceanu.stefan@yahoo.com ↗</a>
+            <a href="tel:+40734588720">+40 734 588 720</a>
+            <address>Oswald-Hesse-Str. 27<br>70469 Stuttgart, Germany</address>
+          </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Stefan Vilceanu</span>
+      <div class="footer-links">
+        <a href="mailto:stefan.vilceanu@rwth-aachen.de" data-i18n="ui.contact">Get in touch</a>
+        <a href="https://www.linkedin.com/in/stefan-vilceanu-65b45b213/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/SVilcheaz" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="source/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

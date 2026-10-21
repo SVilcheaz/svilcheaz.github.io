@@ -1,119 +1,207 @@
 <!DOCTYPE html>
-<html lang="en" data-i18n="app.lang">
+<html lang="en">
 <head>
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stefan Vilceanu — computer engineer building AI, robotics, and autonomous systems. Explore hands-on projects, research, and engineering experience.">
+  <meta name="theme-color" content="#f7f8f4">
+  <title data-i18n="app.title">Stefan Vilceanu — AI, Robotics &amp; Autonomous Systems</title>
+  <link rel="icon" href="source/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try {
+      const saved = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = ['light','dark'].includes(saved) ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch (_) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+  <script src="script.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HDJ3Y64YG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-1HDJ3Y64YG');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="app.title">My Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <script>
-    // Apply theme immediately to prevent flash of incorrect theme
-    (function() {
-      try {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', initialTheme);
-      } catch (e) {
-        // Fallback to default theme if localStorage is not available
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
   </script>
 </head>
 <body>
-  <script src="script.js"></script>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
-      <li><a href="about.html" data-i18n="nav.about">About Me</a></li>
-      <li><a href="experience.html" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
-    </ul>
-    <div class="language-switcher">
-      <button class="lang-btn" data-lang="en">EN</button>
-      <span>|</span>
-      <button class="lang-btn" data-lang="de">DE</button>
-    </div>
-  </nav>
-  <button class="theme-toggle" aria-label="Toggle theme"></button>
-  <div class="section active" id="home">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-content-inner">
-          <img src="source/img.png" alt="Portfolio Hero" class="hero-image">
-          <h1 class="hero-title" data-i18n="home.heroTitle">Welcome To My Portfolio</h1>
-          <p class="hero-subtitle" data-i18n="home.heroSubtitle">Stefan Vilceanu - Computer Engineer | Passionate About Drones & Autonomous Systems</p>
-          <!-- Buttons removed as per request -->
+  <a data-i18n="ui.skip" href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Stefan Vilceanu — Projects"><span class="brand-mark" aria-hidden="true">sv.</span>Stefan Vilceanu</a>
+      <nav class="site-nav" aria-label="Main navigation" data-i18n="[aria-label]ui.navigation"><a data-i18n="nav.projects" href="index.html" aria-current="page">Projects</a><a data-i18n="nav.experience" href="experience.html">Experience</a><a data-i18n="nav.about" href="about.html">About</a></nav>
+      <div class="header-tools">
+        <div class="language-switcher" role="group" aria-label="Language" data-i18n="[aria-label]ui.language">
+          <button class="lang-btn active" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button class="lang-btn" data-lang="de" lang="de" aria-label="Deutsch" aria-pressed="false">DE</button>
         </div>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item" onclick="window.location.href='experience.html'" style="cursor: pointer;">
-          <span class="stat-number" data-i18n="home.yearsExperience">3+</span>
-          <span class="stat-label" data-i18n="home.yearsLabel">Years of Experience</span>
-        </div>
-        <div class="stat-item" onclick="window.location.href='projects.html'" style="cursor: pointer;">
-          <span class="stat-number" data-i18n="home.projectsCount">8+</span>
-          <span class="stat-label" data-i18n="home.projectsLabel">Completed Projects</span>
-        </div>
-        <div class="stat-item" onclick="window.location.href='about.html'" style="cursor: pointer;">
-          <span class="stat-number" data-i18n="home.technologiesCount">10+</span>
-          <span class="stat-label" data-i18n="home.technologiesLabel">Skills Mastered</span>
-        </div>
+        <button class="theme-toggle" aria-label="Toggle theme" data-i18n="[aria-label]themeToggle" aria-pressed="false">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
       </div>
     </div>
-  </div>
-  <script>
-    // Add parallax effect
-    document.addEventListener('scroll', () => {
-      const hero = document.querySelector('.hero');
-      if (hero) {
-        const scrollPosition = window.pageYOffset;
-        hero.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-      }
-    });
+  </header>
+  <main id="main" class="container">
+    <div class="page-intro projects-intro"><h1 data-i18n="nav.projects" id="projects-heading">Projects</h1></div>
+    <section class="work-section" aria-labelledby="projects-heading">
+      <div class="projects-grid">
+      <article class="project-card featured" id="project7" data-project="project7">
+        <a class="project-overview" href="?project=project7" data-project-open="project7" aria-haspopup="dialog" aria-labelledby="project7-title">
+          <div class="project-media"><img src="source/robocar-preview.jpg" alt="" class="car-image" width="1200" height="1600"></div>
+          <div class="project-content">
+            <h2 data-i18n="projects.project7.title" id="project7-title">Inference Pipeline - Autonomous Car</h2>
+            <p data-i18n="projects.project7.summary" class="project-summary">An autonomous car that sees obstacles and follows people using onboard AI.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project7.description" class="project-description">Autonomous car built on a RPi 5 and Hailo-8L AI accelerator, combining real-time object detection and monocular depth estimation to enable obstacle-aware navigation and person-following without dedicated distance sensors.</p>
+          <p data-i18n="projects.project7.tech" class="project-tech">C++, RPi5 &amp; Hailo AI Accelerator, YoloV8, Depth Anything V2</p>
+          <div class="project-resources"><a data-i18n="projects.project7.viewCar" href="source/robocar.jpg" target="_blank" rel="noopener noreferrer" class="project-link">View Car</a><a data-i18n="projects.project7.viewDemo" href="source/robocar_demo.mp4" target="_blank" rel="noopener noreferrer" class="project-link">View Demo</a><a data-i18n="projects.project7.demoLogs" href="source/robocar_logs.log" target="_blank" rel="noopener noreferrer" class="project-link">Demo Logs</a><a data-i18n="projects.project7.demo" href="https://github.com/SVilcheaz/autonomous_vehicle" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a></div>
+        </div>
+      </article>
+      <article class="project-card featured" id="project8" data-project="project8">
+        <a class="project-overview" href="?project=project8" data-project-open="project8" aria-haspopup="dialog" aria-labelledby="project8-title">
+          <div class="project-media"><img src="source/drone-preview.jpg" alt="" class="drone-image" width="1200" height="1600"></div>
+          <div class="project-content">
+            <h2 data-i18n="projects.project8.title" id="project8-title">Building an FPV Drone</h2>
+            <p data-i18n="projects.project8.summary" class="project-summary">A custom-built FPV drone, from assembly and flight tuning to autonomous navigation.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project8.description" class="project-description">Built an FPV drone from scratch, flashing and configuring Betaflight, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis. Additionally, flashed, configured, and PID-tuned ArduPilot to enable GPS-based autonomous waypoint navigation for preplanned missions.</p>
+          <p data-i18n="projects.project8.tech" class="project-tech">Betaflight, ArduPilot, ELRS, Flight Automation, Waypoint Navigation, PID Tuning</p>
+          <div class="project-resources"><a data-i18n="projects.project8.demo" href="source/drone.jpg" target="_blank" rel="noopener noreferrer" class="project-link">View Photo</a><a data-i18n="projects.project8.viewFlight1" href="source/fpv_video1.mp4" target="_blank" rel="noopener noreferrer" class="project-link">Flight demo</a><a data-i18n="projects.project8.viewFlight2" href="source/fpv_video2.mp4" target="_blank" rel="noopener noreferrer" class="project-link">FPV demo</a><a data-i18n="projects.project8.bomDrone" href="source/drone_bom.html" target="_blank" rel="noopener noreferrer" class="project-link">BOM Drone</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project3" data-project="project3">
+        <a class="project-overview" href="?project=project3" data-project-open="project3" aria-haspopup="dialog" aria-labelledby="project3-title">
+          <div class="project-media preview-media"><img src="source/regression_uncertainty_preview.png" alt="" width="977" height="912" loading="lazy"></div>
+          <div class="project-content">
+            <h2 data-i18n="projects.project3.title" id="project3-title">Uncertainty Estimation for 3D Object Detectors</h2>
+            <p data-i18n="projects.project3.summary" class="project-summary">Evaluating uncertainty and calibration in multimodal 3D object detectors.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project3.description" class="project-description">Analyzed uncertainty estimation in transformer-based 3D object detectors using LiDAR, radar and camera data, evaluating baseline methods against calibration techniques to improve reliability without high computational cost.</p>
+          <p data-i18n="projects.project3.tech" class="project-tech">Python, MMDetection, Docker, PETR, ViT, LiDAR, Radar, Camera, Sensor Fusion</p>
+          <div class="project-resources"><a data-i18n="projects.project3.demo" href="source/MA.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Master&#x27;s Thesis</a><a data-i18n="projects.project3.paper" href="source/Query2Unvertainty.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Paper</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project1" data-project="project1">
+        <a class="project-overview" href="?project=project1" data-project-open="project1" aria-haspopup="dialog" aria-labelledby="project1-title">
+          <div class="project-media preview-media"><img src="source/lane_localication_preview.png" alt="" width="1417" height="792" loading="lazy"></div>
 
-    // Add fade-in animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+          <div class="project-content">
+            <h2 data-i18n="projects.project1.title" id="project1-title">Determining Vehicle Position Over Lane Segmentation</h2>
+            <p data-i18n="projects.project1.summary" class="project-summary">Camera-based lane detection and stable vehicle localization using perspective mapping and Bayesian filtering.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project1.description" class="project-description">The YOLOPv2 model was used for lane line segmentation, IPM was applied to modify the perspective of the image to a Bird&#x27;s Eye View perspective, and Bayesian Filtering was used to keep the lane localization and assignment algorithm stable.</p>
+          <p data-i18n="projects.project1.tech" class="project-tech">YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker</p>
+          <div class="project-resources"><a data-i18n="projects.project1.demo" href="source/LaneAnalysis.mp4" target="_blank" rel="noopener noreferrer" class="project-link">View Demo</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project9" data-project="project9">
+        <a class="project-overview" href="?project=project9" data-project-open="project9" aria-haspopup="dialog" aria-labelledby="project9-title">
+          <div class="project-media preview-media"><img src="source/kalman_comparison_preview.png" alt="" width="1800" height="675" loading="lazy"></div>
 
-    const animatedElements = document.querySelectorAll('.hero-content, .hero-stats');
-    animatedElements.forEach(el => observer.observe(el));
+          <div class="project-content">
+            <h2 data-i18n="projects.project9.title" id="project9-title">State Estimation with Kalman Filters</h2>
+            <p data-i18n="projects.project9.summary" class="project-summary">Comparing Kalman filter models for more accurate 3D position estimates.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project9.description" class="project-description">Implemented constant velocity and constant acceleration Kalman filters for 3D position estimation and compared both against a baseline on two datasets using mean Euclidean position error.</p>
+          <p data-i18n="projects.project9.tech" class="project-tech">Python, Kalman Filtering, State Estimation</p>
+          <div class="project-resources"><a data-i18n="projects.project9.demo" href="https://github.com/SVilcheaz/state_estimator" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Code</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project2" data-project="project2">
+        <a class="project-overview" href="?project=project2" data-project-open="project2" aria-haspopup="dialog" aria-labelledby="project2-title">
 
-    // Add hover animations for stats
-    const statItems = document.querySelectorAll('.stat-item');
-    statItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        const number = item.querySelector('.stat-number');
-        if (number) {
-          number.style.transform = 'scale(1.2)';
-        }
-      });
+          <div class="project-content">
+            <h2 data-i18n="projects.project2.title" id="project2-title">Comparison of Neural Networks for Efficient Inverse Dynamics Identification</h2>
+            <p data-i18n="projects.project2.summary" class="project-summary">Neural networks that predict joint torque in a six-axis industrial robot.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project2.description" class="project-description">Developed, trained, tested and compared several neural network architectures for predicting torque in robot joints of a 6-axis industrial robot using the position, velocity and acceleration of the joint as input data.</p>
+          <p data-i18n="projects.project2.tech" class="project-tech">Python, Pytorch, JAX, LSTM, MLP</p>
+          <div class="project-resources"><a data-i18n="projects.project2.demo" href="source/NewtonianNN.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Paper</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project4" data-project="project4">
+        <a class="project-overview" href="?project=project4" data-project-open="project4" aria-haspopup="dialog" aria-labelledby="project4-title">
 
-      item.addEventListener('mouseleave', () => {
-        const number = item.querySelector('.stat-number');
-        if (number) {
-          number.style.transform = 'scale(1)';
-        }
-      });
-    });
-  </script>
+          <div class="project-content">
+            <h2 data-i18n="projects.project4.title" id="project4-title">Memristor-based MVM Engine</h2>
+            <p data-i18n="projects.project4.summary" class="project-summary">A memristor-based computing engine for efficient matrix-vector multiplication.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project4.description" class="project-description">Built and studied a memristor-based matrix-vector multiplication engine for in-memory computing and compared efficiency, accuracy and resource use to the classical Von Neumann approaches.</p>
+          <p data-i18n="projects.project4.tech" class="project-tech">Cadence, SPICE, C++, Python, Memristor Arrays</p>
+          <div class="project-resources"><a data-i18n="projects.project4.demo" href="source/BA.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Bachelor&#x27;s Thesis</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project6" data-project="project6">
+        <a class="project-overview" href="?project=project6" data-project-open="project6" aria-haspopup="dialog" aria-labelledby="project6-title">
+
+          <div class="project-content">
+            <h2 data-i18n="projects.project6.title" id="project6-title">Recreating GPT 1 &amp; 2</h2>
+            <p data-i18n="projects.project6.summary" class="project-summary">Reimplementing transformer language models and training them to generate text and security queries.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project6.description" class="project-description">Reimplemented the GPT 1 &amp; 2 architectures from the original OpenAI paper. Trained and tested the models on the Shakespeare and Game of Thrones dataset, in order to let the models produce such-styled content. Similarly, a SIEM query LLM generator was implemented and trained.</p>
+          <p data-i18n="projects.project6.tech" class="project-tech">Python, Pytorch, Transformers</p>
+          <div class="project-resources"><a data-i18n="projects.project6.demo" href="https://github.com/SVilcheaz/gpt_llm" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a></div>
+        </div>
+      </article>
+      <article class="project-card" id="project5" data-project="project5">
+        <a class="project-overview" href="?project=project5" data-project-open="project5" aria-haspopup="dialog" aria-labelledby="project5-title">
+
+          <div class="project-content">
+            <h2 data-i18n="projects.project5.title" id="project5-title">About The Shape and Texture Bias for Object Recognition</h2>
+            <p data-i18n="projects.project5.summary" class="project-summary">Investigating how neural networks use shape and texture to recognize objects.</p>
+          </div>
+        </a>
+        <div class="project-data" hidden>
+          <p data-i18n="projects.project5.description" class="project-description">Investigated why CNNs tend to recognize objects by texture rather than shape, and presented two transformer-based methods to reduce this bias and improve accuracy.</p>
+          <p data-i18n="projects.project5.tech" class="project-tech">CNN, ViT, ImageNet</p>
+          <div class="project-resources"><a data-i18n="projects.project5.demo" href="source/Bias_in_Computer_Vision.pdf" target="_blank" rel="noopener noreferrer" class="project-link">Report</a></div>
+        </div>
+      </article>
+      </div>
+    </section>
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-inner">
+        <div class="dialog-top"><button class="dialog-close" data-i18n="[aria-label]ui.close" aria-label="Close project" autofocus>×</button></div>
+        <h2 id="dialog-title"></h2>
+        <p class="dialog-tech" id="dialog-tech"></p>
+        <div class="dialog-media" id="dialog-media"></div>
+        <details class="technical-notes" id="dialog-notes">
+          <summary><span data-i18n="ui.technicalDetails">Technical details</span></summary>
+          <p class="dialog-description" id="dialog-description"></p>
+          <p class="dialog-description" id="dialog-details"></p>
+        </details>
+        <div class="project-links" id="dialog-links"></div>
+      </div>
+    </dialog>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Stefan Vilceanu</span>
+      <div class="footer-links">
+        <a href="mailto:stefan.vilceanu@rwth-aachen.de" data-i18n="ui.contact">Get in touch</a>
+        <a href="https://www.linkedin.com/in/stefan-vilceanu-65b45b213/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/SVilcheaz" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="source/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
