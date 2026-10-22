@@ -154,7 +154,7 @@
       "summary": "Ein autonomes Fahrzeug, das mit KI Hindernisse erkennt und Personen folgt."
     },
     "project8": {
-      "title": "Bau einer FPV-Drohne",
+      "title": "Bau einer (autonomen) FPV-Drohne",
       "tech": "Betaflight, ArduPilot, ELRS, Flugautomatisierung, Wegpunktnavigation, PID Tuning",
       "description": "Eine FPV-Drohne von Grund auf gebaut und dabei Betaflight, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse verbessert. Zusätzlich ArduPilot geflasht, konfiguriert und die PID-Regler abgestimmt, um GPS-basierte autonome Wegpunktnavigation für vorgeplante Missionen zu ermöglichen.",
       "demo": "Foto ansehen",
