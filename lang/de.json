@@ -170,15 +170,15 @@
     "title": "Berufserfahrung",
     "recommandation": "Referenzschreiben",
     "job1": {
-      "title": "Softwareentwickler",
+      "title": "Softwareentwickler · KI & Automatisierung",
       "company": "Porsche Engineering",
       "date": "2025 - Heute",
-      "responsibilities0": "Entwurf und Implementierung eines KI-Agenten zur Automatisierung von Tests für Porsche-Infotainmentoberflächen, der LLMs, Vision-Language-Modelle und Computer Vision kombiniert, um HMI-Testfälle autonom auszuführen.",
-      "responsibilities1": "Entwicklung eines Echtzeit-Sprach-KI-Agenten zur Automatisierung der Tests der Domäne des digitalen Assistenten im Infotainmentsystem von Porsche durch gesprochene Interaktionen",
-      "responsibilities2": "Entwicklung eines KI-Resolvers zur Reparatur fehlerhafter Testfälle innerhalb des bestehenden Testframeworks, um den manuellen Wartungsaufwand zu reduzieren.",
-      "responsibilities3": "Entwicklung von Workflows für kontinuierliche Integration und kontinuierliches Testen (CI/CT) mit Jira-Anbindung zur Automatisierung des Abrufens und Ausführens von Testfällen sowie der Ergebnisberichterstattung, um Testmanagement mit kontinuierlicher Validierung zu verbinden.",
-      "responsibilities4": "Entwicklung automatisierter Bereitstellungs- und Testpipelines für Infotainment-Steuergeräte, einschließlich Skripten zum Flashen von Software und zur Testausführung, um die Softwarevalidierung zu vereinfachen.",
-      "responsibilities5": "Mitwirkung an ESP32-basierter Testhardware zum Auslösen und Validieren von Fahrzeug- und Infotainmentfunktionen."
+      "responsibilities0": "Konzeption und Entwicklung eines autonomen Multi-Agenten-Testsystems, das natürlichsprachliche Testfälle interpretiert, UI-Navigation und Prüfungen koordiniert und Testergebnisse bewertet. So lassen sich Hunderte von Infotainment-Tests automatisieren, ohne für jeden Test ein eigenes Skript zu schreiben.",
+      "responsibilities1": "Aufbau eines Navigationsgraphen der Infotainment-Oberfläche mit Segment Anything 2 (SAM 2) zur Segmentierung von UI-Elementen und LLMs zur Klassifikation. Rekursive Erfassung von Bildschirmen und Übergängen als Grundlage für die automatisierte Navigation.",
+      "responsibilities2": "Entwicklung eines Echtzeit-KI-Agenten zum Testen des digitalen Assistenten. Text-to-Speech, Whisper-Transkription und LLM-basierte Auswertung prüfen sowohl gesprochene Antworten als auch Aktionen auf dem Bildschirm anhand der Testvorgaben.",
+      "responsibilities3": "Entwicklung eines selbstheilenden KI-Resolvers mit spezialisierten Reparaturstrategien, der nach Softwareupdates ungültige UI-Locators erkennt und passende Ersatzreferenzen ermittelt. Dadurch sinkt der manuelle Wartungsaufwand für klassische automatisierte Tests.",
+      "responsibilities4": "Anbindung des Testagenten an Jira zum automatischen Abruf von Spezifikationen, zur Planung und Ausführung von Testschritten sowie zur Ergebnisrückmeldung. Damit wird das Testmanagement direkt mit der autonomen Validierung verbunden.",
+      "responsibilities5": "Aufbau von Pipelines für kontinuierliche Integration und kontinuierliches Testen (CI/CT) mit Raspberry Pi und ESP32. Die Automatisierung erkennt neue Softwareversionen, lädt sie herunter, flasht Infotainmentsysteme und stößt Testausführung und Ergebnisrückmeldung an."
     },
     "job2": {
       "title": "Praktikant in der Softwareentwicklung",

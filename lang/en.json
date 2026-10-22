@@ -170,15 +170,15 @@
     "title": "Professional Experience",
     "recommandation": "Recommendation letter",
     "job1": {
-      "title": "Software Engineer",
+      "title": "Software Engineer · AI & Automation",
       "company": "Porsche Engineering",
       "date": "2025 - Present",
-      "responsibilities0": "Designed and implemented an AI automation agent for testing Porsche infotainment interfaces, combining LLMs, vision-language models, and computer vision to execute HMI test cases autonomously.",
-      "responsibilities1": "Created a real-time speech AI agent to automate the testing of the digital assistant domain in the Porsche infotainment system through spoken interactions",
-      "responsibilities2": "Developed an AI resolver to repair broken test cases within the existing testing framework, reducing manual maintenance effort.",
-      "responsibilities3": "Developed continuous integration and continuous testing (CI/CT) workflows with Jira integration, automating test case retrieval, execution, and result reporting to connect test management with continuous validation.",
-      "responsibilities4": "Built automated deployment and testing pipelines for infotainment ECUs, including scripts for software flashing and test execution, streamlining software validation.",
-      "responsibilities5": "Contributed to ESP32-based test hardware for triggering and validating vehicle and infotainment functions."
+      "responsibilities0": "Designed and built an autonomous multi-agent testing system that interprets natural-language test cases, coordinates UI navigation and verification, and determines pass/fail outcomes, enabling hundreds of infotainment tests to be automated without scripting each test.",
+      "responsibilities1": "Built a navigation graph of the infotainment UI using Segment Anything 2 (SAM 2) for element segmentation and LLMs for classification, recursively mapping screens and transitions to support automated navigation.",
+      "responsibilities2": "Developed a real-time AI agent for digital assistant testing, combining text-to-speech, Whisper transcription, and LLM-based evaluation to verify spoken responses and on-screen actions against test expectations.",
+      "responsibilities3": "Created a self-healing AI resolver with specialized repair strategies to detect UI locators broken by software updates, identify their replacements, and reduce manual maintenance of conventional automated tests.",
+      "responsibilities4": "Integrated the test execution agent with Jira to retrieve specifications, plan and execute test steps, and publish results automatically, connecting test management directly to autonomous validation.",
+      "responsibilities5": "Built continuous integration and continuous testing (CI/CT) pipelines with Raspberry Pi and ESP32 automation to detect and download new software releases, flash infotainment systems, and trigger test execution and result reporting."
     },
     "job2": {
       "title": "Software Engineer Intern",
