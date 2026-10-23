@@ -26,7 +26,7 @@
     gtag('config', 'G-1HDJ3Y64YG');
   </script>
 </head>
-<body>
+<body class="projects-page">
   <a data-i18n="ui.skip" href="#main" class="skip-link">Skip to content</a>
   <header class="site-header">
     <div class="container header-inner">
@@ -45,7 +45,38 @@
   </header>
   <main id="main" class="container">
     <div class="page-intro projects-intro"><h1 data-i18n="nav.projects" id="projects-heading">Projects</h1></div>
-    <section class="work-section" aria-labelledby="projects-heading">
+    <section class="work-section portfolio-layout" aria-labelledby="projects-heading">
+      <aside class="ongoing-project" id="project10" data-project="project10" aria-labelledby="project10-title">
+        <div class="ongoing-header"><span class="project-status" data-i18n="projects.project10.status">Currently building</span></div>
+        <div class="project-media"><img src="source/uav-simulation-preview.jpg" width="1200" height="725" alt="A square waypoint mission shown in QGroundControl" data-i18n="[alt]projects.project10.imageAlt" decoding="async"></div>
+        <div class="ongoing-content">
+          <h2 id="project10-title" data-i18n="projects.project10.title">Autonomous UAV Simulation</h2>
+          <p class="project-summary" data-i18n="projects.project10.summary">Building a perception and guidance stack on Jetson Orin Nano, with PX4 and Gazebo providing the simulated aircraft.</p>
+          <p class="ongoing-stack" data-i18n="projects.project10.tech">C++, ROS2, PX4, Gazebo, Jetson Orin Nano, Docker</p>
+          <div class="ongoing-milestone"><h3 data-i18n="projects.project10.progress">Phases 0–1 complete</h3><p data-i18n="projects.project10.delivered">PC/Jetson integration and C++ offboard control for autonomous takeoff, waypoint flight, and landing in simulation.</p></div>
+          <p class="ongoing-next"><span data-i18n="projects.project10.nextLabel">Next up</span><strong data-i18n="projects.project10.next">TensorRT-accelerated perception</strong></p>
+          <div class="ongoing-actions">
+            <a class="ongoing-link" href="?project=project10" data-project-open="project10" aria-haspopup="dialog"><span data-i18n="projects.project10.viewRoadmap">Explore the roadmap</span><span aria-hidden="true">↗</span></a>
+            <a class="ongoing-github" href="https://github.com/SVilcheaz/autonomous_drone" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div class="project-data" hidden>
+          <p class="project-tech" data-i18n="projects.project10.tech">C++, ROS2, PX4, Gazebo, Jetson Orin Nano, Docker</p>
+          <p class="project-description" data-i18n="projects.project10.description">An ongoing UAV autonomy project that separates the simulated aircraft from its companion computer: Gazebo and PX4 SITL run on a PC, while the ROS2 C++ mission controller runs on a Jetson Orin Nano over a DDS bridge. Phases 0 and 1 are complete, covering the distributed setup and autonomous takeoff, square-waypoint flight, and landing. The remaining roadmap adds perception, visual-inertial odometry, trajectory planning, sensor fusion, and vision-based precision landing.</p>
+          <div class="project-progress">
+            <h3 data-i18n="projects.project10.roadmapTitle">Development roadmap</h3>
+            <ol class="project-roadmap">
+              <li class="is-complete"><div class="roadmap-heading"><h4 data-i18n="projects.project10.phase1.title">Offboard flight control</h4><span class="roadmap-state" data-i18n="projects.project10.complete">Complete</span></div><p data-i18n="projects.project10.phase1.description">Jetson-side C++ control of takeoff, waypoint flight, and landing in PX4/Gazebo, including a controller-loss recovery check.</p></li>
+              <li class="is-next"><div class="roadmap-heading"><h4 data-i18n="projects.project10.phase2.title">TensorRT perception</h4><span class="roadmap-state" data-i18n="projects.project10.nextLabel">Next up</span></div><p data-i18n="projects.project10.phase2.description">Run YOLOv8 on the Jetson against simulated camera feeds and measure inference latency.</p></li>
+              <li><div class="roadmap-heading"><h4 data-i18n="projects.project10.phase3.title">Visual-inertial odometry</h4><span class="roadmap-state" data-i18n="projects.project10.planned">Planned</span></div><p data-i18n="projects.project10.phase3.description">Use Isaac ROS cuVSLAM with stereo camera and IMU data, comparing pose estimates with simulation ground truth.</p></li>
+              <li><div class="roadmap-heading"><h4 data-i18n="projects.project10.phase4.title">Trajectory planning &amp; guidance</h4><span class="roadmap-state" data-i18n="projects.project10.planned">Planned</span></div><p data-i18n="projects.project10.phase4.description">Generate smooth minimum-jerk trajectories in C++, add L1 path-following guidance, and develop local obstacle replanning.</p></li>
+              <li><div class="roadmap-heading"><h4 data-i18n="projects.project10.phase5.title">VIO / GPS sensor fusion</h4><span class="roadmap-state" data-i18n="projects.project10.planned">Planned</span></div><p data-i18n="projects.project10.phase5.description">Fuse visual-inertial odometry and GPS with an extended Kalman filter, then evaluate behavior during simulated GPS dropouts.</p></li>
+              <li><div class="roadmap-heading"><h4 data-i18n="projects.project10.phase6.title">Vision-based precision landing</h4><span class="roadmap-state" data-i18n="projects.project10.planned">Planned</span></div><p data-i18n="projects.project10.phase6.description">Integrate AprilTag detection and relative guidance into a complete simulated mission ending in a precision landing.</p></li>
+            </ol>
+          </div>
+          <div class="project-resources"><a class="project-link" href="https://github.com/SVilcheaz/autonomous_drone" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+        </div>
+      </aside>
       <div class="projects-grid">
       <article class="project-card featured" id="project7" data-project="project7">
         <a class="project-overview" href="?project=project7" data-project-open="project7" aria-haspopup="dialog" aria-labelledby="project7-title">
@@ -121,7 +152,7 @@
       </article>
       <article class="project-card" id="project2" data-project="project2">
         <a class="project-overview" href="?project=project2" data-project-open="project2" aria-haspopup="dialog" aria-labelledby="project2-title">
-
+          <div class="project-media preview-media"><img src="source/mae_joint_torque_comp_preview.png" alt="" width="791" height="745" loading="lazy" decoding="async"></div>
           <div class="project-content">
             <h2 data-i18n="projects.project2.title" id="project2-title">Comparison of Neural Networks for Efficient Inverse Dynamics Identification</h2>
             <p data-i18n="projects.project2.summary" class="project-summary">Neural networks that predict joint torque in a six-axis industrial robot.</p>
@@ -135,7 +166,7 @@
       </article>
       <article class="project-card" id="project4" data-project="project4">
         <a class="project-overview" href="?project=project4" data-project-open="project4" aria-haspopup="dialog" aria-labelledby="project4-title">
-
+          <div class="project-media preview-media"><img src="source/power_distribution_preview.png" alt="" width="1912" height="1247" loading="lazy" decoding="async"></div>
           <div class="project-content">
             <h2 data-i18n="projects.project4.title" id="project4-title">Memristor-based MVM Engine</h2>
             <p data-i18n="projects.project4.summary" class="project-summary">A memristor-based computing engine for efficient matrix-vector multiplication.</p>
@@ -149,7 +180,7 @@
       </article>
       <article class="project-card" id="project6" data-project="project6">
         <a class="project-overview" href="?project=project6" data-project-open="project6" aria-haspopup="dialog" aria-labelledby="project6-title">
-
+          <div class="project-media preview-media"><img src="source/transformer_preview.png" alt="" width="855" height="1225" loading="lazy" decoding="async"></div>
           <div class="project-content">
             <h2 data-i18n="projects.project6.title" id="project6-title">Recreating GPT 1 &amp; 2</h2>
             <p data-i18n="projects.project6.summary" class="project-summary">Reimplementing transformer language models and training them to generate text and security queries.</p>
@@ -183,6 +214,7 @@
         <h2 id="dialog-title"></h2>
         <p class="dialog-tech" id="dialog-tech"></p>
         <div class="dialog-media" id="dialog-media"></div>
+        <div class="dialog-progress" id="dialog-progress" hidden></div>
         <details class="technical-notes" id="dialog-notes">
           <summary><span data-i18n="ui.technicalDetails">Technical details</span></summary>
           <p class="dialog-description" id="dialog-description"></p>

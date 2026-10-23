@@ -58,6 +58,31 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.2; font-weight: 650; }
 .text-link { display: inline-block; font-size: 14px; text-decoration: none; }
 .text-link:hover { color: var(--accent); }
 .work-section { padding-block: 8px 70px; }
+:where(.projects-page) .container { width: min(1440px, calc(100% - 112px)); }
+.portfolio-layout { display: grid; grid-template-columns: minmax(0,1fr) 320px; align-items: start; gap: 28px; }
+.portfolio-layout > .projects-grid { grid-column: 1; grid-row: 1; }
+.ongoing-project { position: relative; grid-column: 2; grid-row: 1; min-width: 0; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 4px; background: var(--accent-soft); overflow: hidden; }
+.ongoing-header { padding: 18px 22px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; }
+.project-status { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 650; color: var(--accent); }
+.project-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.ongoing-project .project-media img { height: auto; aspect-ratio: 1200 / 725; object-fit: contain; }
+.ongoing-content { padding: 24px 22px 20px; }
+.ongoing-content h2 { font-size: 25px; line-height: 1.3; letter-spacing: -.7px; margin-bottom: 12px; }
+.ongoing-stack { font-size: 11px; line-height: 1.8; color: var(--muted); margin: 14px 0 20px; }
+.ongoing-milestone { padding: 16px 0; border-block: 1px solid var(--line); }
+.ongoing-milestone h3 { font: 650 13px/1.5 var(--sans); color: var(--accent); margin-bottom: 6px; }
+.ongoing-milestone p { font-size: 12px; line-height: 1.8; color: var(--muted); margin: 0; }
+.ongoing-next { margin: 16px 0 20px; font-size: 12px; line-height: 1.7; }
+.ongoing-next span, .ongoing-next strong { display: block; }
+.ongoing-next span { font-size: 11px; color: var(--muted); }
+.ongoing-next strong { font-weight: 550; }
+.ongoing-actions { display: flex; align-items: center; gap: 20px; border-top: 1px solid var(--line); padding-top: 12px; }
+.ongoing-link { display: flex; flex: 1; justify-content: space-between; align-items: center; gap: 12px; min-height: 44px; font-size: 13px; text-decoration: none; }
+.ongoing-link::after { content: ''; position: absolute; inset: 0; }
+.ongoing-link:focus-visible { outline: none; }
+.ongoing-link:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -4px; }
+.ongoing-github { position: relative; z-index: 1; display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; text-decoration: none; }
+.ongoing-link:hover, .ongoing-github:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 .projects-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 24px; }
 .project-card { min-width: 0; grid-column: span 2; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
 .project-card.featured { grid-column: span 3; }
@@ -141,6 +166,18 @@ details[open] > summary::after { content: '−'; }
 .dialog-media:empty { display: none; }
 .dialog-media video { width: 100%; max-height: 350px; background: #101713; border-radius: 3px; }
 .dialog-media img { width: 100%; height: auto; max-height: 380px; object-fit: contain; background: #fff; border-radius: 3px; }
+.dialog-progress h3 { font-size: 19px; margin-bottom: 20px; letter-spacing: -.4px; }
+.project-roadmap { list-style: none; counter-reset: phase; margin: 0; padding: 0; }
+.project-roadmap > li { counter-increment: phase; position: relative; padding: 0 0 22px 42px; }
+.project-roadmap > li::before { content: counter(phase, decimal-leading-zero); position: absolute; top: 0; left: 0; width: 27px; height: 27px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-size: 10px; color: var(--muted); background: var(--surface); }
+.project-roadmap > li:not(:last-child)::after { content: ''; position: absolute; left: 13px; top: 31px; bottom: 5px; width: 1px; background: var(--line); }
+.project-roadmap > .is-complete::before { content: '✓'; color: var(--paper); background: var(--accent); border-color: var(--accent); font-size: 13px; }
+.project-roadmap > .is-next::before { color: var(--accent); border-color: var(--accent); }
+.roadmap-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; margin-bottom: 6px; }
+.roadmap-heading h4 { margin: 0; font-size: 14px; line-height: 1.6; font-weight: 550; }
+.roadmap-state { font-size: 10px; color: var(--muted); }
+.is-complete .roadmap-state, .is-next .roadmap-state { color: var(--accent); }
+.project-roadmap p { font-size: 13px; line-height: 1.8; color: var(--muted); margin: 0; }
 .technical-notes { border-block: 1px solid var(--line); margin-top: 25px; }
 .technical-notes > summary { font-size: 14px; padding-block: 17px; }
 .dialog-tech { color: var(--accent); font-size: 13px; line-height: 1.9; margin: 0 0 20px; }
@@ -154,6 +191,15 @@ details[open] > summary::after { content: '−'; }
   .project-card:last-child { grid-column: 1 / -1; }
   .project-card:last-child .project-content { display: grid; grid-template-columns: 1fr 1.3fr; gap: 35px; align-items: center; }
   .project-card:last-child h2 { margin: 0; }
+}
+@media (max-width:1200px) {
+  .portfolio-layout { grid-template-columns: minmax(0,1fr); }
+  .portfolio-layout > .projects-grid { grid-column: 1; grid-row: 2; }
+  .ongoing-project { grid-column: 1; grid-row: 1; display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); }
+  .ongoing-header { grid-column: 1 / -1; padding: 20px 24px; }
+  .ongoing-project .project-media { margin: 0 0 24px 24px; align-self: stretch; border-radius: 3px; }
+  .ongoing-project .project-media img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+  .ongoing-content { padding: 0 24px 20px; }
 }
 @media (max-width:1000px) {
   .container { width: calc(100% - 72px); }
@@ -186,6 +232,12 @@ details[open] > summary::after { content: '−'; }
   .site-nav a { font-size: 12px; padding-block: 10px; }
   .site-nav a[aria-current='page']::after { bottom: 3px; }
   .work-section { padding-bottom: 40px; }
+  .portfolio-layout { gap: 24px; }
+  .ongoing-project { display: block; }
+  .ongoing-header { padding: 18px 22px; }
+  .ongoing-project .project-media { margin: 0; border-radius: 0; }
+  .ongoing-project .project-media img { height: auto; aspect-ratio: 1200 / 725; object-fit: contain; }
+  .ongoing-content { padding: 22px; }
   .projects-intro { padding-block: 33px 24px; }
   .projects-grid { grid-template-columns: 1fr; gap: 18px; }
   .project-card, .project-card.featured { grid-column: auto; }

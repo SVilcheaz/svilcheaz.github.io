@@ -140,6 +140,7 @@ function initProjects() {
   const extendedDescription = document.getElementById('dialog-details');
   const technicalNotes = document.getElementById('dialog-notes');
   const media = document.getElementById('dialog-media');
+  const progress = document.getElementById('dialog-progress');
   const links = document.getElementById('dialog-links');
   let currentCard = null;
   let returnFocus = null;
@@ -156,6 +157,9 @@ function initProjects() {
     description.textContent = card.querySelector('.project-description').textContent;
     extendedDescription.textContent = i18n.get(`projects.${id}.details`);
     extendedDescription.hidden = !extendedDescription.textContent;
+    const roadmap = card.querySelector('.project-progress');
+    progress.replaceChildren(...(roadmap ? [roadmap.cloneNode(true)] : []));
+    progress.hidden = !roadmap;
     // Keep alternate demos, but omit the exact video already embedded here.
     const embeddedVideo = demos[id]?.src;
     const resources = [...card.querySelectorAll('.project-resources a')].filter(link =>

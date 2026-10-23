@@ -84,6 +84,46 @@
   },
   "projects": {
     "title": "Meine Projekte",
+    "project10": {
+      "title": "Autonome UAV-Simulation",
+      "status": "Im Aufbau",
+      "summary": "Aufbau eines Wahrnehmungs- und Guidance-Stacks auf dem Jetson Orin Nano. PX4 und Gazebo stellen das simulierte Fluggerät bereit.",
+      "tech": "C++, ROS2, PX4, Gazebo, Jetson Orin Nano, Docker",
+      "imageAlt": "Eine quadratische Wegpunktmission in QGroundControl",
+      "progress": "Phasen 0–1 abgeschlossen",
+      "delivered": "PC/Jetson-Anbindung und C++-Offboard-Steuerung für autonomen Start, Wegpunktflug und Landung in der Simulation.",
+      "nextLabel": "Als Nächstes",
+      "next": "TensorRT-beschleunigte Wahrnehmung",
+      "viewRoadmap": "Roadmap entdecken",
+      "description": "Ein laufendes UAV-Autonomieprojekt mit getrenntem Fluggerät und Companion Computer: Gazebo und PX4 SITL laufen auf dem PC, der ROS2-Missionscontroller in C++ auf einem Jetson Orin Nano über eine DDS-Anbindung. Phasen 0 und 1 sind abgeschlossen: die verteilte Umgebung sowie autonomer Start, quadratischer Wegpunktflug und Landung. Die weiteren Phasen ergänzen Wahrnehmung, visuell-inertiale Odometrie, Trajektorienplanung, Sensorfusion und bildgestützte Präzisionslandung.",
+      "roadmapTitle": "Entwicklungsroadmap",
+      "complete": "Abgeschlossen",
+      "planned": "Geplant",
+      "phase1": {
+        "title": "Offboard-Flugsteuerung",
+        "description": "C++-Steuerung auf dem Jetson für Start, Wegpunktflug und Landung in PX4/Gazebo, einschließlich eines Tests bei Ausfall des Controllers."
+      },
+      "phase2": {
+        "title": "TensorRT-Wahrnehmung",
+        "description": "YOLOv8 auf dem Jetson mit simulierten Kamerabildern ausführen und die Inferenzlatenz messen."
+      },
+      "phase3": {
+        "title": "Visuell-inertiale Odometrie",
+        "description": "Isaac ROS cuVSLAM mit Stereokamera- und IMU-Daten einsetzen und Posenschätzungen mit der Ground Truth der Simulation vergleichen."
+      },
+      "phase4": {
+        "title": "Trajektorienplanung & Guidance",
+        "description": "Glatte Minimum-Jerk-Trajektorien in C++ erzeugen, eine L1-Bahnführung ergänzen und lokale Hindernisumplanung entwickeln."
+      },
+      "phase5": {
+        "title": "VIO-/GPS-Sensorfusion",
+        "description": "Visuell-inertiale Odometrie und GPS mit einem erweiterten Kalman-Filter fusionieren und das Verhalten bei simulierten GPS-Ausfällen untersuchen."
+      },
+      "phase6": {
+        "title": "Bildgestützte Präzisionslandung",
+        "description": "AprilTag-Erkennung und relative Flugführung zu einer vollständigen simulierten Mission mit abschließender Präzisionslandung verbinden."
+      }
+    },
     "project1": {
       "title": "Bestimmung der Fahrzeugposition über Fahrbahnsegmentierung",
       "tech": "YOLOPv2, IPM, Bayesian Filtering, ROS2, Docker",
