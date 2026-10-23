@@ -59,26 +59,38 @@
     "bio1": "Mein Hintergrund umfasst maschinelles Lernen, Computer Vision, Robotik und eingebettete Systeme. Ich verbinde diese Disziplinen gerne, um zuverlässige Software zu entwickeln und Ideen in die Praxis umzusetzen.",
     "bio2": "Ich arbeite gerne über den gesamten Technologie-Stack hinweg, lerne neue Werkzeuge kennen und löse Probleme in interdisziplinären Teams. Neben meiner beruflichen Arbeit baue ich Drohnen und erkunde das Zusammenspiel von Wahrnehmung, Regelung und Hardware.",
     "profileAlt": "Porträt von Stefan Vilceanu",
-    "universityName": "RWTH Aachen",
+    "universityName": "RWTH Aachen University",
     "studyPeriod1": "2023–2025",
     "studyPeriod2": "2019–2023",
+    "masterThesisLabel": "Masterarbeit",
+    "masterThesisTitle": "Analysis of Uncertainty Estimates for Transformer-based Radar-, Camera-, and LiDAR-driven 3D Object Detectors",
+    "bachelorThesisLabel": "Bachelorarbeit",
+    "bachelorThesisTitle": "Evaluation of data representations for a memristor-based matrix-vector-multiplication engine",
     "cvLabel": "Lebenslauf ansehen",
     "workGroups": {
       "software": {
         "label": "Software & Entwicklung",
-        "tools": "C++, Python, Linux, Docker, CI/CD, automatisierte Tests"
+        "tools": "C/C++, Python, Bash, Git, Linux, Docker, FastAPI, Multithreading, GitLab CI/CD, Jenkins"
       },
       "vision": {
         "label": "KI & Computer Vision",
-        "tools": "PyTorch, JAX, OpenCV, YOLO, Transformers, Agentic AI, RAG, KI-Automatisierung"
+        "tools": "PyTorch, JAX, Scikit-learn, OpenCV, Hugging Face Transformers, YOLO, SAM 2, Tiefenschätzung, Objektverfolgung"
+      },
+      "automation": {
+        "label": "KI-Agenten & Automatisierung",
+        "tools": "LLMs, LangChain, LangGraph, RAG, Multi-Agenten-Orchestrierung, Whisper, TTS/STT, selbstheilende Tests, Jira, CI/CT"
       },
       "robotics": {
         "label": "Robotik & Flugsteuerung",
-        "tools": "ROS2, Gazebo, MAVLink, PX4, ArduPilot, Betaflight, Sensorfusion, Kalman-Filter"
+        "tools": "ROS2, Gazebo, PX4, ArduPilot, Betaflight, MAVLink, QGroundControl, Offboard-Steuerung, PID-Abstimmung, Sensorfusion, Kalman-Filter"
       },
       "edge": {
         "label": "Embedded & Edge AI",
-        "tools": "Raspberry Pi, ESP32, NVIDIA Jetson, Hailo, TensorRT, ONNX, Kameras, Radar, LiDAR"
+        "tools": "Raspberry Pi, ESP32, NVIDIA Jetson, Hailo, TensorRT, ONNX, UART/SPI, Kameras, Radar, LiDAR"
+      },
+      "research": {
+        "label": "Modellierung & Forschung",
+        "tools": "MATLAB/Simulink, Cadence, SPICE, inverse Dynamik, Unsicherheitsschätzung, Modellkalibrierung, In-Memory-Computing"
       }
     }
   },
@@ -208,6 +220,9 @@
   },
   "experience": {
     "title": "Berufserfahrung",
+    "fullTime": "Vollzeit",
+    "fullTimeInternship": "Vollzeitpraktikum",
+    "partTimeStudent": "Teilzeit · Studentische Tätigkeit",
     "recommandation": "Referenzschreiben",
     "job1": {
       "title": "Softwareentwickler · KI & Automatisierung",
