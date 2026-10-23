@@ -236,7 +236,7 @@
       "responsibilities5": "Built continuous integration and continuous testing (CI/CT) pipelines with Raspberry Pi and ESP32 automation to detect and download new software releases, flash infotainment systems, and trigger test execution and result reporting."
     },
     "job2": {
-      "title": "Software Engineer Intern",
+      "title": "Software Engineer",
       "company": "ETAS GmbH",
       "date": "2024 - 2025",
       "responsibilities0": "Analyzed real-world automotive cyberattacks and mapped them to frameworks such as MITRE ATT&CK, EMB3D, Auto-ISAC ATM, and VATT&EK, to strengthen detection strategies in ETAS’s VSOC solution.",
