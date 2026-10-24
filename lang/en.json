@@ -203,9 +203,12 @@
       "viewDemo": "View Demo",
       "demoLogs": "Demo Logs",
       "imageAlt": "My autonomous RC car with Raspberry Pi and onboard camera",
-      "summary": "An autonomous car that sees obstacles and follows people using onboard AI."
+      "summary": "An autonomous car that sees obstacles and follows people using onboard AI. A real-time C++ pipeline combines object detection and depth estimation on a Raspberry Pi 5 with a Hailo AI accelerator. Camera-based distance estimates guide steering and speed, while object tracking enables person-following. Voice commands add hands-free control, with an RC link available for manual override."
     },
     "project8": {
+      "flightHours": "~100 hours of manual FPV practice",
+      "flightScope": "Real-world flying + simulator practice combined",
+      "certificates": "A1/A3 & A2 remote pilot certificates",
       "title": "Building an (autonomous) FPV Drone",
       "tech": "Betaflight, ArduPilot, ELRS, Flight Automation, Waypoint Navigation, PID Tuning",
       "description": "Built an FPV drone from scratch, flashing and configuring Betaflight, ELRS, and the video system. Improved flight performance through blackbox data logging and PID analysis. Additionally, flashed, configured, and PID-tuned ArduPilot to enable GPS-based autonomous waypoint navigation for preplanned missions.",

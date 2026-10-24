@@ -83,7 +83,7 @@
           <div class="project-media"><img src="source/robocar-preview.jpg" alt="" class="car-image" width="1200" height="1600"></div>
           <div class="project-content">
             <h2 data-i18n="projects.project7.title" id="project7-title">Inference Pipeline - Autonomous Car</h2>
-            <p data-i18n="projects.project7.summary" class="project-summary">An autonomous car that sees obstacles and follows people using onboard AI.</p>
+            <p data-i18n="projects.project7.summary" class="project-summary">An autonomous car that sees obstacles and follows people using onboard AI. A real-time C++ pipeline combines object detection and depth estimation on a Raspberry Pi 5 with a Hailo AI accelerator. Camera-based distance estimates guide steering and speed, while object tracking enables person-following. Voice commands add hands-free control, with an RC link available for manual override.</p>
           </div>
         </a>
         <div class="project-data" hidden>
@@ -98,6 +98,10 @@
           <div class="project-content">
             <h2 data-i18n="projects.project8.title" id="project8-title">Building an FPV Drone</h2>
             <p data-i18n="projects.project8.summary" class="project-summary">A custom-built FPV drone, from assembly and flight tuning to autonomous navigation.</p>
+            <div class="project-flight-profile">
+              <p class="project-flight-hours"><strong data-i18n="projects.project8.flightHours">~100 hours of manual FPV practice</strong><span data-i18n="projects.project8.flightScope">Real-world flying + simulator practice combined</span></p>
+              <p data-i18n="projects.project8.certificates">A1/A3 &amp; A2 remote pilot certificates</p>
+            </div>
           </div>
         </a>
         <div class="project-data" hidden>
@@ -213,6 +217,7 @@
         <div class="dialog-top"><button class="dialog-close" data-i18n="[aria-label]ui.close" aria-label="Close project" autofocus>×</button></div>
         <h2 id="dialog-title"></h2>
         <p class="dialog-tech" id="dialog-tech"></p>
+        <div id="dialog-flight-profile" hidden></div>
         <div class="dialog-media" id="dialog-media"></div>
         <div class="dialog-progress" id="dialog-progress" hidden></div>
         <details class="technical-notes" id="dialog-notes">

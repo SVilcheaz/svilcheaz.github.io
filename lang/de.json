@@ -203,9 +203,12 @@
       "viewDemo": "Demo ansehen",
       "demoLogs": "Demo-Protokolle",
       "imageAlt": "Mein autonomes RC-Fahrzeug mit Raspberry Pi und Bordkamera",
-      "summary": "Ein autonomes Fahrzeug, das mit KI Hindernisse erkennt und Personen folgt."
+      "summary": "Ein autonomes Fahrzeug, das mit KI Hindernisse erkennt und Personen folgt. Eine C++-Echtzeitpipeline verbindet Objekterkennung und Tiefenschätzung auf einem Raspberry Pi 5 mit Hailo-KI-Beschleuniger. Kamerabasierte Abstandsschätzungen steuern Lenkung und Geschwindigkeit; Objekttracking ermöglicht das Folgen einer Person. Sprachbefehle ergänzen die Steuerung, während eine RC-Verbindung die manuelle Übernahme erlaubt."
     },
     "project8": {
+      "flightHours": "Ca. 100 Stunden manuelle FPV-Praxis",
+      "flightScope": "Reale Flüge + Simulatortraining zusammen",
+      "certificates": "Fernpiloten-Zertifikate A1/A3 & A2",
       "title": "Bau einer (autonomen) FPV-Drohne",
       "tech": "Betaflight, ArduPilot, ELRS, Flugautomatisierung, Wegpunktnavigation, PID Tuning",
       "description": "Eine FPV-Drohne von Grund auf gebaut und dabei Betaflight, ELRS und das Videosystem geflasht und konfiguriert. Die Flugleistung durch Blackbox-Datenaufzeichnung und PID-Analyse verbessert. Zusätzlich ArduPilot geflasht, konfiguriert und die PID-Regler abgestimmt, um GPS-basierte autonome Wegpunktnavigation für vorgeplante Missionen zu ermöglichen.",

@@ -136,6 +136,7 @@ function initProjects() {
   const cards = [...document.querySelectorAll('[data-project]')];
   const title = document.getElementById('dialog-title');
   const tech = document.getElementById('dialog-tech');
+  const flightProfile = document.getElementById('dialog-flight-profile');
   const description = document.getElementById('dialog-description');
   const extendedDescription = document.getElementById('dialog-details');
   const technicalNotes = document.getElementById('dialog-notes');
@@ -154,6 +155,9 @@ function initProjects() {
     const id = card.dataset.project;
     title.textContent = card.querySelector('h2').textContent;
     tech.textContent = card.querySelector('.project-tech').textContent;
+    const profile = card.querySelector('.project-flight-profile');
+    flightProfile.replaceChildren(...(profile ? [profile.cloneNode(true)] : []));
+    flightProfile.hidden = !profile;
     description.textContent = card.querySelector('.project-description').textContent;
     extendedDescription.textContent = i18n.get(`projects.${id}.details`);
     extendedDescription.hidden = !extendedDescription.textContent;

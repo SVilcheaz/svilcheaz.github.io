@@ -97,6 +97,12 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.2; font-weight: 650; }
 .project-card h2 { font-size: 21px; letter-spacing: -.5px; line-height: 1.4; margin: 0 0 12px; overflow-wrap: anywhere; }
 .project-card.featured h2 { font-size: 24px; }
 .project-summary { font-size: 14px; line-height: 1.8; color: var(--muted); margin-bottom: 0; }
+.project-flight-profile { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 15px; font-size: 12px; line-height: 1.65; }
+.project-flight-profile p { margin-bottom: 0; }
+.project-flight-profile .project-flight-hours { margin-bottom: 9px; }
+.project-flight-hours strong { display: block; color: var(--accent); font-size: 14px; font-weight: 600; }
+.project-flight-hours span { display: block; color: var(--muted); }
+#dialog-flight-profile .project-flight-profile { margin: 0 0 20px; padding: 0; border: 0; }
 .project-media.preview-media { background: #fff; }
 .project-media.preview-media img { height: 160px; object-fit: contain; }
 summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
