@@ -231,12 +231,12 @@
       "title": "Software Engineer · AI & Automation",
       "company": "Porsche Engineering",
       "date": "2025 - Present",
-      "responsibilities0": "Designed and built an autonomous multi-agent testing system that interprets natural-language test cases, coordinates UI navigation and verification, and determines pass/fail outcomes, enabling hundreds of infotainment tests to be automated without scripting each test.",
-      "responsibilities1": "Built a navigation graph of the infotainment UI using Segment Anything 2 (SAM 2) for element segmentation and LLMs for classification, recursively mapping screens and transitions to support automated navigation.",
-      "responsibilities2": "Developed a real-time AI agent for digital assistant testing, combining text-to-speech, Whisper transcription, and LLM-based evaluation to verify spoken responses and on-screen actions against test expectations.",
-      "responsibilities3": "Created a self-healing AI resolver with specialized repair strategies to detect UI locators broken by software updates, identify their replacements, and reduce manual maintenance of conventional automated tests.",
-      "responsibilities4": "Integrated the test execution agent with Jira to retrieve specifications, plan and execute test steps, and publish results automatically, connecting test management directly to autonomous validation.",
-      "responsibilities5": "Built continuous integration and continuous testing (CI/CT) pipelines with Raspberry Pi and ESP32 automation to detect and download new software releases, flash infotainment systems, and trigger test execution and result reporting."
+      "responsibilities0": "Designed and implemented a Python/LangGraph multi-agent platform that autonomously executes natural-language infotainment tests, combining RAG-based knowledge retrieval, UI navigation, and outcome verification. Enabled automation of approximately 500 test cases and iteratively evaluated and refined agent reliability.",
+      "responsibilities1": "Integrated the agent platform with Jira to automate test specification retrieval, execution planning, and result reporting, and exposed test execution through FastAPI endpoints.",
+      "responsibilities2": "Co-designed and implemented a visual UI mapping pipeline combining Segment Anything 2 (SAM 2) segmentation and LLM-based classification to recursively map infotainment screens and transitions into a navigation graph.",
+      "responsibilities3": "Developed a real-time voice testing agent combining text-to-speech, Whisper transcription, and LLM-based evaluation to verify the infotainment digital assistant’s spoken responses and resulting UI actions against test requirements.",
+      "responsibilities4": "Co-developed a self-healing AI resolver that detects UI locators broken by software updates, identifies replacement references, and repairs affected tests, reducing manual maintenance across releases.",
+      "responsibilities5": "Automated infotainment software validation through CI/CT pipelines and Raspberry Pi/ESP32 hardware control, connecting release discovery and download with software flashing, test execution, and result reporting."
     },
     "job2": {
       "title": "Software Engineer",

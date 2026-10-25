@@ -231,12 +231,12 @@
       "title": "Softwareentwickler · KI & Automatisierung",
       "company": "Porsche Engineering",
       "date": "2025 - Heute",
-      "responsibilities0": "Konzeption und Entwicklung eines autonomen Multi-Agenten-Testsystems, das natürlichsprachliche Testfälle interpretiert, UI-Navigation und Prüfungen koordiniert und Testergebnisse bewertet. So lassen sich Hunderte von Infotainment-Tests automatisieren, ohne für jeden Test ein eigenes Skript zu schreiben.",
-      "responsibilities1": "Aufbau eines Navigationsgraphen der Infotainment-Oberfläche mit Segment Anything 2 (SAM 2) zur Segmentierung von UI-Elementen und LLMs zur Klassifikation. Rekursive Erfassung von Bildschirmen und Übergängen als Grundlage für die automatisierte Navigation.",
-      "responsibilities2": "Entwicklung eines Echtzeit-KI-Agenten zum Testen des digitalen Assistenten. Text-to-Speech, Whisper-Transkription und LLM-basierte Auswertung prüfen sowohl gesprochene Antworten als auch Aktionen auf dem Bildschirm anhand der Testvorgaben.",
-      "responsibilities3": "Entwicklung eines selbstheilenden KI-Resolvers mit spezialisierten Reparaturstrategien, der nach Softwareupdates ungültige UI-Locators erkennt und passende Ersatzreferenzen ermittelt. Dadurch sinkt der manuelle Wartungsaufwand für klassische automatisierte Tests.",
-      "responsibilities4": "Anbindung des Testagenten an Jira zum automatischen Abruf von Spezifikationen, zur Planung und Ausführung von Testschritten sowie zur Ergebnisrückmeldung. Damit wird das Testmanagement direkt mit der autonomen Validierung verbunden.",
-      "responsibilities5": "Aufbau von Pipelines für kontinuierliche Integration und kontinuierliches Testen (CI/CT) mit Raspberry Pi und ESP32. Die Automatisierung erkennt neue Softwareversionen, lädt sie herunter, flasht Infotainmentsysteme und stößt Testausführung und Ergebnisrückmeldung an."
+      "responsibilities0": "Konzeption und Implementierung einer Python/LangGraph-Multi-Agenten-Plattform, die natürlichsprachliche Infotainment-Tests mithilfe von RAG-basierter Wissensabfrage, UI-Navigation und Ergebnisprüfung autonom ausführt. Damit wurde die Automatisierung von rund 500 Testfällen ermöglicht; die Zuverlässigkeit der Agenten wurde iterativ evaluiert und verbessert.",
+      "responsibilities1": "Integration der Agentenplattform mit Jira zur Automatisierung des Abrufs von Testspezifikationen, der Ausführungsplanung und der Ergebnisrückmeldung sowie Bereitstellung der Testausführung über FastAPI-Endpunkte.",
+      "responsibilities2": "Gemeinsame Konzeption und Implementierung einer visuellen UI-Mapping-Pipeline, die Segmentierung mit Segment Anything 2 (SAM 2) und LLM-basierte Klassifikation kombiniert, um Infotainment-Bildschirme und Übergänge rekursiv als Navigationsgraph abzubilden.",
+      "responsibilities3": "Entwicklung eines Echtzeit-Sprachtestagenten, der Text-to-Speech, Whisper-Transkription und LLM-basierte Auswertung kombiniert, um gesprochene Antworten des digitalen Infotainment-Assistenten und daraus resultierende UI-Aktionen anhand der Testanforderungen zu prüfen.",
+      "responsibilities4": "Mitentwicklung eines selbstheilenden KI-Resolvers, der nach Softwareupdates ungültige UI-Locators erkennt, Ersatzreferenzen identifiziert und betroffene Tests repariert, um den manuellen Wartungsaufwand über Softwareversionen hinweg zu reduzieren.",
+      "responsibilities5": "Automatisierung der Infotainment-Softwarevalidierung mit CI/CT-Pipelines und Hardwaresteuerung über Raspberry Pi/ESP32, um Erkennung und Download neuer Softwareversionen mit Flashen, Testausführung und Ergebnisrückmeldung zu verbinden."
     },
     "job2": {
       "title": "Softwareentwicklung",
