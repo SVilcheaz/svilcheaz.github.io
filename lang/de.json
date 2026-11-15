@@ -97,43 +97,54 @@
   "projects": {
     "title": "Meine Projekte",
     "project10": {
-      "title": "Autonome UAV-Simulation",
-      "status": "Im Aufbau",
-      "summary": "Aufbau eines Wahrnehmungs- und Guidance-Stacks auf dem Jetson Orin Nano. PX4 und Gazebo stellen das simulierte Fluggerät bereit.",
-      "tech": "C++, ROS2, PX4, Gazebo, Jetson Orin Nano, Docker",
+      "title": "Autonome UAV-Navigation & Flugführung",
+      "status": "Phase 2 in Arbeit",
+      "summary": "Ziel ist die autonome Navigation: unbekannte Hindernisse erfassen, eine sichere Route planen und anpassen und auf einem markierten Landeplatz landen. Der Companion-Stack läuft auf einem Jetson Orin Nano, die PX4/Gazebo-Simulation auf einem PC.",
+      "tech": "C++, ROS2, PX4, Gazebo, Isaac ROS, Jetson Orin Nano",
       "imageAlt": "Eine quadratische Wegpunktmission in QGroundControl",
       "progress": "Phasen 0–1 abgeschlossen",
-      "delivered": "PC/Jetson-Anbindung und C++-Offboard-Steuerung für autonomen Start, Wegpunktflug und Landung in der Simulation.",
-      "nextLabel": "Als Nächstes",
-      "next": "TensorRT-beschleunigte Wahrnehmung",
+      "delivered": "PC/Jetson-Anbindung und C++-Offboard-Steuerung für Schwebeflug, quadratischen Wegpunktflug, Landung/Disarm und Absicherung bei Controller-Ausfall.",
+      "currentLabel": "Aktueller Fokus · Phase 2",
+      "current": "Stereo-/IMU-Sensorik & metrische Hinderniserfassung",
       "viewRoadmap": "Roadmap entdecken",
-      "description": "Ein laufendes UAV-Autonomieprojekt mit getrenntem Fluggerät und Companion Computer: Gazebo und PX4 SITL laufen auf dem PC, der ROS2-Missionscontroller in C++ auf einem Jetson Orin Nano über eine DDS-Anbindung. Phasen 0 und 1 sind abgeschlossen: die verteilte Umgebung sowie autonomer Start, quadratischer Wegpunktflug und Landung. Die weiteren Phasen ergänzen Wahrnehmung, visuell-inertiale Odometrie, Trajektorienplanung, Sensorfusion und bildgestützte Präzisionslandung.",
+      "description": "Die erste Mission ist der autonome Flug zu einem vorgegebenen Ziel mit ungefähr bekannter Landeplatzposition: aus Bordsensordaten eine Hinderniskarte aufbauen, eine sichere Route planen und abfliegen, bei neuer Geometrie umplanen und mithilfe einer Markierung landen. Der Bediener gibt die Mission frei; Ausweichentscheidungen entstehen aus der Wahrnehmung. Phasen 0–1 sind abgeschlossen. Phase 2 ist in Arbeit und schafft die gemeinsame Stereo-/IMU-Sensorik mit validierter metrischer Tiefe. Visuelle Navigation, Kartierung, Planung, Fehlerbehandlung und Präzisionslandung sind geplant; die semantische Suche folgt in Phase 7.",
+      "details": "Verteilung: Gazebo Harmonic, PX4 SITL, QGroundControl, die ROS/Gazebo-Sensorbrücke und RViz2 laufen auf dem PC. Der Jetson Orin Nano 8GB übernimmt den XRCE-DDS-Agent, alle Companion-Komponenten, Builds/Tests, Aufzeichnung und Auswertung. Die etablierte Umgebung mit Ubuntu 24.04 / ROS2 Jazzy / JetPack 7.2 und den festgelegten PX4-/Nachrichtenrevisionen bleibt bestehen. Sensordaten werden über ROS2 DDS im LAN übertragen, getrennt von PX4 XRCE-DDS.\n\nGeplanter Datenfluss: kalibriertes Stereo → metrische Tiefe → 3D-Belegungskarte → Routen-/Trajektorienplaner → Missionsüberwachung → Offboard-Sollwerte. Dieselbe Stereo-/IMU-Sensorik liefert cuVSLAM-VIO für die Kartierung und einen External-Vision-Adapter für PX4 EKF2. EKF2 bleibt die maßgebliche Flugzustandsschätzung; die vorhandenen PX4-Regelkreise bleiben erhalten. Zeitstempel, kalibrierte Transformationen, Kovarianz und Schätzungsresets werden geprüft. Kontinuierliche lokale Odometrie verhindert, dass Posensprünge unbemerkt Flugziele verschieben.\n\nRahmen und Abnahme: langsamer Simulationsflug in einem Geofence mit statischen Hindernissen, texturierten Oberflächen, ausreichendem Licht und validierter Sensorreichweite. Ziel und markierten Landeplatz ohne manuelle Steuerung oder vorgegebene Ausweichwegpunkte erreichen, auf veränderte Hindernisse reagieren, Abbruch/Fehlerbehandlung zeigen und die Landegenauigkeit messen. Simulator-Ground-Truth und optionale native Gazebo-Tiefe dienen ausschließlich der Auswertung, niemals als operative Pose oder Hinderniskarte. Physischer Einsatz bleibt eine spätere Erweiterung.\n\nRessourcenprüfung: Start mit CUDA SGM in isaac_ros_stereo_image_proc unter festgelegtem Isaac ROS 4.6. Die gemeinsame Last von Stereo, VIO, Karte, Planer und Steuerung wird auf dem 8GB-Jetson gemessen. ESS-/TensorRT-Stereo ist optional, wenn es eine gemessene Lücke der Tiefenqualität innerhalb des Ressourcenbudgets schließt. Die Detektorauswahl gehört zur Suchmission in Phase 7. TensorRT-Leistung und die vollständige Autonomielast sind noch nicht validiert.",
       "roadmapTitle": "Entwicklungsroadmap",
+      "roadmapContext": "Phasen 0–1 abgeschlossen · Phase 2 in Arbeit · Phasen 3–7 geplant",
       "complete": "Abgeschlossen",
+      "inProgress": "In Arbeit",
       "planned": "Geplant",
+      "phase0": {
+        "title": "Umgebung & Anbindung",
+        "description": "PC-/Jetson-Verteilung und Netzwerk eingerichtet: Gazebo Harmonic, PX4 SITL, QGroundControl, Sensorbrücke und RViz2 auf dem PC; Companion-Komponenten und XRCE-DDS-Agent auf dem Jetson."
+      },
       "phase1": {
         "title": "Offboard-Flugsteuerung",
         "description": "C++-Steuerung auf dem Jetson für Start, Wegpunktflug und Landung in PX4/Gazebo, einschließlich eines Tests bei Ausfall des Controllers."
       },
       "phase2": {
-        "title": "TensorRT-Wahrnehmung",
-        "description": "YOLOv8 auf dem Jetson mit simulierten Kamerabildern ausführen und die Inferenzlatenz messen."
+        "title": "Stereo-/IMU-Sensorik & metrische Hinderniserfassung",
+        "description": "Kalibrierte, synchronisierte Stereo-/IMU-Sensorik aufbauen und metrische Tiefe mit Isaac ROS CUDA SGM auf dem Jetson berechnen. Reichweite, Fehler, Abdeckung, ungültige Daten, Latenz und Ressourcenverbrauch anhand bekannter Flächen prüfen und die Pipeline parallel zur fertigen Schwebe-/Landesteuerung betreiben."
       },
       "phase3": {
-        "title": "Visuell-inertiale Odometrie",
-        "description": "Isaac ROS cuVSLAM mit Stereokamera- und IMU-Daten einsetzen und Posenschätzungen mit der Ground Truth der Simulation vergleichen."
+        "title": "Visuelle Navigation & PX4-Fusion",
+        "description": "Die gemeinsame Sensorik für visuell-inertiale Odometrie mit cuVSLAM nutzen. Koordinatensysteme, Zeitbezug, Maßstab und Tracking-Zustand prüfen, dann External Vision über einen C++-Adapter in PX4 EKF2 einspeisen. Die tatsächliche Fusion in Logs nachweisen und einen begrenzten Flug mit deaktivierter GNSS-Fusion und gültiger lokaler Schätzung durchführen."
       },
       "phase4": {
-        "title": "Trajektorienplanung & Guidance",
-        "description": "Glatte Minimum-Jerk-Trajektorien in C++ erzeugen, eine L1-Bahnführung ergänzen und lokale Hindernisumplanung entwickeln."
+        "title": "3D-Kartierung, Planung & Umplanung",
+        "description": "Metrische Tiefe und Pose zum Aufnahmezeitpunkt in einer begrenzten OctoMap mit belegtem, freiem und unbekanntem Raum zusammenführen. C++-3D-A* mit Sicherheitsabstand und Geofence-Prüfung nutzen; kollisionsgeprüfte Segmente innerhalb von Geschwindigkeits-/Beschleunigungsgrenzen über die vorhandene Offboard-Schnittstelle ausführen. Bei versetzten Hindernissen umplanen, nur durch beobachteten freien Raum fliegen und unerreichbare Routen ablehnen."
       },
       "phase5": {
-        "title": "VIO-/GPS-Sensorfusion",
-        "description": "Visuell-inertiale Odometrie und GPS mit einem erweiterten Kalman-Filter fusionieren und das Verhalten bei simulierten GPS-Ausfällen untersuchen."
+        "title": "Missionsüberwachung & Fehlerbehandlung",
+        "description": "Die C++-Missionsüberwachung vom Start über Navigation/Umplanung bis zu Landung und Disarm erweitern. Geschwindigkeit aus validierter freier Reichweite, Latenz und Bremsweg ableiten. Verhalten bei tatsächlichem GNSS-Ausfall in PX4, veralteten Tiefendaten und Lokalisierungsverlust/-reset prüfen; unsichere Trajektorien verwerfen und ohne gültigen Positionshalt auf das verifizierte PX4-Rückfallverhalten zurückgreifen."
       },
       "phase6": {
-        "title": "Bildgestützte Präzisionslandung",
-        "description": "AprilTag-Erkennung und relative Flugführung zu einer vollständigen simulierten Mission mit abschließender Präzisionslandung verbinden."
+        "title": "Gesamtmission & Präzisionslandung",
+        "description": "Kalibrierte Abwärtskamera und AprilTag-Relativpose zur Flugführung ergänzen, einschließlich Verhalten bei Tag-Verlust. Eine durchgehende Zielmission bis zur Landung, eine veränderte Hindernisanordnung ohne angepasste Ausweichwegpunkte und Abbruch/Fehlerbehandlung bei fehlendem sicheren Weg zeigen. Aufsetzabweichung gegen eine vorher festgelegte Toleranz messen und Disarm bestätigen."
+      },
+      "phase7": {
+        "title": "Semantische Suchmission",
+        "description": "Nach zuverlässiger Navigation in einem begrenzten Gebiet nach einem bestimmten Objekt oder einer Person suchen. Zielklasse, Detektor und Reaktion werden zu Beginn dieser Phase festgelegt. Erkennungen über mehrere Bilder bestätigen und das Ziel mit kalibrierter Tiefe und Pose lokalisieren. Hindernisvermeidung, Fehlerbehandlung und ein definierter Ausgang bei erfolgloser Suche bleiben erhalten. YOLO und TensorRT sind Kandidaten, abhängig von gemessenem Bedarf und Ressourcenbudget."
       }
     },
     "project1": {

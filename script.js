@@ -161,6 +161,7 @@ function initProjects() {
     description.textContent = card.querySelector('.project-description').textContent;
     extendedDescription.textContent = i18n.get(`projects.${id}.details`);
     extendedDescription.hidden = !extendedDescription.textContent;
+    technicalNotes.hidden = id === 'project10';
     const roadmap = card.querySelector('.project-progress');
     progress.replaceChildren(...(roadmap ? [roadmap.cloneNode(true)] : []));
     progress.hidden = !roadmap;

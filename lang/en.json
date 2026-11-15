@@ -97,43 +97,54 @@
   "projects": {
     "title": "My Projects",
     "project10": {
-      "title": "Autonomous UAV Simulation",
-      "status": "Currently building",
-      "summary": "Building a perception and guidance stack on Jetson Orin Nano, with PX4 and Gazebo providing the simulated aircraft.",
-      "tech": "C++, ROS2, PX4, Gazebo, Jetson Orin Nano, Docker",
+      "title": "Autonomous UAV Navigation & Guidance",
+      "status": "Phase 2 in progress",
+      "summary": "Building toward autonomous goal navigation: sense unmapped obstacles, plan and replan a safe route, and land on a marked pad. The companion stack runs on a Jetson Orin Nano with PX4/Gazebo simulation on a PC.",
+      "tech": "C++, ROS2, PX4, Gazebo, Isaac ROS, Jetson Orin Nano",
       "imageAlt": "A square waypoint mission shown in QGroundControl",
       "progress": "Phases 0–1 complete",
-      "delivered": "PC/Jetson integration and C++ offboard control for autonomous takeoff, waypoint flight, and landing in simulation.",
-      "nextLabel": "Next up",
-      "next": "TensorRT-accelerated perception",
+      "delivered": "PC/Jetson integration and C++ Offboard control for hover, square-waypoint flight, landing/disarm, and controller-loss recovery.",
+      "currentLabel": "Current focus · Phase 2",
+      "current": "Stereo/IMU rig & metric obstacle sensing",
       "viewRoadmap": "Explore the roadmap",
-      "description": "An ongoing UAV autonomy project that separates the simulated aircraft from its companion computer: Gazebo and PX4 SITL run on a PC, while the ROS2 C++ mission controller runs on a Jetson Orin Nano over a DDS bridge. Phases 0 and 1 are complete, covering the distributed setup and autonomous takeoff, square-waypoint flight, and landing. The remaining roadmap adds perception, visual-inertial odometry, trajectory planning, sensor fusion, and vision-based precision landing.",
+      "description": "The first mission is autonomous flight to an assigned destination and approximate landing-pad location: build an obstacle map from onboard sensors, plan and follow a safe route, replan around new geometry, and land using a marker. The operator authorizes the mission; avoidance decisions come from perception. Phases 0–1 are complete. Phase 2 is in progress, establishing the shared stereo/IMU rig and validated metric depth. Vision-based navigation, mapping, planning, mission recovery, and precision landing remain planned; semantic search follows in Phase 7.",
+      "details": "Deployment: Gazebo Harmonic, PX4 SITL, QGroundControl, the ROS/Gazebo sensor bridge, and RViz2 run on the PC. The Jetson Orin Nano 8GB hosts the XRCE-DDS Agent, all companion components, builds/tests, recording, and analysis. The established Ubuntu 24.04 / ROS2 Jazzy / JetPack 7.2 setup and pinned PX4/message revisions are retained. Sensor streams travel over ROS2 DDS on the LAN, separately from PX4 XRCE-DDS.\n\nPlanned data path: calibrated stereo → metric depth → 3D occupancy map → route/trajectory planner → mission supervisor → Offboard targets. The same stereo/IMU rig supplies cuVSLAM VIO to mapping and an external-vision adapter for PX4 EKF2, which remains the flight-estimation authority alongside PX4's existing control loops. Validate timestamps, calibrated transforms, covariance, and estimator resets; use continuous local odometry so pose jumps cannot silently move flight targets.\n\nScope and acceptance: low-speed simulation in a geofenced area with static obstacles, textured surfaces, adequate lighting, and validated sensor range. Reach the goal and marked pad without manual steering or pre-authored avoidance waypoints, adapt to changed obstacles, demonstrate refusal/recovery, and measure landing accuracy. Simulator truth and optional native Gazebo depth are evaluation references only, never the operational pose or obstacle map. Physical deployment remains a future extension.\n\nResource validation: begin with CUDA SGM in isaac_ros_stereo_image_proc on pinned Isaac ROS 4.6. Measure combined stereo, VIO, map, planner, and control load on the 8GB Jetson. ESS/TensorRT stereo is optional if it resolves a measured depth-quality gap within budget; detector selection belongs to the Phase 7 search mission. TensorRT performance and the full autonomy workload remain unvalidated.",
       "roadmapTitle": "Development roadmap",
+      "roadmapContext": "Phases 0–1 complete · Phase 2 in progress · Phases 3–7 planned",
       "complete": "Complete",
+      "inProgress": "In progress",
       "planned": "Planned",
+      "phase0": {
+        "title": "Environment & bridge",
+        "description": "Established the PC/Jetson deployment and networking: Gazebo Harmonic, PX4 SITL, QGroundControl, sensor bridge, and RViz2 on the PC; companion components and the XRCE-DDS Agent on the Jetson."
+      },
       "phase1": {
         "title": "Offboard flight control",
         "description": "Jetson-side C++ control of takeoff, waypoint flight, and landing in PX4/Gazebo, including a controller-loss recovery check."
       },
       "phase2": {
-        "title": "TensorRT perception",
-        "description": "Run YOLOv8 on the Jetson against simulated camera feeds and measure inference latency."
+        "title": "Stereo/IMU rig & metric obstacle sensing",
+        "description": "Build a calibrated, synchronized stereo/IMU rig and compute metric depth on the Jetson with Isaac ROS CUDA SGM. Validate range, error, coverage, invalid data, latency, and resource use against known surfaces, then run alongside the completed hover/landing controller."
       },
       "phase3": {
-        "title": "Visual-inertial odometry",
-        "description": "Use Isaac ROS cuVSLAM with stereo camera and IMU data, comparing pose estimates with simulation ground truth."
+        "title": "Visual navigation & PX4 fusion",
+        "description": "Use the shared rig for cuVSLAM visual-inertial odometry. Validate frames, timing, scale, and tracking health, then feed external vision through a C++ adapter into PX4 EKF2. Verify actual fusion in logs and complete a bounded flight with GNSS fusion disabled and a valid local estimate."
       },
       "phase4": {
-        "title": "Trajectory planning & guidance",
-        "description": "Generate smooth minimum-jerk trajectories in C++, add L1 path-following guidance, and develop local obstacle replanning."
+        "title": "3D mapping, planning & replanning",
+        "description": "Combine metric depth and capture-time pose in a bounded OctoMap of occupied, free, and unknown space. Use C++ 3D A* with vehicle clearance and geofence checks, then execute collision-checked segments within speed/acceleration limits through the existing Offboard interface. Replan around moved obstacles, fly only through observed-free space, and reject unreachable routes."
       },
       "phase5": {
-        "title": "VIO / GPS sensor fusion",
-        "description": "Fuse visual-inertial odometry and GPS with an extended Kalman filter, then evaluate behavior during simulated GPS dropouts."
+        "title": "Mission supervision & recovery",
+        "description": "Extend the C++ supervisor from takeoff through navigation/replanning to landing and disarm. Set speed from validated free range, latency, and braking distance. Verify recovery during actual PX4 GNSS loss, stale depth, and localization loss/reset; invalidate unsafe trajectories and use the verified PX4 fallback when a valid position hold is unavailable."
       },
       "phase6": {
-        "title": "Vision-based precision landing",
-        "description": "Integrate AprilTag detection and relative guidance into a complete simulated mission ending in a precision landing."
+        "title": "Integrated mission & precision landing",
+        "description": "Add a calibrated downward camera and AprilTag relative-pose guidance with tag-loss handling. Demonstrate one continuous goal-to-landing mission, a changed obstacle layout without edited avoidance waypoints, and refusal/recovery when safe progress is unavailable. Measure touchdown offset against a predefined tolerance and confirm disarm."
+      },
+      "phase7": {
+        "title": "Semantic search mission",
+        "description": "After reliable navigation, search for a specified object or person in a bounded area. Select the target class, detector, and response when this phase starts. Confirm detections across frames and use calibrated depth and pose to locate the target, while retaining obstacle avoidance, recovery, and a target-not-found outcome. YOLO and TensorRT are candidates, subject to measured need and resource limits."
       }
     },
     "project1": {
