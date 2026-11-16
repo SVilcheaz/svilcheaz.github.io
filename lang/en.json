@@ -107,6 +107,8 @@
       "currentLabel": "Current focus · Phase 3",
       "current": "Visual navigation & PX4 fusion",
       "viewRoadmap": "Explore the roadmap",
+      "explorePhase": "Explore Phase {phase}: {title}",
+      "openImage": "Open full-size image (new tab)",
       "description": "The first mission is autonomous flight to an assigned destination and approximate landing-pad location: build an obstacle map from onboard sensors, plan and follow a safe route, replan around new geometry, and land using a marker. The operator authorizes the mission; avoidance decisions come from perception. Phases 0–2 are complete, including the shared stereo/IMU rig and validated metric depth. Phase 3 is in progress, integrating visual navigation with PX4. Mapping, planning, mission recovery, and precision landing remain planned; semantic search follows in Phase 7.",
       "details": "Deployment: Gazebo Harmonic, PX4 SITL, QGroundControl, the ROS/Gazebo sensor bridge, and RViz2 run on the PC. The Jetson Orin Nano 8GB hosts the XRCE-DDS Agent, all companion components, builds/tests, recording, and analysis. The established Ubuntu 24.04 / ROS2 Jazzy / JetPack 7.2 setup and pinned PX4/message revisions are retained. Sensor streams travel over ROS2 DDS on the LAN, separately from PX4 XRCE-DDS.\n\nPlanned data path: calibrated stereo → metric depth → 3D occupancy map → route/trajectory planner → mission supervisor → Offboard targets. The same stereo/IMU rig supplies cuVSLAM VIO to mapping and an external-vision adapter for PX4 EKF2, which remains the flight-estimation authority alongside PX4's existing control loops. Validate timestamps, calibrated transforms, covariance, and estimator resets; use continuous local odometry so pose jumps cannot silently move flight targets.\n\nScope and acceptance: low-speed simulation in a geofenced area with static obstacles, textured surfaces, adequate lighting, and validated sensor range. Reach the goal and marked pad without manual steering or pre-authored avoidance waypoints, adapt to changed obstacles, demonstrate refusal/recovery, and measure landing accuracy. Simulator truth and optional native Gazebo depth are evaluation references only, never the operational pose or obstacle map. Physical deployment remains a future extension.\n\nResource validation: begin with CUDA SGM in isaac_ros_stereo_image_proc on pinned Isaac ROS 4.6. Measure combined stereo, VIO, map, planner, and control load on the 8GB Jetson. ESS/TensorRT stereo is optional if it resolves a measured depth-quality gap within budget; detector selection belongs to the Phase 7 search mission. TensorRT performance and the full autonomy workload remain unvalidated.",
       "roadmapTitle": "Development roadmap",
@@ -119,11 +121,14 @@
       },
       "phase1": {
         "title": "Offboard flight control",
-        "description": "Jetson-side C++ control of takeoff, waypoint flight, and landing in PX4/Gazebo, including a controller-loss recovery check."
+        "description": "Jetson-side C++ control of takeoff, waypoint flight, and landing in PX4/Gazebo, including a controller-loss recovery check.",
+        "imageCaption": "Square-waypoint flight in QGroundControl."
       },
       "phase2": {
         "title": "Stereo/IMU rig & metric obstacle sensing",
-        "description": "Build a calibrated, synchronized stereo/IMU rig and compute metric depth on the Jetson with Isaac ROS CUDA SGM. Validate range, error, coverage, invalid data, latency, and resource use against known surfaces, then run alongside the completed hover/landing controller."
+        "description": "Build a calibrated, synchronized stereo/IMU rig and compute metric depth on the Jetson with Isaac ROS CUDA SGM. Validate range, error, coverage, invalid data, latency, and resource use against known surfaces, then run alongside the completed hover/landing controller.",
+        "imageCaption": "Stereo depth before and after confidence filtering.",
+        "imageAlt": "Simulated camera image and metric depth before and after confidence filtering"
       },
       "phase3": {
         "title": "Visual navigation & PX4 fusion",

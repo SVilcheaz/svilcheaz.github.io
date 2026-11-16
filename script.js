@@ -130,6 +130,47 @@ function initJobDurations() {
   update();
 }
 
+function initStageGallery(card) {
+  const gallery = card.querySelector('[data-stage-gallery]');
+  if (!gallery) return;
+  const stages = [...card.querySelectorAll('[data-phase]')].filter(stage => stage.querySelector('.phase-image'));
+  if (!stages.length) return;
+  const featured = gallery.querySelector('.stage-gallery-featured');
+  const image = featured.querySelector('img');
+  let selected = stages.length - 1;
+  let timer = null;
+
+  const select = index => {
+    selected = index;
+    const stage = stages[index];
+    const source = stage.querySelector('.phase-image img');
+    image.src = source.src;
+    image.alt = source.alt;
+    image.width = source.width;
+    image.height = source.height;
+    image.dataset.i18n = source.dataset.i18n;
+    featured.dataset.projectPhase = stage.dataset.phase;
+    featured.setAttribute('aria-label', i18n.get(`projects.${card.dataset.project}.explorePhase`, 'Explore Phase {phase}: {title}')
+      .replace('{phase}', stage.dataset.phase)
+      .replace('{title}', stage.querySelector('h4').textContent));
+    const url = new URL(featured.href, location.href);
+    url.searchParams.set('phase', stage.dataset.phase);
+    featured.href = url.pathname + url.search;
+  };
+  const restart = () => {
+    window.clearInterval(timer);
+    timer = null;
+    if (document.hidden || stages.length < 2) return;
+    timer = window.setInterval(() => {
+      if (!document.getElementById('project-dialog')?.open) select((selected + 1) % stages.length);
+    }, 5000);
+  };
+  select(selected);
+  document.addEventListener('visibilitychange', restart);
+  window.addEventListener('languagechange', () => select(selected));
+  restart();
+}
+
 function initProjects() {
   const dialog = document.getElementById('project-dialog');
   if (!dialog) return;
@@ -174,6 +215,8 @@ function initProjects() {
   };
   const fillMedia = card => {
     media.replaceChildren();
+    // Stage images already appear in the roadmap beside their context.
+    if (card.querySelector('.phase-image')) return;
     const demo = demos[card.dataset.project];
     if (demo) {
       const video = document.createElement('video');
@@ -202,7 +245,7 @@ function initProjects() {
     currentCard = null;
     if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
   };
-  const open = (card, { updateUrl = true, trigger = null } = {}) => {
+  const open = (card, { updateUrl = true, trigger = null, phase = null } = {}) => {
     returnFocus = trigger || card.querySelector('[data-project-open]');
     currentCard = card;
     technicalNotes.open = false;
@@ -210,9 +253,18 @@ function initProjects() {
     fillMedia(card);
     if (!dialog.open) dialog.showModal();
     dialog.scrollTop = 0;
+    const stage = [...progress.querySelectorAll('[data-phase]')].find(item => item.dataset.phase === phase);
+    if (stage) {
+      dialog.scrollTop = stage.getBoundingClientRect().top - dialog.getBoundingClientRect().top - 24;
+      const heading = stage.querySelector('h4');
+      heading.tabIndex = -1;
+      heading.focus({ preventScroll: true });
+    }
     if (updateUrl) {
       const url = new URL(location.href);
       url.searchParams.set('project', card.dataset.project);
+      if (stage) url.searchParams.set('phase', phase);
+      else url.searchParams.delete('phase');
       history.pushState({ portfolioProject: card.dataset.project }, '', url);
     }
   };
@@ -223,13 +275,14 @@ function initProjects() {
     if (history.state?.portfolioProject) history.back();
     else {
       url.searchParams.delete('project');
+      url.searchParams.delete('phase');
       history.replaceState(history.state, '', url);
     }
   };
   const syncFromUrl = () => {
     const id = new URL(location.href).searchParams.get('project');
     const card = cards.find(item => item.dataset.project === id);
-    if (card) open(card, { updateUrl: false });
+    if (card) open(card, { updateUrl: false, phase: new URL(location.href).searchParams.get('phase') });
     else hide();
   };
   document.querySelectorAll('[data-project-open]').forEach(trigger => {
@@ -238,7 +291,7 @@ function initProjects() {
       const card = cards.find(item => item.dataset.project === trigger.dataset.projectOpen);
       if (!card) return;
       event.preventDefault();
-      open(card, { trigger });
+      open(card, { trigger, phase: trigger.dataset.projectPhase });
     });
   });
   dialog.querySelector('.dialog-close').addEventListener('click', close);
@@ -262,6 +315,8 @@ function initProjects() {
 
 async function initApp() {
   initTheme();
+  // The image-only slideshow also runs when local-file translation fetches fail or stall.
+  document.querySelectorAll('[data-project]').forEach(initStageGallery);
   await i18n.init();
   initDisclosures();
   initJobDurations();
