@@ -1,3 +1,10 @@
+// Keep explicit index-file visits on the same clean URLs used by navigation.
+if (/^\/(?:(?:about|experience)\/)?index\.html$/.test(location.pathname)) {
+  const url = new URL(location.href);
+  url.pathname = url.pathname.replace(/index\.html$/, '');
+  history.replaceState(history.state, '', url);
+}
+
 // Preferences are optional: the portfolio also works when storage is disabled.
 const preferences = {
   get(key) { try { return localStorage.getItem(key); } catch (_) { return null; } },
@@ -15,7 +22,7 @@ const i18n = {
   async load(language) {
     if (this.translations[language]) return true;
     try {
-      const response = await fetch(`lang/${language}.json`);
+      const response = await fetch(`/lang/${language}.json`);
       if (!response.ok) return false;
       this.translations[language] = await response.json();
       return true;
@@ -48,7 +55,7 @@ const i18n = {
       if (link.getAttribute('href').startsWith('#')) return;
       const url = new URL(link.href, location.href);
       if (url.origin !== location.origin) return;
-      if (!/(?:index|about|experience)\.html$/.test(url.pathname) && !link.hasAttribute('data-project-open')) return;
+      if (!/^\/(?:about\/|experience\/)?$/.test(url.pathname) && !link.hasAttribute('data-project-open')) return;
       url.searchParams.set('lang', this.currentLanguage);
       link.href = url.pathname + url.search + url.hash;
     });
